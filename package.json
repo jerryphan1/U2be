@@ -1,5 +1,41 @@
 {
-  "name": "U2be",
+  "name": "u2be",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerryphan1/U2be.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerryphan1/U2be/issues"
+  },
+  "homepage": "https://github.com/jerryphan1/U2be#readme"
 }
