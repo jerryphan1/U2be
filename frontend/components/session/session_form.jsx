@@ -22,38 +22,53 @@ export default class SessionForm extends React.Component {
     }
 
     render() {
-        let link;
-        let text;
+        let link, text, other_text;
         if (this.props.formType === 'login') {
             link = `/signup`;
-            text = `Sign Up`;
+            text = 'Log In';
+            other_text = `Sign Up`;
         } else {
             link = `/login`;
-            text = `Log In`;
+            text = 'Sign Up';
+            other_text = `Log In`;
         };
         return (
-            <div>
-                <h1>{this.props.formType}</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username: <input 
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.update('username')}
-                    /></label>
-                    <label>Password: <input 
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                    /></label>
-                    <button type="submit">{this.props.formType}</button>
-                </form>
-                <ul className="errors">
-                    {this.props.errors.map((error, idx) => {
-                        return <li key={idx}>{error}</li>
-                    })}
-                </ul>
+            <div id='session-container'>
+                <div id='form-outer-line'>
+                    <div id='upper-form-container'>
+                        <h1>Logo will go here</h1>
+                        <h1>{text}</h1>
+                    </div>
 
-                <Link to={link}>{text}</Link>
+                    <form onSubmit={this.handleSubmit} id='form-container'>
+
+                        <label><input 
+                            type="text"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            placeholder='username'
+                            />
+                        </label>
+                        <label><input 
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            placeholder='password'
+                            />
+                        </label>
+                        <div id='session-submit-options'>
+                            <Link to={link}>{other_text}</Link>
+                            <input type="submit" value={text}/>
+                        </div>
+                    </form>
+
+                    <ul className="errors">
+                        {this.props.errors.map((error, idx) => {
+                            return <li key={idx}>{error}</li>
+                        })}
+                    </ul>
+                </div>
+
             </div>
         )
     }
