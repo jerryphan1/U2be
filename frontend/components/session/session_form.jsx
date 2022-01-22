@@ -38,6 +38,8 @@ export default class SessionForm extends React.Component {
                     <div id='upper-form-container'>
                         <h1>Logo will go here</h1>
                         <h1>{text}</h1>
+                        <a href="https://github.com/jerryphan1" target='_blank'><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jerry-phan-8615a7a3/" target='_blank'><i className="fab fa-linkedin"></i></a>
                     </div>
 
                     <form onSubmit={this.handleSubmit} id='form-container'>
