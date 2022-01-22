@@ -12,14 +12,16 @@ export default class Greeting extends React.Component {
             )
         } else {
             return (
-                <div>
-                    <Link to={'/signup'}>
+                <div className="navbar-link-container">
+                    {/* <Link to={'/signup'}>
                         Signup
-                    </Link>
-                    <br />
-                    <Link to={'/login'}>
-                        Login
-                    </Link>
+                    </Link> */}
+                    {/*Youtube only shows a signup*/}
+                    {/* <br /> */}
+                    <button className='navbar-button'>
+                        <Link to={'/login'} className='navbar-link'>Login</Link>
+                    </button>
+
                 </div>
             )
         }
