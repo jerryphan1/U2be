@@ -1,0 +1,90 @@
+#top-navbar-container{
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #202020;
+  border-bottom: 2px solid #4d4949;
+}
+
+#top-navbar-icons{
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  color: white;
+  /* width: 10%; */
+}
+
+.fa-bars{
+  cursor: pointer;
+}
+
+.fa-react{
+  margin-left: 50px;
+}
+
+#top-navbar-searchbar{
+  display: flex;
+  width: 48%;
+  margin: auto;
+}
+
+.searchbar {
+  width: 90%;
+  font-size: 20px;
+  padding: 8px;
+  background-color: hsl(0, 0%, 7%);
+  border: 0.5px solid #141414;
+  color: white;
+}
+
+.searchbar:focus {
+  outline: 0.5px solid blue;
+}
+
+#top-navbar-searchbar button{
+  /* background-color: #323232; */
+  background-color: hsla(0, 0%, 100%, 0.08);
+  cursor: pointer;
+  border: 0.5px solid black;
+}
+
+#top-navbar-searchbar button:hover{
+  /* background-color: hsla(0, 0%, 100%, 0.08); */
+  background-color: rgba(255,255,255,0.2);
+}
+
+
+.fa-search{
+  color: rgba(255,255,255,0.6);
+  font-size: 22px;
+  padding: 12px;
+}
+
+
+.navbar-link-container{
+  margin-right: 45px;
+  text-decoration: none;
+}
+
+.navbar-button{
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.navbar-button:hover{
+  background-color: rgba(255,0,0,0.95);
+
+}
+
+.navbar-link{
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+}

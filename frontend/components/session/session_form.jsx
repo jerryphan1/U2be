@@ -25,19 +25,20 @@ export default class SessionForm extends React.Component {
         let link, text, other_text;
         if (this.props.formType === 'login') {
             link = `/signup`;
-            text = 'Log In';
-            other_text = `Sign Up`;
+            text = 'Login';
+            other_text = `Signup`;
         } else {
             link = `/login`;
-            text = 'Sign Up';
-            other_text = `Log In`;
+            text = 'Signup';
+            other_text = `Login`;
         };
         return (
             <div id='session-container'>
                 <div id='form-outer-line'>
                     <div id='upper-form-container'>
                         <h1>Logo will go here</h1>
-                        <h1>{text}</h1>
+                        <h2>{text}</h2>
+                        <p>to continue to U2be</p>
                         <a href="https://github.com/jerryphan1" target='_blank'><i className="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/jerry-phan-8615a7a3/" target='_blank'><i className="fab fa-linkedin"></i></a>
                     </div>
@@ -58,9 +59,13 @@ export default class SessionForm extends React.Component {
                             placeholder='password'
                             />
                         </label>
+                    
+                        <input className='demo-submit' type='submit' value='Demo Login'/>
+                        
                         <div id='session-submit-options'>
-                            <Link to={link}>{other_text}</Link>
-                            <input type="submit" value={text}/>
+                            
+                            <Link to={link}>{other_text === 'Signup' ? other_text = 'Create Account' : other_text = 'Already have an account?'}</Link>
+                            <input className='session-submit' type="submit" value={text}/>
                         </div>
                     </form>
 
