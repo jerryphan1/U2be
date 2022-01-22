@@ -3,6 +3,7 @@ import GreetingContainer from "./greeting/greeting_container";
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import TopNavbar from "./top_navbar";
+import LeftNavbar from "./left_navbar";
 import { Route } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 
@@ -12,6 +13,7 @@ const App = () => (
       {/* <h1>U2be</h1> */}
       {/* <GreetingContainer /> */}
       <TopNavbar/>
+      <LeftNavbar/>
     </header>
 
     <AuthRoute path="/login" component={LoginFormContainer} />

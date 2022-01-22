@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Source+Sans+3:wght@300;400&display=swap');
+
+
+#left-nav-menu{
+  box-sizing: border-box;
+  /* margin: 0; */
+  /* margin-top: 6%; */
+  /* padding-top: 20px; */
+  /* padding: 20px; */
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #202020;
+  width: 210px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+
+#left-nav-menu.active{
+  left: 0;
+  transition: 350ms;
+}
+
+#navbar-toggle a{
+  text-decoration: none;
+}
+
+.fa-bars.left-nav-icon {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.966);
+  cursor: pointer;
+  padding: 24px;
+}
+
+#left-main-logo{
+  margin-left: 60px;
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.left-nav-text{
+  display: flex;
+  justify-content: start;
+  text-align: center;
+  align-items: center;
+  list-style: none;
+  height: 50px;
+  padding: 1rem;
+  /* width: 100%; */
+}
+
+.left-nav-text a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.966);
+  font-size: 1.2rem;
+  margin-left: 0.6rem;
+  text-align: center;
+  align-items: center;
+}
+
+.left-nav-text:hover{
+  background-color: rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+.left-nav-menu-items{
+  width: 100%; 
+}
+
+.left-nav-icon{
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  color: #909090;
+}
+
+.left-nav-section{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
