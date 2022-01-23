@@ -6,19 +6,20 @@ export default class SessionForm extends React.Component {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
-        return e => this.setState({ [field]: e.currentTarget.value });
+        return e => this.setState({ [field]: e.currentTarget.value});
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).fail(() => this.setState({ errors: this.props.errors }));
     }
 
     render() {
@@ -68,7 +69,7 @@ export default class SessionForm extends React.Component {
                     </form>
 
                     <ul className="errors">
-                        {this.props.errors.map((error, idx) => {
+                        {this.state.errors.map((error, idx) => {
                             return <li key={idx}>{error}</li>
                         })}
                     </ul>
