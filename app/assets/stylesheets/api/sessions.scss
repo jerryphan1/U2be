@@ -3,22 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap');
+
 #session-container{
   display: flex;
-  background-color: white;
+  background-color: rgb(44, 36, 36);
   justify-content: center;
   align-items: center;
-  margin-top: 7%;
+  margin: auto;
+  width: 100%;
 }
 
 #form-outer-line{
-  border: 1px solid #dadce0;
-  width: 33%;
+  border: 1px solid #4d4949;
+  width: 39%;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #202020;
+  color: white;
+  margin: 7px;
+  // margin: 30px;
+}
 
+#session-logo{
+  width: 90%;
+  height: 70%;
+}
+
+.session-h2-text{
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 15px;
+  margin-bottom: 12px;
+}
+
+.session-p-text{
+  color: rgba(255,255,255,0.6);
 }
 
 #upper-form-container{
@@ -33,28 +56,59 @@
   flex-direction: column;
   text-align: center;
   margin: 10px;
+  width: 62%;
 }
 
-#form-container > label{
-  margin: 10px;
 
+#form-container > input{
+  padding: 10px;
+  margin: 5px;
+  background-color: #141414;
+  border: 0.5px solid #4d4949;
+  color: rgba(255,255,255,0.6);
+  border-radius: 5px;
+}
+
+#form-container > input:focus{
+  outline: 0.5px solid rgb(75, 75, 197);
 }
 
 #session-submit-options{
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
-
 }
 
-.demo-submit {
+#form-container > input.demo-submit {
   cursor: pointer;
+  background-color: rgba(255,255,255,0.1);
+  // padding: 10px;
+  // margin: 5px;
+  margin-top: 15px;
+  outline: none;
+}
+
+#form-container > input.demo-submit:hover{
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.session-link{
+  text-decoration: none;
+  color: rgba(255,255,255,1);
+}
+
+.session-link:hover{
+  color: rgba(255,255,255,0.9);
 }
 
 .session-submit {
   cursor: pointer;
   background-color: red;
+  font-size: 16px;
+  padding: 12px 20px;
   color: white;
   border: none;
   border-radius: 5px;
