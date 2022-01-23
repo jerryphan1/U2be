@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import U2beLogo from '../../../app/assets/images/U2be.svg';
+
 
 export default class SessionForm extends React.Component {
     constructor(props) {
@@ -37,33 +39,35 @@ export default class SessionForm extends React.Component {
             <div id='session-container'>
                 <div id='form-outer-line'>
                     <div id='upper-form-container'>
-                        <h1>Logo will go here</h1>
-                        <h2>{text}</h2>
-                        <p>to continue to U2be</p>
+                    <a href='#'>
+                        <img src={U2beLogo} alt="main-logo" id='session-logo'/>
+                    </a>
+                        <h2 className='session-h2-text'>{text}</h2>
+                        <p className="session-p-text">to continue to U2be</p>
                     </div>
 
                     <form onSubmit={this.handleSubmit} id='form-container'>
 
-                        <label><input 
+                        <input 
                             type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder='username'
                             />
-                        </label>
-                        <label><input 
+                        
+                        <input 
                             type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder='password'
                             />
-                        </label>
+                        
                     
                         <input className='demo-submit' type='submit' value='Demo Login'/>
                         
                         <div id='session-submit-options'>
                             
-                            <Link to={link}>{other_text === 'Signup' ? other_text = 'Create Account' : other_text = 'Already have an account?'}</Link>
+                            <Link className="session-link" to={link}>{other_text === 'Signup' ? other_text = 'Create Account' : other_text = 'Already have an account?'}</Link>
                             <input className='session-submit' type="submit" value={text}/>
                         </div>
                     </form>

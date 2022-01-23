@@ -13,9 +13,9 @@ const App = () => (
     <header>
       {/* <h1>U2be</h1> */}
       {/* <GreetingContainer /> */}
-      <TopNavbar/>
+      {/* <TopNavbar/>
       <LeftNavbar/>
-      <LeftIcons/>
+      <LeftIcons/> */}
     </header>
 
     <AuthRoute path="/login" component={LoginFormContainer} />
