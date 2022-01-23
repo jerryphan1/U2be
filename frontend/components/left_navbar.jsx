@@ -39,7 +39,7 @@ export default class LeftNavbar extends React.Component {
               </li>
 
               <li className="left-nav-text">
-                <a href="#"><i className="fas fa-random left-nav-icon"></i>Random</a>
+                <a href="https://www.youtube.com/c/Valkyrae1" target='_blank'><i className="fas fa-random left-nav-icon"></i>Random</a>
               </li>
 
               

@@ -21,7 +21,7 @@ export default class LeftIcons extends React.Component{
               </li>
 
               <li className="left-icon-nav-text">
-                <a href="#"><i className="fas fa-random left-icon-nav-icon"></i></a>
+                <a href="https://www.youtube.com/c/Valkyrae1" target='_blank'><i className="fas fa-random left-icon-nav-icon"></i></a>
                 <p>Random</p>
               </li>
         </ul>
