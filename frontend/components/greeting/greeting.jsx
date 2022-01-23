@@ -7,7 +7,7 @@ export default class Greeting extends React.Component {
             return (
                 <div>
                     <h1>Welcome {this.props.currentUser.username}</h1>
-                    <button onClick={() => this.props.logout()}>Logout</button>
+                    <button className='navbar-button' onClick={() => this.props.logout()}>Logout</button>
                 </div>
             )
         } else {

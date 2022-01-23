@@ -12,7 +12,7 @@ const App = () => (
   <div>
     <header>
       {/* <h1>U2be</h1> */}
-      {/* <GreetingContainer /> */}
+      <GreetingContainer />
       {/* <TopNavbar/>
       <LeftNavbar/>
       <LeftIcons/> */}
