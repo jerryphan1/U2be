@@ -15,34 +15,37 @@ export default class SessionForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this)
     }
 
-    handleDemo(e){
-        e.preventDefault()
+    handleUser(){
         let demoUsername = 'demo username'.split('');
-        let demoPassword = 'demo password'.split('');
         let nextUserLetters = '' 
-        let nextPassLetters = ''
-
         const userTypewriter =  setInterval(() => {
             if ('demo username' !== this.state.username){
                 nextUserLetters += demoUsername.shift()
                 this.setState({username: nextUserLetters})
             } else {
                 clearInterval(userTypewriter);
-                passTypewriter()
+                this.handlePassword()
             }
         },100)
+    }
 
-        const passTypewriter = () => {
-            const passTyping = setInterval(() => {
-                if ('demo password' !== this.state.password){
-                    nextPassLetters += demoPassword.shift()
-                    this.setState({password: nextPassLetters})
-                } else {
-                    clearInterval(passTyping)
-                    this.props.processForm({ username: 'demo username', password: 'demo password' })
-                }
-            },100)
-        }
+    handlePassword(){
+        let demoPassword = 'demo password'.split('');
+        let nextPassLetters = ''
+        const passTypewriter = setInterval(() => {
+            if ('demo password' !== this.state.password){
+                nextPassLetters += demoPassword.shift()
+                this.setState({password: nextPassLetters})
+            } else {
+                clearInterval(passTypewriter)
+                this.props.processForm({ username: 'demo username', password: 'demo password' })
+            }
+        },100)
+    }
+
+    handleDemo(e){
+        e.preventDefault()
+        this.handleUser();
     }
 
     update(field) {
