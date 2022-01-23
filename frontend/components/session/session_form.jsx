@@ -12,6 +12,37 @@ export default class SessionForm extends React.Component {
             errors: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this)
+    }
+
+    handleDemo(e){
+        e.preventDefault()
+        let demoUsername = 'demo username'.split('');
+        let demoPassword = 'demo password'.split('');
+        let nextUserLetters = '' 
+        let nextPassLetters = ''
+
+        const userTypewriter =  setInterval(() => {
+            if ('demo username' !== this.state.username){
+                nextUserLetters += demoUsername.shift()
+                this.setState({username: nextUserLetters})
+            } else {
+                clearInterval(userTypewriter);
+                passTypewriter()
+            }
+        },100)
+
+        const passTypewriter = () => {
+            const passTyping = setInterval(() => {
+                if ('demo password' !== this.state.password){
+                    nextPassLetters += demoPassword.shift()
+                    this.setState({password: nextPassLetters})
+                } else {
+                    clearInterval(passTyping)
+                    this.props.processForm({ username: 'demo username', password: 'demo password' })
+                }
+            },100)
+        }
     }
 
     update(field) {
@@ -63,7 +94,7 @@ export default class SessionForm extends React.Component {
                             />
                         
                     
-                        <input className='demo-submit' type='submit' value='Demo Login'/>
+                        <input onClick={this.handleDemo} className='demo-submit' type='submit' value='Demo Login'/>
                         
                         <div id='session-submit-options'>
                             
