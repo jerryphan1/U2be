@@ -39,8 +39,6 @@ export default class SessionForm extends React.Component {
                         <h1>Logo will go here</h1>
                         <h2>{text}</h2>
                         <p>to continue to U2be</p>
-                        <a href="https://github.com/jerryphan1" target='_blank'><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/jerry-phan-8615a7a3/" target='_blank'><i className="fab fa-linkedin"></i></a>
                     </div>
 
                     <form onSubmit={this.handleSubmit} id='form-container'>
