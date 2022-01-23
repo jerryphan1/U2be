@@ -24,6 +24,7 @@
 #left-nav-menu.active{
   left: 0;
   transition: 350ms;
+  z-index: 2;
 }
 
 #navbar-toggle a{
@@ -74,12 +75,11 @@
 
 .left-nav-icon{
   padding-right: 1rem;
-  font-size: 1.5rem;
+  font-size: 32px;
   color: #909090;
 }
 
 .left-nav-section{
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
