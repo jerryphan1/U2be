@@ -1,4 +1,5 @@
 import React from "react";
+import U2beLogo from '../../app/assets/images/U2be.svg';
 
 export default class LeftNavbar extends React.Component {
 
@@ -20,7 +21,8 @@ export default class LeftNavbar extends React.Component {
               </a>
 
               <a href='#'>
-                <i className="fab fa-react" id='left-main-logo'></i>
+                {/* <i className="fab fa-react" id='left-main-logo'></i> */}
+                <img src={U2beLogo} alt="main-logo" id='left-main-logo'/>
               </a>
             </div>
             {/* <hr/> */}

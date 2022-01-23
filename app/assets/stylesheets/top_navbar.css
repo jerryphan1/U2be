@@ -24,7 +24,15 @@
 }
 
 .fa-react.nav-logos{
-  margin-left: 85px;
+  position: absolute;
+  cursor: pointer;
+  /* font-size: 16px; */
+  width: 90px;
+  height: 90px;
+  /* top: -0.7%;
+  left: 7.7%; */
+  left: 6.6%;
+  top: -4%;
 }
 
 #top-navbar-searchbar{
