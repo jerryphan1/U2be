@@ -39,16 +39,15 @@
 }
 
 #left-main-logo{
-  /* margin-left: 55px; */
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   /* font-size: 16px; */
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
   /* top: -0.7%;
   left: 7.7%; */
-  left: 43%;
-  top: -0.5%;
+  left: 80px;
+  top: -2px;
 }
 
 .left-nav-text{

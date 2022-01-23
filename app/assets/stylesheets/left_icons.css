@@ -2,11 +2,11 @@
   position: fixed;
   display: flex;
   /* flex-direction: column; */
-  top: 11.8%;
+  top: 67px;
   justify-content: start;
   /* padding: 16px; */
   background-color: #202020;
-  width: 6.1vw;
+  width: 90px;
   height: 100vh;
   text-align: center;
   border: none;
