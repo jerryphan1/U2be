@@ -13,6 +13,10 @@
 class Video < ApplicationRecord
   validates :title, :views, presence: true 
 
+  # aws/s3 syntax 
+  has_one_attached :uploaded_video
+  has_one_attached :thumbnail
+
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
