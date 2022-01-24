@@ -52,7 +52,8 @@
 
 .left-nav-text{
   display: flex;
-  justify-content: start;
+  flex-direction: row;
+  justify-content: flex-start;
   text-align: center;
   align-items: center;
   list-style: none;
@@ -66,6 +67,19 @@
   color: rgba(255, 255, 255, 0.966);
   font-size: 1.2rem;
   margin-left: 0.6rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+}
+
+.left-nav-text p{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.966);
+  font-size: 1.2rem;
   text-align: center;
   align-items: center;
 }
@@ -89,4 +103,38 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* .fa-github.left-nav-icon {
+  font-size: 32px;
+}
+
+.github{
+  margin-left: 3px;
+} */
+
+
+
+.linkedin-all{
+  padding-left: 3px;
+}
+
+.github-all{
+  padding-left: 2px;
+}
+
+.random-all{
+  padding-left: 1px;
+}
+
+.github{
+  margin-left: 2px;
+}
+
+.linkedin{
+  margin-left: 5px;
+}
+
+.random{
+  margin-left: 2px;
 }

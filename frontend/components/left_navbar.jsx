@@ -29,19 +29,23 @@ export default class LeftNavbar extends React.Component {
 
             <div className="left-nav-section">
               <li className="left-nav-text">
-                <a href="#"><i className="fas fa-home left-nav-icon"></i>Home</a>
+                <a href="#"><i className="fas fa-home left-nav-icon"></i><p>Home</p></a>
+                
               </li>
 
               <li className="left-nav-text">
-                <a href="https://github.com/jerryphan1" target='_blank'><i className="fab fa-github left-nav-icon"></i>Github</a>
+                <a href="https://github.com/jerryphan1" target='_blank' className='github-all'><i className="fab fa-github left-nav-icon"></i><p className='github'>Github</p></a>
+
               </li>
 
               <li className="left-nav-text">
-                <a href="https://www.linkedin.com/in/jerry-phan-8615a7a3/" target='_blank'><i className="fab fa-linkedin left-nav-icon"></i>LinkedIn</a>
+                <a href="https://www.linkedin.com/in/jerry-phan-8615a7a3/" target='_blank'className='linkedin-all'><i className="fab fa-linkedin left-nav-icon"></i><p className='linkedin'>LinkedIn</p></a>
+                
               </li>
 
               <li className="left-nav-text">
-                <a href="https://www.youtube.com/c/Valkyrae1" target='_blank'><i className="fas fa-random left-nav-icon"></i>Random</a>
+                <a href="https://www.youtube.com/c/Valkyrae1" target='_blank'className='random-all'><i className="fas fa-random left-nav-icon"></i><p className='random'>Random</p></a>
+                
               </li>
 
               
