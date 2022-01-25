@@ -10,9 +10,9 @@ const App = () => (
   <div>
     <header>
       {/* <GreetingContainer /> */}
-      <Home/>
+      {/* <Home/> */}
     </header>
-
+    <Route exact path="/" component={Home} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>

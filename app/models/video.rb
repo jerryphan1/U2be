@@ -17,6 +17,7 @@ class Video < ApplicationRecord
   has_one_attached :uploaded_video
   has_one_attached :thumbnail
 
+  
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
