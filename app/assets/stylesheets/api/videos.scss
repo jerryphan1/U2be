@@ -118,6 +118,10 @@
   vertical-align: middle;
 }
 
-// .video-test{
+#video-show-container{
+  display: flex;
+}
 
-// }
+#video-show-video{
+  width: 95%;
+}
