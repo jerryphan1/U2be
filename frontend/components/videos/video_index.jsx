@@ -4,6 +4,9 @@ import VideoIndexItem from "./video_index_item";
 export default class VideoIndex extends React.Component {
   constructor(props){
     super(props)
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+
   }
 
   componentDidMount(){
@@ -12,6 +15,7 @@ export default class VideoIndex extends React.Component {
 
   handleMouseEnter(e) {
     e.preventDefault();
+    {console.log(e.target.className)}
     {if (e.target.className === 'video-index-thumbnail' ) console.log('test')} {
       console.log('hello')
     }
@@ -44,7 +48,7 @@ export default class VideoIndex extends React.Component {
 
   render(){
     return (
-      <div id='main-video-index-container' onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+      <div id='main-video-index-container'>
         <div id='video-index-blacktext'></div>
         {
           this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} />)

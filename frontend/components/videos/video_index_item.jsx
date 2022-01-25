@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import moment from 'moment';
 
 
+// onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+
 const VideoIndexItem = (props) => {
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
   let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
