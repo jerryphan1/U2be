@@ -5,14 +5,17 @@
 
 
 #main-video-index-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4,270px);
+  grid-gap: 16px;
   font-family: 'Roboto';
-  margin-top: 120px;
+  margin-top: 100px;
+  margin-left: 105px;
 }
 
 #video-index-blacktext{
   background-color: black;
-  margin: 0 50px;
+  margin: 0 8px;
   height: 240px;
   width: 270px;
 }
