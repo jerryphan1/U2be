@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from 'moment';
+
+
+// onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
 
 const VideoIndexItem = (props) => {
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
+  let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
   return(
     <div className="video-index-container">
       <Link className="video-index-thumbnail" to={`/videos/${props.video.id}`}>
-        <img src={props.video.thumbnail} alt={`thumbnail for ${props.video.title}`} />
+        {/* <img src={props.video.thumbnail} alt={`thumbnail for ${props.video.title}`} /> */}
+        <video src={props.video.uploaded_video}  
+        poster={props.video.thumbnail}/>
       </Link>
       {/* <video className='video-test'src={props.video.uploaded_video} controls></video> */}
       <div className="video-index-info-container">
@@ -21,8 +28,7 @@ const VideoIndexItem = (props) => {
             </Link>
             <div className="video-index-viewdates">
               <p className="video-index-views">{props.video.views} views</p>
-              {/* <span>.</span> */}
-              <p>{props.video.createdAt}</p>
+              <p>{newDate}</p>
             </div>
         </div>
       </div>
