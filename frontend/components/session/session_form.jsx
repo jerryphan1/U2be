@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import U2beLogo from '../../../app/assets/images/U2be.svg';
 
 
 export default class SessionForm extends React.Component {
@@ -74,7 +73,7 @@ export default class SessionForm extends React.Component {
                 <div id='form-outer-line'>
                     <div id='upper-form-container'>
                     <a href='#'>
-                        <img src={U2beLogo} alt="main-logo" id='session-logo'/>
+                        <img src={window.u2be_logo} alt="main-logo" id='session-logo'/>
                     </a>
                         <h2 className='session-h2-text'>{text}</h2>
                         <p className="session-p-text">to continue to U2be</p>

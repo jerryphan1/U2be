@@ -1,7 +1,6 @@
 import React from "react";
 import Searchbar from "./searchbar";
 import GreetingContainer from "./greeting/greeting_container";
-import U2beLogo from '../../app/assets/images/U2be.svg';
 import { Link } from "react-router-dom";
 
 export default class TopNavbar extends React.Component {
@@ -18,7 +17,7 @@ export default class TopNavbar extends React.Component {
         <div id='top-navbar-icons'>
         <a href='#/'id='show-menu' onClick={this.handleClick}><i className="fas fa-bars nav-logos"></i></a>
           {/* <a href='#/'><i className="fab fa-react nav-logos"></i></a> */}
-          <a href="#"><img src={U2beLogo} alt="main-logo" className='fa-react nav-logos'/></a>
+          <a href="#"><img src={window.u2be_logo} alt="main-logo" className='fa-react nav-logos'/></a>
         </div>
         <Searchbar/>
         <GreetingContainer/>
