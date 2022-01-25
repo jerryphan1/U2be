@@ -11,9 +11,8 @@ const VideoIndexItem = (props) => {
   return(
     <div className="video-index-container">
       <Link className="video-index-thumbnail" to={`/videos/${props.video.id}`}>
-        {/* <img src={props.video.thumbnail} alt={`thumbnail for ${props.video.title}`} /> */}
-        <video src={props.video.uploaded_video}  
-        poster={props.video.thumbnail}/>
+        <video className='index-actual-video'src={props.video.uploaded_video}  
+        poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}/>
       </Link>
       {/* <video className='video-test'src={props.video.uploaded_video} controls></video> */}
       <div className="video-index-info-container">

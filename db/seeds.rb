@@ -22,9 +22,9 @@ v2_vid = open('https://u2be-seeds.s3.us-west-1.amazonaws.com/Easy_ace_for_tenz.m
 v2.uploaded_video.attach(io: v2_vid, filename: 'better_vid')
 v2.save
 
-v3 = Video.new(title: 'better test', views: 400, user_id: u1.id)
+v3 = Video.new(title: 'test', views: 400, user_id: u1.id)
 v3_thumb = open("https://u2be-seeds.s3.us-west-1.amazonaws.com/test_picture.jpg")
-v3.thumbnail.attach(io: v3_thumb, filename: 'better_test')
+v3.thumbnail.attach(io: v3_thumb, filename: 'test')
 v3_vid = open('https://u2be-seeds.s3.us-west-1.amazonaws.com/Easy_ace_for_tenz.mp4')
-v3.uploaded_video.attach(io: v3_vid, filename: 'better_vid')
+v3.uploaded_video.attach(io: v3_vid, filename: 'vid')
 v3.save

@@ -6,44 +6,52 @@ export default class VideoIndex extends React.Component {
     super(props)
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
-
   }
+
+
 
   componentDidMount(){
     this.props.fetchVideos()
   }
 
+  // timeout = null;
+
   handleMouseEnter(e) {
     e.preventDefault();
-    {console.log(e.target.className)}
-    {if (e.target.className === 'video-index-thumbnail' ) console.log('test')} {
-      console.log('hello')
-    }
-    // this.startPreview();
-    // setTimeout(this.stopPreview,4000)
+    {
+      if (e.target.className === 'index-actual-video' ) {
+      console.log('test')
+      this.startPreview(e.target);
+      setTimeout(() => this.stopPreview(e.target),4000)
+      }
+    } 
   }
   
   handleMouseLeave(e) {
     e.preventDefault();
-    clearTimeout();
-    // this.stopPreview();
+    if (e.target.className === 'index-actual-video') {
+      console.log('bye')
+      // console.log(e.target)
+      // clearTimeout(4);
+      // timeout = null;
+      this.stopPreview(e.target);
+    }
   }
   
-  startPreview() {
+  startPreview(target) {
     // e.preventDefault();
-    const video = document.querySelector('.video-index-thumbnail video');
-    video.muted = true;
-    video.currentTime = 1;
-    video.playbackRate = 0.5;
-    video.play()
+    target.muted = true;
+    target.currentTime = 1;
+    target.playbackRate = 0.5;
+    target.play()
   }
   
-  stopPreview(){
-    // e.preventDefault();
-    const video = document.querySelector('.video-index-thumbnail video');
-    video.currentTime = 0;
-    video.playbackRate = 1;
-    video.pause();
+  stopPreview(target){
+    console.log(target);
+    target.currentTime = 0;
+    target.playbackRate = 1;
+    target.pause();
+    target.load();
   }
 
   render(){
@@ -51,7 +59,7 @@ export default class VideoIndex extends React.Component {
       <div id='main-video-index-container'>
         <div id='video-index-blacktext'></div>
         {
-          this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} />)
+          this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}/>)
         }
       </div>
     )
