@@ -2,9 +2,7 @@ import React from "react";
 import GreetingContainer from "./greeting/greeting_container";
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import LeftIcons from "./left_icons";
-import TopNavbar from "./top_navbar";
-import LeftNavbar from "./left_navbar";
+import Home from "./home";
 import { Route } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 
@@ -12,9 +10,7 @@ const App = () => (
   <div>
     <header>
       {/* <GreetingContainer /> */}
-      <TopNavbar/>
-      <LeftNavbar/>
-      <LeftIcons/>
+      <Home/>
     </header>
 
     <AuthRoute path="/login" component={LoginFormContainer} />
