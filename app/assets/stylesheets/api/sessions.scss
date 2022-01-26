@@ -134,3 +134,84 @@
 .errors{
   color: red;
 }
+
+#logged-in-container{
+  position: relative;
+
+  width: 7%;
+}
+
+#logged-in-container:hover .logged-in-dropdown{
+  display: flex;
+  flex-direction: column;
+}
+
+#logged-in-container:active .logged-in-dropdown{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.video-greeting-button{
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  align-items: center;
+  vertical-align:middle;
+  text-decoration: none;
+}
+
+.video-greeting-button p{
+  align-items: center;
+  vertical-align:middle;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+}
+
+
+.logged-in-dropdown {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  left: auto;
+  font-family: Roboto, sans-serif;
+  margin-right: 20px;
+  margin-top: 5px;
+  float: right;
+  overflow: hidden;
+}
+
+.logged-links{
+  text-decoration: none;
+  text-align: center;
+  color: #AAAAAA;
+  padding: 5px;
+}
+
+.logged-links:hover{
+  background-color: rgba(255,255,255,0.2);
+}
+
+.logged-logout{
+  text-decoration: none;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 5px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  color: #AAAAAA;
+}
+
+.logged-logout:hover{
+  background-color: rgba(255,255,255,0.2);
+}
