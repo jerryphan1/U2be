@@ -97,7 +97,7 @@ export default class SessionForm extends React.Component {
                             />
                         
                     
-                        <input onClick={this.handleDemo} className='demo-submit' type='submit' value='Demo Login'
+                        <input onClick={this.handleDemo} className='demo-submit' type='button' value='Demo Login'
                             onkeydown={"return event.key != 'Enter';"}/>
                         
                         <div id='session-submit-options'>
