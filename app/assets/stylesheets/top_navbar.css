@@ -8,6 +8,7 @@
   padding: 20px;
   background-color: #202020;
   border-bottom: 2px solid #4d4949;
+  z-index: 2;
 }
 
 #top-navbar-icons{

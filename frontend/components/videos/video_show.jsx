@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LeftNavbar from "../left_navbar";
 import TopNavbar from "../top_navbar";
+import VideoSideContainer from "./video_side_container";
 
 export default class VideoShow extends React.Component {
   constructor(props){
@@ -11,8 +12,8 @@ export default class VideoShow extends React.Component {
 
 
   componentDidMount(){
-    let all = window.location.href.split('/');
-    let video = all[all.length -1]
+    let url = window.location.href.split('/');
+    let video = url[url.length-1]
     this.props.fetchVideo(video)
   }
 
@@ -28,7 +29,7 @@ export default class VideoShow extends React.Component {
 
     return (
 
-      <div>
+      <div id='show-div'>
         <TopNavbar/>
         <LeftNavbar/>
             <video id='video-show-video' src={this.props.video?.uploaded_video || ""} controls/>
@@ -60,6 +61,8 @@ export default class VideoShow extends React.Component {
             </div>
 
             <div id='video-show-suggested-container'>
+              <h1>Most Viewed</h1>
+              <VideoSideContainer/>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, fugit rem. Architecto ex iure modi dignissimos labore incidunt voluptatibus ea iste dolore quaerat. Fuga, mollitia vitae in itaque tempora tenetur.</p>  
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, fugit rem. Architecto ex iure modi dignissimos labore incidunt voluptatibus ea iste dolore quaerat. Fuga, mollitia vitae in itaque tempora tenetur.</p>  
               

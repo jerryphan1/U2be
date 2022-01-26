@@ -1,25 +1,21 @@
 import React from "react";
-import VideoIndexItem from "./video_index_item";
+import VideoSideItem from "./video_side_item";
 
-export default class VideoIndex extends React.Component {
+export default class VideoSide extends React.Component {
   constructor(props){
     super(props)
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
-
-
   componentDidMount(){
-    this.props.fetchVideos()
-  }
-
-  // timeout = null;
+    this.props.fetchVideos();
+  }  
 
   handleMouseEnter(e) {
     e.preventDefault();
     {
-      if (e.target.className === 'index-actual-video' ) {
+      if (e.target.className === 'side-actual-video' ) {
       this.startPreview(e.target);
       setTimeout(() => this.stopPreview(e.target),4000)
       }
@@ -28,7 +24,7 @@ export default class VideoIndex extends React.Component {
   
   handleMouseLeave(e) {
     e.preventDefault();
-    if (e.target.className === 'index-actual-video') {
+    if (e.target.className === 'side-actual-video') {
       this.stopPreview(e.target);
     }
   }
@@ -48,18 +44,16 @@ export default class VideoIndex extends React.Component {
     target.load();
   }
 
+
   render(){
     return (
-      <div id='main-video-index-container'>
-        <div id='video-index-blacktext'></div>
-        {/* <div id='video-index-blacktext'></div> */}
-        {/* <div id='video-index-blacktext'></div>
-        <div id='video-index-blacktext'></div> */}
-
+      <div>
         {
-          this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}/>)
+          this.props.videos.map((video) => <VideoSideItem video={video} key={video.id}
+          MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}/>)
         }
       </div>
-    )
+    ) 
   }
 }
+

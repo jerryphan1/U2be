@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap');
+
+
+.video-side-container{
+  display: flex;
+  width: 100%;
+  margin: 10px 0px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.video-side-thumbnail{
+  width: 40%;
+}
+
+.video-side-thumbnail video{
+  width: 100%;
+  height: 105px;
+  object-fit: cover;
+}
+
+.video-side-info-container{
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 8px;
+}
+
+.video-side-title{
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: white;
+}
+
+.video-side-user{
+  color: #AAAAAA;
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  /* line-height: 4rem; */
+  margin-top: 30px;
+}
+
+.video-side-viewdates{
+  display: flex;
+  font-size: 12px;
+  line-height: 1.6rem;
+  font-weight: 400;
+  color: #AAAAAA;
+}
+
+.video-side-views{
+  margin-left: 0px;
+}
+
+.video-side-date{
+  padding-left: 0px;
+  margin-left: 8px;
+}
+
+
+.video-side-views::after{
+  color: #AAAAAA;
+  content: " \2219 ";
+  margin-left: 4px;
+  font-weight: 900;
+}
