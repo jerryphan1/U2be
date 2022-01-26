@@ -113,15 +113,142 @@
 .video-index-viewdates span{
   font-size: 30px;
   margin: 0px 6px;
-  // margin-top: -8px;
   align-items: center;
   vertical-align: middle;
 }
 
 #video-show-container{
+  color: white;
   display: flex;
+  margin: 0px 20px;
+  font-family: 'Roboto';
 }
 
 #video-show-video{
-  width: 95%;
+  width: 99.5%;
+  height: 500px;
+  // margin: 5px 5px;
+}
+
+#video-show-info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+  margin-right: 2%;
+  width: 60%;
+}
+
+#video-show-top-info-container{
+  border-bottom: 1px solid #AAAAAA;
+}
+
+#video-show-top-info-container{
+  font-size: 14px;
+}
+
+#video-show-top-info-container{
+  line-height: 1.4rem;
+}
+
+.video-show-format-container{
+  display: flex;
+  color: #AAAAAA;
+  justify-content: space-between;
+}
+
+#video-show-views-create{
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+  margin: 10px;
+  margin-left: 0px;
+  padding-left: 0px;
+  color: #AAAAAA;
+  font-size: 16px;
+}
+
+.video-show-views::after{
+  color: #AAAAAA;
+  content: " \2219 ";
+  margin: 0 6px;
+  font-weight: 900;
+}
+
+#video-show-likes-dislikes{
+  display: flex;
+}
+
+#video-show-likes-dislikes p{
+  padding: 5px;
+  margin: 10px;
+  margin-left: 0px;
+  padding-left: 0px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#video-show-suggested-container{
+  width: 40%;
+  text-align: center;
+  margin: 20px;
+  margin-left: 0px;
+  // margin-right: 50px;
+}
+
+#video-show-suggested-container p{
+  margin: 25px;
+}
+
+#video-show-image-username{
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+  margin-left: 0px;
+  border-bottom: 1px solid #AAAAAA;
+  margin-right: 0px;
+  text-align: center;
+}
+
+#video-show-image-username div{ 
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+
+.video-show-image{
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: 0px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  align-items: center;
+  vertical-align:middle;
+  text-decoration: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.video-show-image p{
+  align-items: center;
+  font-size: 22px;
+  vertical-align:middle;
+}
+
+#video-show-image-username h2{
+  margin: 10px 0px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#video-show-image-username h3{
+  margin: 10px 0px;
+  color: #AAAAAA;
+  font-size: 16px;
 }
