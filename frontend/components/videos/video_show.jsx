@@ -12,23 +12,22 @@ export default class VideoShow extends React.Component {
 
 
   componentDidMount(){
-    let url = window.location.href.split('/');
-    let video = url[url.length-1]
-    this.props.fetchVideo(video)
+    // let url = window.location.href.split('/');
+    // let video = url[url.length-1]
+    this.props.fetchVideo(this.props.match.params.videoId)
   }
 
-  componentDidUpdate(prevProps){
-    if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-      this.componentDidMount()
-    }
-  }
+  // componentDidUpdate(prevProps){
+  //   if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
+  //     this.componentDidMount()
+  //   }
+  // }
 
   // this.props.video?.uploaded_video  "" checks for value if not itll return empty, 
   // good to run with the id because refreshes can take time
   render(){
-
+    if (!this.props.video) return null;
     return (
-
       <div id='show-div'>
         <TopNavbar/>
         <LeftNavbar/>
@@ -36,11 +35,11 @@ export default class VideoShow extends React.Component {
           <div id='video-show-container'>
             <div id ='video-show-info'>
                 <div id='video-show-top-info-container'>
-                    <h1>{this.props.video?.title || ""}</h1>
+                    <h1>{this.props.video.title}</h1>
                       <div className="video-show-format-container">
                         <div id='video-show-views-create'>
-                          <h3 className="video-show-views">{this.props.video?.views || ""} views</h3>
-                          <h3>{this.props.video?.createdAt || ""}</h3>
+                          <h3 className="video-show-views">{this.props.video.views} views</h3>
+                          <h3>{this.props.video.createdAt}</h3>
                         </div>
                         <div id='video-show-likes-dislikes'>
                           <p> 9 likes</p>
@@ -53,7 +52,7 @@ export default class VideoShow extends React.Component {
                     <div>
                       <h2>{(this.props.video?.user.username[0].toUpperCase() + 
                           this.props.video?.user.username.slice(1).toLowerCase())
-                            || ""}</h2>
+                          }</h2>
                       <h3>Description</h3>
                     </div>
 
