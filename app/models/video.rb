@@ -17,7 +17,11 @@ class Video < ApplicationRecord
   has_one_attached :uploaded_video
   has_one_attached :thumbnail
 
-  
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :video_id,
+    class_name: :Comment
+
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,

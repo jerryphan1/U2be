@@ -10,7 +10,8 @@ const VideoSideItem = (props) => {
     <div className='video-side-container'>
         <Link className="video-side-thumbnail" to={`/videos/${props.video.id}`}>
           <video className='side-actual-video'src={props.video.uploaded_video}  
-            poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}/>
+            poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}
+            onClick={() => props.loadTop()}/>
         </Link>
 
         <div className="video-side-info-container">

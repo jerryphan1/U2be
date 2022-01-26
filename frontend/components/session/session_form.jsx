@@ -43,7 +43,8 @@ export default class SessionForm extends React.Component {
     }
 
     handleDemo(e){
-        e.preventDefault()
+        e.preventDefault();
+        e.stopPropagation();
         this.handleUser();
     }
 
@@ -79,7 +80,7 @@ export default class SessionForm extends React.Component {
                         <p className="session-p-text">to continue to U2be</p>
                     </div>
 
-                    <form onSubmit={this.handleSubmit} id='form-container'>
+                    <form onSubmit={this.handleSubmit} id='form-container' >
 
                         <input 
                             type="text"
@@ -96,7 +97,8 @@ export default class SessionForm extends React.Component {
                             />
                         
                     
-                        <input onClick={this.handleDemo} className='demo-submit' type='submit' value='Demo Login'/>
+                        <input onClick={this.handleDemo} className='demo-submit' type='submit' value='Demo Login'
+                            onkeydown={"return event.key != 'Enter';"}/>
                         
                         <div id='session-submit-options'>
                             
