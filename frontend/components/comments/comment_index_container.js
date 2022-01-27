@@ -11,7 +11,8 @@ const mSTP = (state,ownProps) => {
       return comment.video_id === ownProps.video.id
     }),
     currentUser: state.entities.users[state.session.id],
-    video: ownProps.video
+    video: ownProps.video,
+    errors: state.errors.commentErrors
   }
 } 
 

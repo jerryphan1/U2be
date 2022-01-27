@@ -18,11 +18,11 @@ export default class VideoShow extends React.Component {
     this.props.fetchVideo(this.props.match.params.videoId)
   }
 
-  // componentDidUpdate(prevProps){
-  //   if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-  //     this.componentDidMount()
-  //   }
-  // }
+  componentDidUpdate(prevProps){
+    if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
+      this.componentDidMount()
+    }
+  }
 
   // this.props.video?.uploaded_video  "" checks for value if not itll return empty, 
   // good to run with the id because refreshes can take time

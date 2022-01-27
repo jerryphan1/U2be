@@ -36,23 +36,23 @@ const receiveCommentErrors = (errors) => {
 export const fetchComments = () => (dispatch) => {
   return CommentAPIUtil.fetchComments()
     .then((comments) => dispatch(receiveComments(comments)),
-    (errors) => dispatch(receiveCommentErrors(errors)))
+    (errors) => dispatch(receiveCommentErrors(errors.responseJSON)))
 }
 
 export const createComment = (comment) => (dispatch) => {
   return CommentAPIUtil.createComment(comment)
     .then((created) => dispatch(receiveComment(created)),
-    (errors) => console.log(errors.responseText))
+    (errors) => dispatch(receiveCommentErrors(errors.responseJSON)))
 }
 
 export const updateComment = (comment) => (dispatch) => {
   return CommentAPIUtil.updateComment(comment)
     .then((updated) => dispatch(receiveComment(updated)),
-    errors => dispatch(receiveCommentErrors(errors)))
+    errors => dispatch(receiveCommentErrors(errors.responseJSON)))
 }
 
 export const deleteComment = (commentId) => (dispatch) => {
   return CommentAPIUtil.deleteComment(commentId)
     .then(() => dispatch(removeComment(commentId)),
-    errors => dispatch(receiveCommentErrors(errors)))
+    errors => dispatch(receiveCommentErrors(errors.responseJSON)))
 }
