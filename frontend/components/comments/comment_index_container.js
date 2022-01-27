@@ -9,6 +9,8 @@ const mSTP = (state,ownProps) => {
   return {
     comments: Object.values(state.entities.comments).filter((comment) => {
       return comment.video_id === ownProps.video.id
+    }).sort((a,b) => {
+      return b.createdAtIndex - a.createdAtIndex
     }),
     currentUser: state.entities.users[state.session.id],
     video: ownProps.video,

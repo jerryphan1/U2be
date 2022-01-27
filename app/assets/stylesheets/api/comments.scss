@@ -117,6 +117,13 @@
 .comment-index-info-container{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.comment-index-top-info{
+  display: flex;
+  justify-content: space-between;
 }
 
 .comment-index-top-info{
@@ -161,4 +168,24 @@
 
 .comment-index-body{
   line-height: 200%;
+}
+
+.comment-index-delete{
+  display: flex;
+  justify-content: baseline;
+  text-align: center;
+  vertical-align: middle;
+  align-items: baseline;
+}
+
+.comment-delete{
+  align-items: right;
+  margin-right: 20px;
+  justify-content: end;
+}
+
+.fa-trash-alt{
+  color: white;
+  align-items: right;
+  justify-content: end;
 }

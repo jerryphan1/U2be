@@ -19,7 +19,7 @@ export default class CommentIndex extends React.Component{
           errors={this.props.errors}/>
         {
           this.props.comments.map((comment) => 
-            <CommentIndexItem key={comment.id}comment={comment} deleteComment={this.props.deleteComment}/>)
+            <CommentIndexItem key={comment.id}comment={comment} deleteComment={this.props.deleteComment} user={this.props.currentUser}/>)
         }
       </div>
     )
