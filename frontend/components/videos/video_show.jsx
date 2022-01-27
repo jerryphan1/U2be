@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LeftNavbar from "../left_navbar";
 import TopNavbar from "../top_navbar";
 import VideoSideContainer from "./video_side_container";
+import CommentIndexContainer from '../comments/comment_index_container';
 
 export default class VideoShow extends React.Component {
   constructor(props){
@@ -55,8 +56,9 @@ export default class VideoShow extends React.Component {
                           }</h2>
                       <h3>Description</h3>
                     </div>
-
                 </div>
+
+                <CommentIndexContainer video={this.props.video}/>
             </div>
 
             <div id='video-show-suggested-container'>

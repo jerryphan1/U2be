@@ -11,6 +11,7 @@ require 'open-uri'
 
 Video.destroy_all
 User.destroy_all
+Comment.destroy_all
 u1 = User.create!(username: 'jerry', password: '123456')
 u2 = User.create!(username: 'demo username', password: 'demo password')
 
@@ -28,3 +29,8 @@ v3.thumbnail.attach(io: v3_thumb, filename: 'test')
 v3_vid = open('https://u2be-seeds.s3.us-west-1.amazonaws.com/Easy_ace_for_tenz.mp4')
 v3.uploaded_video.attach(io: v3_vid, filename: 'vid')
 v3.save
+
+c1 = Comment.create(body: 'test comment one, please work...', user_id: u1.id, video_id: v2.id)
+c1 = Comment.create(body: 'second times the charm???', user_id: u1.id, video_id: v3.id)
+c1 = Comment.create(body: 'okay third time', user_id: u2.id, video_id: v2.id)
+c1 = Comment.create(body: 'this one will definitely work', user_id: u2.id, video_id: v3.id)
