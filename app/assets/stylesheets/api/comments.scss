@@ -82,7 +82,7 @@
   visibility: visible;
 }
 
-input[type='submit'], button {
+.comment-form-input, .comment-form-button {
   padding: 10px 15px;
   margin: none;
   border: none;
@@ -93,11 +93,11 @@ input[type='submit'], button {
   cursor: pointer;
 }
 
-input[type='submit'] {
+.comment-form-input {
   background-color: #3ea6ff;
 }
 
-.comment-form-buttons button{
+.comment-form-buttons .comment-form-button{
   color: #AAAAAA;
   background-color: black;
 }

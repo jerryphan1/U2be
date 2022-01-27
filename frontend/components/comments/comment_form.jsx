@@ -54,8 +54,8 @@ export default class CommentForm extends React.Component{
         <form onSubmit={this.handleSubmit} className="comment-form">
           <textarea onClick={this.handleVisible} className="comment-form-textarea" placeholder='Add a public comment...' value={this.state.body} onChange={this.update('body')}/>
           <div className="comment-form-buttons">
-            <button onClick={this.handleCancel} disabled={status}>Cancel</button>
-            <input type='submit' placeholder="Comment" disabled={status}/>
+            <button className='comment-form-button'onClick={this.handleCancel} disabled={status}>Cancel</button>
+            <input className='comment-form-input'type='submit' placeholder="Comment" disabled={status}/>
           </div>
         </form>
       </div>
