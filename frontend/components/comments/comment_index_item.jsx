@@ -10,6 +10,7 @@ export default class CommentIndexItem extends React.Component{
   }
 
 
+
   render(){
     let initial = this.props.comment.user.username[0].toUpperCase();
     let date = moment.tz(this.props.comment.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
@@ -24,7 +25,7 @@ export default class CommentIndexItem extends React.Component{
                 <h2 className="comment-index-username">{this.props.comment.user.username}</h2>
                 <h2 className="comment-index-date">{newDate}</h2>
               </div>
-            <p className="comment-delete">{deleteComm}</p>
+            <p className="comment-delete" onClick={() => this.props.openModal('deleteOption')}>{deleteComm}</p>
           </div>
             <p className="comment-index-body">{this.props.comment.body}</p>
         </div>

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap');
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  text-align: center;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+#delete-modal{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #665454;
+  width: 100%;
+  margin: 20px;
+  border-radius: 5px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+#delete-modal-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#delete-modal-button-container button{
+  text-align: center;
+  padding: 10px 15px;
+  margin: none;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-modal-header{
+  background-color: #AAAAAA;
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px 0px;
+  font-size: 22px;
+}
+
+.delete-modal-text{
+  width: 100%;
+  margin: 20px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.delete-button-cancel{
+  color: #AAAAAA;
+  background-color: black;
+  margin-right: 5px;
+}
+
+.delete-button-cancel:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.delete-button-confirm{
+  background-color: #3ea6ff;
+}
+
+.delete-button-confirm:hover{
+  background-color: #3ea5ffbe;
+}

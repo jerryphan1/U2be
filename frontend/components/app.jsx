@@ -6,10 +6,12 @@ import Home from "./home";
 import ErrorPage from "./error_page";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
+import Modal from './modal/modal'
 
 
 const App = () => (
   <div>
+    <Modal /> 
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path='/videos/:videoId' component={VideoShowContainer} />

@@ -19,7 +19,9 @@ export default class CommentIndex extends React.Component{
           errors={this.props.errors}/>
         {
           this.props.comments.map((comment) => 
-            <CommentIndexItem key={comment.id}comment={comment} deleteComment={this.props.deleteComment} user={this.props.currentUser}/>)
+            <CommentIndexItem key={comment.id}comment={comment} deleteComment={this.props.deleteComment} 
+            user={this.props.currentUser} closeModal={this.props.closeModal} openModal={this.props.openModal}
+            video={this.props.video}/>)
         }
       </div>
     )

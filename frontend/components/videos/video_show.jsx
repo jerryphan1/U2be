@@ -4,6 +4,7 @@ import LeftNavbar from "../left_navbar";
 import TopNavbar from "../top_navbar";
 import VideoSideContainer from "./video_side_container";
 import CommentIndexContainer from '../comments/comment_index_container';
+import LoginFormContainer from "../session/login_form_container";
 
 export default class VideoShow extends React.Component {
   constructor(props){
