@@ -13,10 +13,10 @@ export default class CommentForm extends React.Component{
   }
 
   handleSubmit(e){
-    debugger
+
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    debugger
+
     this.props.processForm(comment)
       .then(() => this.setState({ body: ''}));
   }
@@ -25,6 +25,11 @@ export default class CommentForm extends React.Component{
     //reset body to empty
     e.preventDefault();
     this.setState({body: ''})
+  }
+
+  handleVisible(){
+    let buttons = document.querySelector('.comment-form-buttons')
+    buttons.classList.add('toggle-buttons')
   }
 
   update(field){
@@ -41,15 +46,17 @@ export default class CommentForm extends React.Component{
 
   render(){
     //hopefully handles refresh 
-    if (!this.props.user) return null;
+    let status = (!this.props.user) ? 'true' : ''
     let initial = this.props.user.username[0].toUpperCase()
     return(
       <div id="comment-form-container">
-        <h2>{initial}</h2>
-        <form onSubmit={this.handleSubmit}>
-          <textarea placeholder='Add a public comment...' value={this.state.body} onChange={this.update('body')}/>
-          <input type='button' placeholder="Cancel" onClick={this.handleCancel}/>
-          <input type='submit' placeholder="Comment"/>
+        <h2 className="comment-image-h2"><p>{initial}</p></h2>
+        <form onSubmit={this.handleSubmit} className="comment-form">
+          <textarea onClick={this.handleVisible} className="comment-form-textarea" placeholder='Add a public comment...' value={this.state.body} onChange={this.update('body')}/>
+          <div className="comment-form-buttons">
+            <button onClick={this.handleCancel} disabled={status}>Cancel</button>
+            <input type='submit' placeholder="Comment" disabled={status}/>
+          </div>
         </form>
       </div>
     )

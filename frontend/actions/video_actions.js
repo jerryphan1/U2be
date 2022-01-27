@@ -4,6 +4,7 @@ export const RECEIVE_VIDEOS = 'RECEIVE_VIDEOS';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
 export const REMOVE_VIDEO = 'REMOVE_VIDEO';
 
+
 const receiveVideos = (videos) => {
   return {
     type: RECEIVE_VIDEOS,

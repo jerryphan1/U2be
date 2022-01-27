@@ -1,3 +1,103 @@
 // Place all the styles related to the api::comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap');
+
+#comment-index-container{ 
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+
+#comment-index-container h2{
+  margin-top: 5px;
+}
+
+#comment-form-container{
+  display: flex;
+  width: 98%;
+  padding: 15px 10px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.comment-image-h2{
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  align-items: center;
+  vertical-align:middle;
+  text-decoration: none;
+}
+
+.comment-image-h2 p{
+  align-items: center;
+  vertical-align:middle;
+  font-size: 20px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.comment-form-textarea{
+  height: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #AAAAAA;
+  background-color: transparent;
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+  color: white;
+  transition: border 500ms;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.comment-form-textarea:focus{
+  border-bottom: 2px solid white;
+
+}
+
+
+
+.comment-form{
+  flex-direction: column;
+  display: flex;
+  width: 90%;
+}
+
+
+.comment-form-buttons{
+  display: flex;
+  justify-content: flex-end;
+  visibility: hidden;
+}
+
+.comment-form-buttons.toggle-buttons{
+  visibility: visible;
+}
+
+input[type='submit'], button {
+  padding: 10px 15px;
+  margin: none;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type='submit'] {
+  background-color: #3ea6ff;
+}
+
+.comment-form-buttons button{
+  color: #AAAAAA;
+  background-color: black;
+}

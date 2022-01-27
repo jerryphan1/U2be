@@ -16,15 +16,15 @@ class Api::CommentsController < ApplicationController
   end
 
   def create 
-    @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id 
-    # you'll be on the video show page already 
-    @comment.video_id = params[:id]
 
+    @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
+    # you'll be on the video show page already 
+    @comment.video_id = params[:comment][:video_id]
     if @comment.save 
       render :show 
     else 
-      render json: @comment.errors.full_message, status: 422
+      render json: ['cannot leave comment blank'],  status: 422
     end 
   end
 

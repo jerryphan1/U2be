@@ -1,10 +1,12 @@
-import moment from 'moment';
+import moment from 'moment-timezone';
 import React from "react";
 import { Link } from "react-router-dom";
 
 const VideoSideItem = (props) => {
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
-  let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
+  // let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
+  let date = moment.tz(props.video.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
+  let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
 
   return(
     <div className='video-side-container'>

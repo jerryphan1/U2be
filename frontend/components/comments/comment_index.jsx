@@ -13,7 +13,7 @@ export default class CommentIndex extends React.Component{
 
   render(){
     return (
-      <div>
+      <div id='comment-index-container'>
         <h2>{this.props.comments.length} Comments</h2>
         <CommentForm video={this.props.video} user={this.props.currentUser} processForm={this.props.processForm}/>
         {

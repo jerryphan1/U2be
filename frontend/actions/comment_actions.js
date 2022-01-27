@@ -3,6 +3,7 @@ import * as CommentAPIUtil from '../util/comment_api_util';
 export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
 const receiveComments = (comments) => {
   return {
@@ -25,22 +26,33 @@ const removeComment = (commentId) => {
   }
 }
 
+const receiveCommentErrors = (errors) => {
+  return {
+      type: RECEIVE_COMMENT_ERRORS,
+      errors
+  }
+};
+
 export const fetchComments = () => (dispatch) => {
   return CommentAPIUtil.fetchComments()
-    .then((comments) => dispatch(receiveComments(comments)))
+    .then((comments) => dispatch(receiveComments(comments)),
+    (errors) => dispatch(receiveCommentErrors(errors)))
 }
 
 export const createComment = (comment) => (dispatch) => {
   return CommentAPIUtil.createComment(comment)
-    .then((created) => dispatch(receiveComment(created)))
+    .then((created) => dispatch(receiveComment(created)),
+    (errors) => console.log(errors.responseText))
 }
 
 export const updateComment = (comment) => (dispatch) => {
   return CommentAPIUtil.updateComment(comment)
-    .then((updated) => dispatch(receiveComment(updated)))
+    .then((updated) => dispatch(receiveComment(updated)),
+    errors => dispatch(receiveCommentErrors(errors)))
 }
 
 export const deleteComment = (commentId) => (dispatch) => {
   return CommentAPIUtil.deleteComment(commentId)
-    .then(() => dispatch(removeComment(commentId)))
+    .then(() => dispatch(removeComment(commentId)),
+    errors => dispatch(receiveCommentErrors(errors)))
 }
