@@ -101,3 +101,16 @@ input[type='submit'] {
   color: #AAAAAA;
   background-color: black;
 }
+
+.comment-index-container{
+  display: flex;
+}
+
+.comment-index-info-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-index-top-info{
+  display: flex;
+}

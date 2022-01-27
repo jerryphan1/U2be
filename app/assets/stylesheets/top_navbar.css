@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 12px;
   background-color: #202020;
   border-bottom: 2px solid #4d4949;
   z-index: 2;
@@ -20,7 +20,8 @@
 
 .fa-bars.nav-logos{
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 12px;
+  margin-top: 2px;
   color: white;
 }
 
