@@ -3,7 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import DeleteCommentContainer from '../comments/delete_comment_container';
 
-function Modal({modal, closeModal}) {
+function Modal({modal, closeModal, id}) {
   if (!modal) {
     return null;
   }
