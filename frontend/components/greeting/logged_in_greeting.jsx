@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 
 const LoggedInGreeting = (props) => {
+  let initial = (props.user) ? props.user.username[0].toUpperCase() : '?'
   return(
     <div id ='logged-in-container'>
     {/* <h1>Welcome {this.props.currentUser.username}</h1> */}
-    <h2 className='video-greeting-button'><p>J</p></h2>
+    <h2 className='video-greeting-button'><p>{initial}</p></h2>
     <div className='logged-in-dropdown'>
       <Link to={`/users/props.currentUser.id`} className='logged-links'>Your Channel</Link>
       <Link to={`/videos/new`} className='logged-links'>Upload Video</Link>
