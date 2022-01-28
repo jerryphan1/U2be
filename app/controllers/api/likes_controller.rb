@@ -8,9 +8,9 @@ class Api::LikesController < ApplicationController
 
   def create 
     @like = Like.new(like_params)
-    @comment.user_id = current_user.id
-    @comment.video_id = params[:comment][:video_id]
-    if @comment.save 
+    @like.user_id = current_user.id
+    @like.video_id = params[:like][:video_id]
+    if @like.save 
       render :show 
     else 
       render json: ['could not process like, please try again'],  status: 422
@@ -42,7 +42,7 @@ class Api::LikesController < ApplicationController
   private 
 
   def like_params 
-    params.require(:like).permit(:user_id, :video_id)
+    params.require(:like).permit(:user_id, :video_id, :start_likes)
   end
 
 end

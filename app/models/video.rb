@@ -27,6 +27,11 @@ class Video < ApplicationRecord
     foreign_key: :video_id,
     class_name: :Like
 
+  has_many :dislikes,
+    primary_key: :id,
+    foreign_key: :video_id,
+    class_name: :Dislike
+
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
