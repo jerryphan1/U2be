@@ -13,12 +13,16 @@ export default class CommentIndexItem extends React.Component{
 
   render(){
     if (!this.props.comment) return null;
-    if (!this.props.user) return null;
+    let deleteComm;
+    if (this.props.user) {
+      deleteComm = (this.props.user.id === this.props.comment.user_id) ? <i className="fas fa-trash-alt"></i> : ''
+    } else {
+      deleteComm = ''
+    }
 
     let initial = this.props.comment.user.username[0].toUpperCase();
     let date = moment.tz(this.props.comment.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
     let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
-    let deleteComm = (this.props.user.id === this.props.comment.user_id) ? <i className="fas fa-trash-alt"></i> : ''
     return(
       <div className="comment-index-container">
         <Link to={`/users/${this.props.comment.user.id}`} className='comment-index-image'><p>{initial}</p></Link>
