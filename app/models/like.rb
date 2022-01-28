@@ -2,16 +2,19 @@
 #
 # Table name: likes
 #
-#  id         :bigint           not null, primary key
-#  user_id    :integer          not null
-#  video_id   :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  user_id     :integer          not null
+#  video_id    :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  start_likes :integer          default(0), not null
 #
 class Like < ApplicationRecord
   # validates :user_id, :video_id, null: false 
   validates :user_id, uniqueness:{scope: :video_id,
           message: 'only one like per user on a video'}
+
+  validates :start_likes, presence: true 
 
   belongs_to :user,
     primary_key: :id,

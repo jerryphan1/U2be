@@ -29,6 +29,7 @@ export default class VideoShow extends React.Component {
   // good to run with the id because refreshes can take time
   render(){
     if (!this.props.video) return null;
+    let initial = this.props.video.user.username[0].toUpperCase();
     return (
       <div id='show-div'>
         <TopNavbar/>
@@ -44,13 +45,13 @@ export default class VideoShow extends React.Component {
                           <h3>{this.props.video.createdAt}</h3>
                         </div>
                         <div id='video-show-likes-dislikes'>
-                          <p><i className="far fa-thumbs-up"></i>9</p>
-                          <p><i className="far fa-thumbs-down"></i>6</p>
+                          <p><i className="fas fa-thumbs-up"></i>9</p>
+                          <p><i className="fas fa-thumbs-down"></i>6</p>
                         </div>
                       </div>
                 </div>
                 <div id='video-show-image-username'>
-                    <Link to='/' className='video-show-image'><p>J</p></Link>
+                    <Link to='/' className='video-show-image'><p>{initial}</p></Link>
                     <div>
                       <h2>{(this.props.video?.user.username[0].toUpperCase() + 
                           this.props.video?.user.username.slice(1).toLowerCase())

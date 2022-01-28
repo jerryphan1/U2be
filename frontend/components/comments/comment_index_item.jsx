@@ -12,6 +12,9 @@ export default class CommentIndexItem extends React.Component{
 
 
   render(){
+    if (!this.props.comment) return null;
+    if (!this.props.user) return null;
+
     let initial = this.props.comment.user.username[0].toUpperCase();
     let date = moment.tz(this.props.comment.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
     let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();

@@ -62,7 +62,7 @@ export default class CommentForm extends React.Component{
 
   render(){
     //hopefully handles refresh 
-    let status = (!this.props.user) ? 'true' : ''
+    let status = (!this.props.user) ? true : false
     let initial = (this.props.user) ? this.props.user.username[0].toUpperCase() : '?'
     return(
       <div id="comment-form-real">
