@@ -3,14 +3,14 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import DeleteCommentContainer from '../comments/delete_comment_container';
 
-function Modal({modal, closeModal, id}) {
+function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal[0]) {
     case 'deleteOption':
-      component = <DeleteCommentContainer />;
+      component = <DeleteCommentContainer commentId={modal[1]} />;
       break;
     default:
       return null;

@@ -185,11 +185,16 @@
 }
 
 .fa-trash-alt{
-  color: white;
+  color: #AAAAAA;
   align-items: right;
   justify-content: end;
   margin-right: 20px;
   cursor: pointer;
+}
+
+.fa-trash-alt:hover{
+  color: rgba(170,170,170,0.9);
+  transform: scale(1.1);
 }
 
 .fa-trash-alt:hover {

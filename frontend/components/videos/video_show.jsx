@@ -44,8 +44,8 @@ export default class VideoShow extends React.Component {
                           <h3>{this.props.video.createdAt}</h3>
                         </div>
                         <div id='video-show-likes-dislikes'>
-                          <p> 9 likes</p>
-                          <p>6 dislikes</p>
+                          <p><i className="far fa-thumbs-up"></i>9</p>
+                          <p><i className="far fa-thumbs-down"></i>6</p>
                         </div>
                       </div>
                 </div>

@@ -8,7 +8,7 @@ export default class DeleteComment extends React.Component {
 
 
   handleClick(){
-    console.log(this.props)
+    console.log(this.props.commentId)
   }
 
 

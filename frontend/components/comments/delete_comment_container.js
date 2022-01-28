@@ -13,6 +13,7 @@ const mSTP = (state,ownProps) => {
     //   return b.createdAtIndex - a.createdAtIndex
     // }),
     currentUser: state.entities.users[state.session.id],
+    commentId: ownProps.commentId
     // video: ownProps.video,
     // errors: state.errors.commentErrors
   }
@@ -24,7 +25,7 @@ const mDTP = (dispatch) => {
     // processForm: (comment) => dispatch(createComment(comment)),
     deleteComment: (commentId) => dispatch(deleteComment(commentId)),
     closeModal: () => dispatch(closeModal()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal,id) => dispatch(openModal(modal,id))
   }
 }
 

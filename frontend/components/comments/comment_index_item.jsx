@@ -25,7 +25,8 @@ export default class CommentIndexItem extends React.Component{
                 <h2 className="comment-index-username">{this.props.comment.user.username}</h2>
                 <h2 className="comment-index-date">{newDate}</h2>
               </div>
-            <p className="comment-delete" onClick={() => this.props.openModal('deleteOption')}>{deleteComm}</p>
+              {/* {console.log(this.props.comment.id)} */}
+            <p className="comment-delete" onClick={() => this.props.openModal('deleteOption',this.props.comment.id)}>{deleteComm}</p>
           </div>
             <p className="comment-index-body">{this.props.comment.body}</p>
         </div>
