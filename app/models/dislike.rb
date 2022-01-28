@@ -13,7 +13,6 @@ class Dislike < ApplicationRecord
   validates :user_id, uniqueness:{scope: :video_id,
   message: 'only one dislike per user on a video'}
 
-validates :start_dislikes, presence: true 
 
 belongs_to :user,
   primary_key: :id,

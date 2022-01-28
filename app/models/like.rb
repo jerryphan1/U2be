@@ -14,7 +14,6 @@ class Like < ApplicationRecord
   validates :user_id, uniqueness:{scope: :video_id,
           message: 'only one like per user on a video'}
 
-  validates :start_likes, presence: true 
 
   belongs_to :user,
     primary_key: :id,
