@@ -43,8 +43,6 @@ export default class CommentForm extends React.Component{
 
   componentDidMount(){
     // only signed in users can post comment
-    console.log('inside')
-    console.log(this.state)
     if (!this.props.user) return null;
     this.setState({user_id: this.props.user.id, 
                   video_id: this.props.video.id,

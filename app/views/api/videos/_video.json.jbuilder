@@ -16,6 +16,29 @@ if video.comments
   end
 end
 
+#video has many likes
+if video.likes
+  json.likes do 
+    video.likes.each do |like|
+      json.set! like.id do
+        json.extract! like, :id, :user_id, :video_id
+      end
+    end
+  end
+end
+
+
+#video has many dislikes
+if video.dislikes
+  json.dislikes do 
+    video.dislikes.each do |dislike|
+      json.set! dislike.id do
+        json.extract! dislike, :id, :user_id, :video_id
+      end
+    end
+  end
+end
+
 #aws and date converted to string
 json.createdAtIndex video.created_at.strftime("%Y%m%d")
 json.createdAt video.created_at.strftime("%b %d, %Y")
