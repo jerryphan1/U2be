@@ -2,6 +2,8 @@ import React from "react";
 import CommentForm from "./comment_form";
 import CommentIndexItem from "./comment_index_item";
 
+
+//maybe refactor to handle video thru association, state not changing = no re render 
 export default class CommentIndex extends React.Component{
   constructor(props){
     super(props)

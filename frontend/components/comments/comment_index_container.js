@@ -6,10 +6,16 @@ import CommentIndex from "./comment_index";
 
 
 // video show page video={this.props.video}, use in ownProps
-// video has a comments association has many comments
+  // let comments; 
+  // comments = !(ownProps.video.comments) ? null : Object.values(ownProps.video.comments).sort((a,b) => {
+  //   return b.createdAtIndex - a.createdAtIndex
+  // })
+
 const mSTP = (state,ownProps) => {
-  let comments; 
-  comments = !(ownProps.video.comments) ? null : Object.values(ownProps.video.comments).sort((a,b) => {
+  let comments;
+  comments = (!state.entities.comments) ? null : Object.values(state.entities.comments).filter((comment) => {
+    return comment.video_id === ownProps.video.id
+  }).sort((a,b) => {
     return b.createdAtIndex - a.createdAtIndex
   })
   return {

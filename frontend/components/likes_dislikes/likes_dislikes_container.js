@@ -6,8 +6,23 @@ import LikesDislikes from "./likes_dislikes";
 
 const mSTP = (state,ownProps) => {
   let likes, dislikes;
-  likes = !(ownProps.video.likes) ? null : Object.values(ownProps.video.likes)
-  dislikes = !(ownProps.video.dislikes) ? null : Object.values(ownProps.video.dislikes)
+  likes = (!state.entities.likes) ? null : Object.values(state.entities.likes).filter((like) => {
+    return like.video_id === ownProps.video.id
+  })
+
+  dislikes = (!state.entities.dislikes) ? null : Object.values(state.entities.dislikes).filter((dislike) => {
+    return dislike.video_id === ownProps.video.id
+  })
+
+  // likes: Object.values(state.entities.likes).filter((like) => {
+  //         return like.video_id === ownProps.video.id
+  //       }),
+
+  // dislikes: Object.values(state.entities.dislikes).filter((dislike) => {
+  //         return dislike.video_id === ownProps.video.id
+  //       }),
+  // likes = !(ownProps.video.likes) ? null : Object.values(ownProps.video.likes)
+  // dislikes = !(ownProps.video.dislikes) ? null : Object.values(ownProps.video.dislikes)
   return {
     likes: likes,
     dislikes: dislikes,

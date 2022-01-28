@@ -13,7 +13,7 @@ export const createDislike = (dislike) => {
   })
 }
 
-export const deleteLike = (dislikeId) => {
+export const deleteDislike = (dislikeId) => {
   return $.ajax({
     method: 'DELETE',
     url:  `/api/dislikes/${dislikeId}`

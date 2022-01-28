@@ -6,9 +6,10 @@ export default class DeleteComment extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-
   handleClick(){
-    console.log(this.props.commentId)
+    this.props.deleteComment(this.props.commentId).then(
+      this.props.closeModal()
+    )
   }
 
 

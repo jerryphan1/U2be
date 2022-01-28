@@ -4,7 +4,6 @@ import LeftNavbar from "../left_navbar";
 import TopNavbar from "../top_navbar";
 import VideoSideContainer from "./video_side_container";
 import CommentIndexContainer from '../comments/comment_index_container';
-import LoginFormContainer from "../session/login_form_container";
 import LikesDislikesContainer from "../likes_dislikes/likes_dislikes_container"
 
 export default class VideoShow extends React.Component {
@@ -46,6 +45,7 @@ export default class VideoShow extends React.Component {
                           <h3>{this.props.video.createdAt}</h3>
                         </div>
                         <LikesDislikesContainer video={this.props.video}/>
+
                       </div>
                 </div>
                 <div id='video-show-image-username'>

@@ -42,13 +42,13 @@ export const fetchLikes = () => (dispatch) => {
 }
 
 export const createLike = (like) => (dispatch) => {
-  return CommentAPIUtil.createLike(like)
+  return LikeAPIUtil.createLike(like)
     .then((created) => dispatch(receiveLike(created)),
     (errors) => dispatch(receiveLikeErrors(errors.responseJSON)))
 }
 
 export const deleteLike = (likeId) => (dispatch) => {
-  return CommentAPIUtil.deleteLike(likeId)
+  return LikeAPIUtil.deleteLike(likeId)
     .then(() => dispatch(removeLike(likeId)),
     errors => dispatch(receiveLikeErrors(errors.responseJSON)))
 }

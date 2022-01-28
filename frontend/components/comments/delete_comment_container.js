@@ -22,7 +22,6 @@ const mSTP = (state,ownProps) => {
 const mDTP = (dispatch) => {
   return {
     fetchComments: () => dispatch(fetchComments()),
-    // processForm: (comment) => dispatch(createComment(comment)),
     deleteComment: (commentId) => dispatch(deleteComment(commentId)),
     closeModal: () => dispatch(closeModal()),
     openModal: (modal,id) => dispatch(openModal(modal,id))
