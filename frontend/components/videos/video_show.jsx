@@ -49,11 +49,13 @@ export default class VideoShow extends React.Component {
                       </div>
                 </div>
                 <div id='video-show-image-username'>
-                    <Link to='/' className='video-show-image'><p>{initial}</p></Link>
+                    <Link to={`/users/${this.props.video.user.id}`} className='video-show-image'><p>{initial}</p></Link>
                     <div>
+                    <Link to={`/users/${this.props.video.user.id}`} className="video-show-username-link">
                       <h2>{(this.props.video?.user.username[0].toUpperCase() + 
                           this.props.video?.user.username.slice(1).toLowerCase())
                           }</h2>
+                    </Link>
                       <h3>Description</h3>
                     </div>
                 </div>

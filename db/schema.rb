@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_01_28_220827) do
     t.index ["user_id", "video_id"], name: "index_dislikes_on_user_id_and_video_id", unique: true
   end
 
+
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "video_id", null: false

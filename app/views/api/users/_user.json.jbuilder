@@ -1,5 +1,6 @@
 json.extract! user, :id, :username
-
+json.createdAtIndex user.created_at.strftime("%Y%m%d")
+json.createdAt user.created_at.strftime("%b %d, %Y")
 
 #user has many videos (uploaded videos)
 if user.videos 

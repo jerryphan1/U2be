@@ -1,3 +1,70 @@
 // Place all the styles related to the Api::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap'); 
+
+#user-show-main-container{
+  display: flex;
+  width: 100%;
+}
+
+#user-show-info-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-left: 90px;
+  width: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  background-color: #181818;
+}
+
+#user-show-info{
+  display: flex;
+  align-items: center;
+  height: 20vh;
+  padding: 0px 61px 4px 61px; 
+}
+
+.user-show-initials{
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: #3f51b5;
+  color: white;
+  align-items: center;
+  vertical-align:middle;
+  text-decoration: none;
+}
+
+.user-show-initials p{
+  align-items: center;
+  vertical-align:middle;
+  font-size: 34px;
+}
+
+.user-show-username{
+  color: white;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+#user-show-tabs{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  color: #AAAAAA;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+#user-show-tabs p:hover{
+  color: white;
+}
+
+#user-show-tabs p{
+  cursor: pointer;
+}

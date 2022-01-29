@@ -94,6 +94,8 @@ export default class LikesDislikes extends React.Component {
     return false 
   }
 
+  
+
   checkPreviousDislike(){
     // no dislikes exist yet 
     if (!this.props.dislikes || this.props.dislikes.length === 0) return false 
