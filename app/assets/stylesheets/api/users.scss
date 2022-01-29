@@ -6,24 +6,27 @@
 
 #user-show-main-container{
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 #user-show-info-container{
+  margin-top: 70px;
+  margin-left: 88px;
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
-  margin-left: 90px;
-  width: 100%;
+  // width: 100%;
   font-family: Roboto, Arial, sans-serif;
   background-color: #181818;
 }
 
 #user-show-info{
+  margin-left: 30px;
   display: flex;
   align-items: center;
-  height: 20vh;
-  padding: 0px 61px 4px 61px; 
+  height: 110px;
+  padding: 0px 61px 4px 0px; 
+
 }
 
 .user-show-initials{
@@ -61,10 +64,95 @@
   margin: 10px 0px;
 }
 
+// #user-show-tabs + p{
+
+// }
+
 #user-show-tabs p:hover{
   color: white;
 }
 
 #user-show-tabs p{
   cursor: pointer;
+}
+
+#user-show-video-container{
+  display: flex;
+}
+
+.user-video-container{
+  display: flex;
+  flex-direction: column;
+}
+
+// vidoe stuff
+
+#user-show-video-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  justify-content: center;
+  grid-gap: 35px;
+  font-family: 'Roboto';
+  margin-top: 30px;
+  margin-left: 70px;
+  // width: 100%;
+}
+
+// .user-video-thumbnail{
+//   width: 40%;
+// }
+
+.user-video-thumbnail video{
+  width: 240px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.user-video-info-container{
+  display: flex;
+  width: 240px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.user-video-title{
+  font-size: 16px;
+  line-height: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  font-weight: 500;
+}
+
+.user-video-user{
+  color: #AAAAAA;
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 5px;
+  /* line-height: 4rem; */
+}
+
+.user-video-viewdates{
+  display: flex;
+  font-size: 12px;
+  line-height: 1.6rem;
+  font-weight: 400;
+  color: #AAAAAA;
+}
+
+.user-video-date{
+  padding-left: 0px;
+  margin-left: 8px;
+}
+
+
+.user-video-views::after{
+  color: #AAAAAA;
+  content: " \2219 ";
+  margin-left: 4px;
+  font-weight: 900;
 }
