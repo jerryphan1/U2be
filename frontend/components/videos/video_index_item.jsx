@@ -11,7 +11,7 @@ const VideoIndexItem = (props) => {
   // let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
   // let date = moment.tz(props.video.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
   // let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
-
+  let initial = props.video.user.username[0].toUpperCase();
   let date = moment.parseZone(props.video.created_at).local().format('YYYYMMDD HH:mm:ss');
   let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
   return(
@@ -23,7 +23,7 @@ const VideoIndexItem = (props) => {
       {/* <video className='video-test'src={props.video.uploaded_video} controls></video> */}
       <div className="video-index-info-container">
         {/* <Link to={`/users/${props.video.user.id}`}><p>Image of user</p></Link> */}
-        <Link to='/' className='video-index-image'><p>J</p></Link>
+        <Link to='/' className='video-index-image'><p>{initial}</p></Link>
         <div className="video-index-info">
             <Link to={`/videos/${props.video.id}`} className="video-index-title">
               <h2>{props.video.title}</h2>

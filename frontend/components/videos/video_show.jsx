@@ -64,10 +64,6 @@ export default class VideoShow extends React.Component {
             <div id='video-show-suggested-container'>
               <h1>Most Viewed</h1>
               <VideoSideContainer/>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, fugit rem. Architecto ex iure modi dignissimos labore incidunt voluptatibus ea iste dolore quaerat. Fuga, mollitia vitae in itaque tempora tenetur.</p>  
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, fugit rem. Architecto ex iure modi dignissimos labore incidunt voluptatibus ea iste dolore quaerat. Fuga, mollitia vitae in itaque tempora tenetur.</p>  
-              
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, fugit rem. Architecto ex iure modi dignissimos labore incidunt voluptatibus ea iste dolore quaerat. Fuga, mollitia vitae in itaque tempora tenetur.</p>  
             </div>
           </div>
       </div>   
