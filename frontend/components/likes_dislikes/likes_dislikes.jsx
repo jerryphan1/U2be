@@ -11,17 +11,19 @@ export default class LikesDislikes extends React.Component {
 
   componentDidMount(){
     // only signed in users can like or dislike
-    console.log('hello inside mount')
-    this.props.fetchLikes();
-    this.props.fetchDislikes();
     if (!this.props.currentUser) return null;
     this.setState({user_id: this.props.currentUser.id, 
-                  video_id: this.props.video.id,
-                  })
+      video_id: this.props.video.id,
+      })
+    this.props.fetchLikes();
+    this.props.fetchDislikes();
   }
 
-  componentDidUpdate(){
+  componentDidUpdate(prevProps){
     if (!this.props.currentUser) return null;
+    if (this.props.video.id !== prevProps.video.id) {
+      this.componentDidMount()
+    }
     this.changeColor()
   }
 
@@ -150,8 +152,8 @@ export default class LikesDislikes extends React.Component {
 
   render(){
     let likeCount, dislikeCount;
-    likeCount = (this.props.likes) ? this.props.likes.length : ''
-    dislikeCount = (this.props.dislikes) ? this.props.dislikes.length : ''
+    likeCount = (this.props.likes && this.props.likes.length > 0) ? this.props.likes.length : ''
+    dislikeCount = (this.props.dislikes && this.props.dislikes.length > 0) ? this.props.dislikes.length : ''
 
     return(
       <div id='video-show-likes-dislikes'>
