@@ -47,7 +47,7 @@
 }
 
 .video-index-image-container{
-  width: 22%;
+  width: 55px;
 }
 
 .video-index-image{
@@ -72,7 +72,7 @@
 .video-index-info{
   display: flex;
   flex-direction: column;
-  width: 82%;
+  width: 185px;
 }
 
 .video-index-title{
@@ -80,10 +80,15 @@
   line-height: initial;
   font-weight: 500;
   text-decoration: none;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
+  white-space: nowrap;
   color: white;
-  margin: 8px 0px;
+  margin: 6px 0px;
+}
+
+.video-index-title h2{
+  display: inline;
 }
 
 .video-index-title:hover{
