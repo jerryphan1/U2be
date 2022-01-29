@@ -16,11 +16,11 @@ export default class DeleteComment extends React.Component {
   render(){
     return (
       <div id='delete-modal'>
-        <h1 className="delete-modal-header">Are you sure?</h1>
-        <p className="delete-modal-text">This action cannot be undone...</p>
+        <h1 className="delete-modal-header">Delete comment</h1>
+        <p className="delete-modal-text">Delete your comment permanently?</p>
         <div id='delete-modal-button-container'>
-          <button className="delete-button-cancel" onClick={() => this.props.closeModal()}>Cancel</button>
-          <button className="delete-button-confirm" onClick={this.handleClick}>Confirm</button>
+          <button className="delete-button-cancel" onClick={() => this.props.closeModal()}>CANCEL</button>
+          <button className="delete-button-confirm" onClick={this.handleClick}>DELETE</button>
         </div>
 
       </div>
