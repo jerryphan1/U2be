@@ -21,8 +21,7 @@ export default class LikesDislikes extends React.Component {
   }
 
   componentDidUpdate(){
-    console.log(this.props.dislikes)
-    console.log(this.props.likes)
+    if (!this.props.currentUser) return null;
     this.changeColor()
   }
 
@@ -31,13 +30,11 @@ export default class LikesDislikes extends React.Component {
     // no user = no like
     if (!this.props.currentUser) return;
     this.checkLikeStatus();
-    console.log(this.props.likes)
   }
 
   handleDislike(){
     if (!this.props.currentUser) return;
     this.checkDislikeStatus()
-    console.log(this.props.dislikes)
   }
 
   // trying to like something, if previous like = delete, no like = create 
@@ -85,7 +82,7 @@ export default class LikesDislikes extends React.Component {
 
   checkPreviousLike(){
     // no likes exist yet 
-    if (!this.props.likes) return false   
+    if (!this.props.likes || this.props.likes.length === 0) return false   
     for (let i = 0; i < this.props.likes.length; i++){
       if ( this.props.likes[i].user_id === this.props.currentUser.id) {
         return this.props.likes[i]
@@ -96,7 +93,7 @@ export default class LikesDislikes extends React.Component {
 
   checkPreviousDislike(){
     // no dislikes exist yet 
-    if (!this.props.dislikes) return false 
+    if (!this.props.dislikes || this.props.dislikes.length === 0) return false 
     for (let i = 0; i < this.props.dislikes.length; i++){
       if ( this.props.dislikes[i].user_id === this.props.currentUser.id) {
         return this.props.dislikes[i]
