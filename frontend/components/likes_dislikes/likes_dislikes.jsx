@@ -152,8 +152,8 @@ export default class LikesDislikes extends React.Component {
 
   render(){
     let likeCount, dislikeCount;
-    likeCount = (this.props.likes && this.props.likes.length > 0) ? this.props.likes.length : ''
-    dislikeCount = (this.props.dislikes && this.props.dislikes.length > 0) ? this.props.dislikes.length : ''
+    likeCount = (this.props.likes && this.props.likes.length > 0) ? this.props.likes.length : ' '
+    dislikeCount = (this.props.dislikes && this.props.dislikes.length > 0) ? this.props.dislikes.length : ' '
 
     return(
       <div id='video-show-likes-dislikes'>
