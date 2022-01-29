@@ -23,7 +23,9 @@ const VideoIndexItem = (props) => {
       {/* <video className='video-test'src={props.video.uploaded_video} controls></video> */}
       <div className="video-index-info-container">
         {/* <Link to={`/users/${props.video.user.id}`}><p>Image of user</p></Link> */}
-        <Link to='/' className='video-index-image'><p>{initial}</p></Link>
+        <div className="video-index-image-container">
+          <Link to='/' className='video-index-image'><p>{initial}</p></Link>
+        </div>
         <div className="video-index-info">
             <Link to={`/videos/${props.video.id}`} className="video-index-title">
               <h2>{props.video.title}</h2>
