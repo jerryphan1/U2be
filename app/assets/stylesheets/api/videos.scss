@@ -195,9 +195,8 @@
   cursor: pointer;
 }
 
-.fa-thumbs-up:hover, .fa-thumbs-down:hover{
-  color: rgba(170,170,170,0.9);
-  transform: scale(1.08);
+.fa-thumbs-up.active-color, .fa-thumbs-down.active-color{
+  color: white;
 }
 
 #video-show-likes-dislikes p{

@@ -9,7 +9,10 @@ import moment from 'moment-timezone';
 const VideoIndexItem = (props) => {
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
   // let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
-  let date = moment.tz(props.video.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
+  // let date = moment.tz(props.video.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');
+  // let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
+
+  let date = moment.parseZone(props.video.created_at).local().format('YYYYMMDD HH:mm:ss');
   let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
   return(
     <div className="video-index-container">

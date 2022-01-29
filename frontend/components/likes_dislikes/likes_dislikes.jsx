@@ -11,6 +11,7 @@ export default class LikesDislikes extends React.Component {
 
   componentDidMount(){
     // only signed in users can like or dislike
+    console.log('hello inside mount')
     this.props.fetchLikes();
     this.props.fetchDislikes();
     if (!this.props.currentUser) return null;
@@ -19,15 +20,24 @@ export default class LikesDislikes extends React.Component {
                   })
   }
 
+  componentDidUpdate(){
+    console.log(this.props.dislikes)
+    console.log(this.props.likes)
+    this.changeColor()
+  }
+
+
   handleLike(){
     // no user = no like
     if (!this.props.currentUser) return;
-    this.checkLikeStatus()
+    this.checkLikeStatus();
+    console.log(this.props.likes)
   }
 
   handleDislike(){
     if (!this.props.currentUser) return;
     this.checkDislikeStatus()
+    console.log(this.props.dislikes)
   }
 
   // trying to like something, if previous like = delete, no like = create 
@@ -48,6 +58,7 @@ export default class LikesDislikes extends React.Component {
     } else {
       const like = Object.assign({}, this.state);
       this.props.createLike(like)
+        .then(this.likeBackgroundColor())
     }
   }
 
@@ -67,6 +78,8 @@ export default class LikesDislikes extends React.Component {
     } else {
       const dislike = Object.assign({}, this.state);
       this.props.createDislike(dislike)
+      .then(console.log(this.props.dislikes))
+      this.dislikeBackgroundColor()
     }
   }
 
@@ -92,6 +105,51 @@ export default class LikesDislikes extends React.Component {
     return false 
   }
 
+  changeColor(){
+    this.resetBackgroundColor();
+    this.likeBackgroundColor();
+    this.dislikeBackgroundColor();
+  }
+
+
+  resetBackgroundColor(){
+    let resetLike = document.querySelector('.fa-thumbs-up');
+    let resetDislike = document.querySelector('.fa-thumbs-down');
+    resetLike.classList.remove('active-color');
+    resetDislike.classList.remove('active-color');
+  }
+
+  addLikeBackgroundColor(){
+    let color = document.querySelector('.fa-thumbs-up')
+    color.classList.add('active-color')
+  }
+
+  addDislikeBackgroundColor(){
+    let color = document.querySelector('.fa-thumbs-down');
+    color.classList.add('active-color');
+  }
+
+  likeBackgroundColor(){
+    // this.resetBackgroundColor();
+    for (let i = 0; i < this.props.likes.length; i++){
+      if ( this.props.likes[i].user_id === this.props.currentUser.id) {
+        this.addLikeBackgroundColor();
+      }
+    }
+  }
+
+  dislikeBackgroundColor(){
+    // this.resetBackgroundColor()
+    console.log(this.props.dislikes)
+    console.log(this.props.currentUser)
+    for (let i = 0; i < this.props.dislikes.length; i++){
+      if ( this.props.dislikes[i].user_id === this.props.currentUser.id) {
+        console.log('inside')
+        this.addDislikeBackgroundColor();
+      }
+    }
+  }
+
 
   render(){
     let likeCount, dislikeCount;
@@ -102,7 +160,7 @@ export default class LikesDislikes extends React.Component {
       <div id='video-show-likes-dislikes'>
         <p className="video-like-p" onClick={() => this.handleLike()}><i className="fas fa-thumbs-up"></i>{likeCount}</p>
         <p className="video-dislike-p" onClick={() => this.handleDislike()}><i className="fas fa-thumbs-down"></i>{dislikeCount}</p>
-    </div>
+      </div>
     )
   }
 }
