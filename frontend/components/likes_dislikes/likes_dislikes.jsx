@@ -11,16 +11,17 @@ export default class LikesDislikes extends React.Component {
 
   componentDidMount(){
     // only signed in users can like or dislike
-    if (!this.props.currentUser) return null;
-    this.setState({user_id: this.props.currentUser.id, 
-      video_id: this.props.video.id,
-      })
+    if (this.props.currentUser) {
+      this.setState({user_id: this.props.currentUser.id, 
+        video_id: this.props.video.id,
+        })
+    }
     this.props.fetchLikes();
     this.props.fetchDislikes();
   }
 
   componentDidUpdate(prevProps){
-    if (!this.props.currentUser) return null;
+    // if (!this.props.currentUser) return null;
     if (this.props.video.id !== prevProps.video.id) {
       this.componentDidMount()
     }
@@ -105,6 +106,7 @@ export default class LikesDislikes extends React.Component {
   }
 
   changeColor(){
+    if (!this.props.currentUser) return 
     this.resetBackgroundColor();
     this.likeBackgroundColor();
     this.dislikeBackgroundColor();
@@ -152,6 +154,8 @@ export default class LikesDislikes extends React.Component {
 
   render(){
     let likeCount, dislikeCount;
+    console.log('hello')
+    console.log(this.props.likes)
     likeCount = (this.props.likes && this.props.likes.length > 0) ? this.props.likes.length : ' '
     dislikeCount = (this.props.dislikes && this.props.dislikes.length > 0) ? this.props.dislikes.length : ' '
 
