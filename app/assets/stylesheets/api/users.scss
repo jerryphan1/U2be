@@ -70,6 +70,7 @@
 
 #user-show-tabs p:hover{
   color: white;
+  // border-bottom: 2px solid #aaa;
 }
 
 #user-show-tabs p{
@@ -172,4 +173,35 @@
   content: " \2219 ";
   margin-left: 4px;
   font-weight: 900;
+}
+
+.user-show-about-container{
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+
+}
+
+.user-show-right-column{
+  width: 30%;
+  margin-top: 20px;
+}
+
+.user-show-right-column p{
+  padding: 12px 0px;
+  margin: 6px 0px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-family: Roboto, Arial, sans-serif;
+
+}
+
+.user-show-stats{
+  font-weight: 500;
+}
+
+.user-show-created{
+  font-size: 14px;
 }

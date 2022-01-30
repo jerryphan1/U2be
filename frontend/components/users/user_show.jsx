@@ -46,17 +46,24 @@ export default class UserShow extends React.Component{
                   <h2 className="user-show-username">{this.props.user.username}</h2>
                 </div>
                 <div id='user-show-tabs'>
-                  <p>HOME</p>
-                  <p>VIDEOS</p>     {/* user uploaded vids */}
+
+                  <p>HOME</p>                {/* user uploaded vids */}
                   <p>LIKED VIDEOS</p>    {/* user liked vids */}
                   <p>DISLIKED VIDEOS</p> {/* user disliked vids */}
+                  <p>UPLOAD A VIDEO</p> 
                   <p>ABOUT</p>
                 </div>
           </div>
             {/* <div className="just-placeholder"><UserVideoContainer user={this.props.user}/></div> */}
             {/* <div className="just-placeholder"><UserLikedVideoContainer user={this.props.user}/></div> */}
-            <div className="just-placeholder"><UserDislikedVideoContainer user={this.props.user}/></div>
+            {/* <div className="just-placeholder"><UserDislikedVideoContainer user={this.props.user}/></div> */}
+            <div className="just-placeholder user-show-about-container">
+              <div className="user-show-right-column">
 
+                <p className="user-show-stats">Stats</p>
+                <p className="user-show-created">Joined {this.props.user.createdAt}</p>
+              </div>
+            </div>
         </div>
       </div>
     )

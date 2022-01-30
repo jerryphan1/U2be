@@ -54,7 +54,7 @@ export default class UserVideo extends React.Component{
     } else if (this.props.videos.length === 0){
       return (
         <div>
-          <p>This channel has no uploaded videos</p>
+          <p>This channel has no videos.</p>
         </div>
       )
     } else {

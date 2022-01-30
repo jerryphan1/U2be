@@ -51,7 +51,7 @@ export default class UserDislikedVideo extends React.Component{
     } else if (this.props.dislikedVids.length === 0){
       return (
         <div>
-          <p>This channel has no disliked videos</p>
+          <p>This channel has no disliked videos.</p>
         </div>
       )
     } else {
@@ -60,8 +60,7 @@ export default class UserDislikedVideo extends React.Component{
                   {
                     this.props.dislikedVids.map((video) => <VideoFormat video={video}
                     key={video.id}
-                    MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
-                      loadTop={this.loadTop}/>)
+                    MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}/>)
                   }
                 </div>
               )

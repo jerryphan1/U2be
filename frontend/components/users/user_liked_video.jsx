@@ -51,7 +51,7 @@ export default class UserLikedVideo extends React.Component{
     } else if (this.props.likedVids.length === 0){
       return (
         <div>
-          <p>This channel has no liked videos</p>
+          <p>This channel has no liked videos.</p>
         </div>
       )
     } else {
