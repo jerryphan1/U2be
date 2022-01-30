@@ -7,7 +7,7 @@ const VideoFormat = (props) => {
   let date = moment.parseZone(props.video.created_at).local().format('YYYYMMDD HH:mm:ss');
   let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
   return(
-    <div className='user-video-container'>
+    <div>
         <Link className="user-video-thumbnail" to={`/videos/${props.video.id}`}>
           <video className='user-video-actual-video'src={props.video.uploaded_video}  
             poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}/>

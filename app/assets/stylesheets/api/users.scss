@@ -78,16 +78,33 @@
 
 #user-show-video-container{
   display: flex;
-}
+  border: 1px solid white;
 
-.user-video-container{
-  display: flex;
-  flex-direction: column;
 }
 
 // vidoe stuff
 
-#user-show-video-container{
+// #user-show-video-container{
+//   display: grid;
+//   grid-template-rows: repeat(auto-fill, 240px);
+//   justify-content: center;
+//   grid-gap: 35px;
+//   font-family: 'Roboto';
+//   margin-top: 30px;
+//   margin-left: 70px;
+//   // width: 100%;
+// }
+
+// .user-video-thumbnail{
+//   width: 40%;
+// }
+
+.dumb{
+  width: 100%;
+  border: 1px solid white;
+}
+
+.user-video-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, 240px);
   justify-content: center;
@@ -95,12 +112,7 @@
   font-family: 'Roboto';
   margin-top: 30px;
   margin-left: 70px;
-  // width: 100%;
 }
-
-// .user-video-thumbnail{
-//   width: 40%;
-// }
 
 .user-video-thumbnail video{
   width: 240px;

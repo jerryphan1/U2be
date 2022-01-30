@@ -4,6 +4,9 @@ import LeftNavbar from "../left_navbar";
 import TopNavbar from "../top_navbar";
 import LeftIcons from "../left_icons";
 import UserVideoContainer from "./user_video_container";
+import UserLikedVideoContainer from "./user_liked_video_container";
+import UserDislikedVideoContainer from "./user_disliked_video_container";
+
 
 export default class UserShow extends React.Component{
   constructor(props){
@@ -50,9 +53,10 @@ export default class UserShow extends React.Component{
                   <p>ABOUT</p>
                 </div>
           </div>
-          <div id='user-show-video-container'>
-            <div className="user-video-container"><UserVideoContainer user={this.props.user}/></div>
-          </div>
+            {/* <div className="just-placeholder"><UserVideoContainer user={this.props.user}/></div> */}
+            {/* <div className="just-placeholder"><UserLikedVideoContainer user={this.props.user}/></div> */}
+            <div className="just-placeholder"><UserDislikedVideoContainer user={this.props.user}/></div>
+
         </div>
       </div>
     )

@@ -1,7 +1,7 @@
 import React from "react";
 import VideoFormat from "./video_format";
 
-export default class UserVideo extends React.Component{
+export default class UserLikedVideo extends React.Component{
   constructor(props){
     super(props)
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -10,11 +10,8 @@ export default class UserVideo extends React.Component{
 
   componentDidMount(){
     this.props.fetchVideos();
+    this.props.fetchLikes();
   }  
-
-  loadTop(){
-    window.scrollTo(0, 0);
-  }
 
   handleMouseEnter(e) {
     e.preventDefault();
@@ -49,25 +46,25 @@ export default class UserVideo extends React.Component{
   }
 
   render(){
-    if (!this.props.videos) {
+    if (!this.props.likedVids) {
       return null
-    } else if (this.props.videos.length === 0){
+    } else if (this.props.likedVids.length === 0){
       return (
         <div>
-          <p>This channel has no uploaded videos</p>
+          <p>This channel has no liked videos</p>
         </div>
       )
     } else {
-        return(
-          <div className="user-video-container">
-            {
-              this.props.videos.map((video) => <VideoFormat video={video}
-              key={video.id}
-              MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
-                loadTop={this.loadTop}/>)
-            }
-          </div>
-        )
+              return(
+                <div className="user-video-container">
+                  {
+                    this.props.likedVids.map((video) => <VideoFormat video={video}
+                    key={video.id}
+                    MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
+                      loadTop={this.loadTop}/>)
+                  }
+                </div>
+              )
     }
   }
 }
