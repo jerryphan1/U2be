@@ -2,14 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import moment from 'moment';
 import moment from 'moment-timezone';
+import EditFormContainer from "./edit_form_container";
 
 
 export default class CommentIndexItem extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      edit: false
+    }
+    this.testEdit = this.testEdit.bind(this)
   }
 
-
+  testEdit(){
+    this.setState({edit: true})
+  }
 
   render(){
     if (!this.props.comment) return null;
@@ -34,11 +41,14 @@ export default class CommentIndexItem extends React.Component{
                 <h2 className="comment-index-date">{newDate}</h2>
               </div>
               {/* {console.log(this.props.comment.id)} */}
-            <p className="comment-delete" onClick={() => this.props.openModal('deleteOption',this.props.comment.id)}>{deleteComm}</p>
+            <p className="comment-delete" onClick={this.testEdit}>{deleteComm}</p>
           </div>
-            <p className="comment-index-body">{this.props.comment.body}</p>
+          {this.state.edit ? <EditFormContainer comment={this.props.comment} user={this.props.user}/> : <p className="comment-index-body">{this.props.comment.body}</p>}
         </div>
+        
       </div>
     )
   }
 }
+
+// onClick={() => this.props.openModal('deleteOption',this.props.comment.id)}

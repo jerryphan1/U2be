@@ -10,11 +10,10 @@ export default class CommentForm extends React.Component{
       errors: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCancel = this.handleCancel.bind(this)
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleSubmit(e){
-    console.log(this.state)
     e.preventDefault();
     const comment = Object.assign({}, this.state);
 

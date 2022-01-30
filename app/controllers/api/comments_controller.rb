@@ -33,7 +33,7 @@ class Api::CommentsController < ApplicationController
     if @comment.update 
       render :show 
     else 
-      render json: @comment.errors.full_message, status: 422
+      render json: ['cannot leave comment blank'], status: 422
     end
   end
 
