@@ -22,7 +22,7 @@ export default class CommentIndexItem extends React.Component{
     if (!this.props.comment) return null;
     let deleteComm;
     if (this.props.user) {
-      deleteComm = (this.props.user.id === this.props.comment.user_id) ? <i className="fas fa-trash-alt"></i> : ''
+      deleteComm = (this.props.user.id === this.props.comment.user_id) ? <i class="fas fa-ellipsis-v"></i> : ''
     } else {
       deleteComm = ''
     }
@@ -52,3 +52,4 @@ export default class CommentIndexItem extends React.Component{
 }
 
 // onClick={() => this.props.openModal('deleteOption',this.props.comment.id)}
+// <i className="fas fa-trash-alt"></i>
