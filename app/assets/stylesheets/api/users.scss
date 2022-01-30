@@ -61,7 +61,7 @@
   width: 100%;
   color: #AAAAAA;
   text-align: center;
-  margin: 10px 0px;
+  margin-top: 10px;
 }
 
 
@@ -205,6 +205,20 @@
 
 .hide{
   display: none;
+}
+
+#user-show-tabs > div > p{
+  padding: 5px 8px;
+}
+
+#user-show-tabs > div{
+  transition: background-color 0.5s;
+}
+
+.active-div{
+  padding: 10px 0px;
+  background-color: rgba(170, 170, 170,0.5);
+  border-radius: 5px;
 }
 
 .active{

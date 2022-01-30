@@ -68,19 +68,19 @@ export default class UserShow extends React.Component{
                   <h2 className="user-show-username">{this.props.user.username}</h2>
                 </div>
                 <div id='user-show-tabs'>
-                  <div>
+                  <div className={this.state.home ? 'active-div' : ''}>
                       <p onClick={() => this.handleClick('home')} className={this.state.home ? 'active' : ''}>HOME</p> 
                   </div>  
-                  <div>
+                  <div className={this.state.liked ? 'active-div' : ''}>
                     <p onClick={() => this.handleClick('liked')}className={this.state.liked ? 'active' : ''}>LIKED VIDEOS</p>
                   </div>   
-                  <div>
+                  <div className={this.state.disliked ? 'active-div' : ''}>
                     <p onClick={() => this.handleClick('disliked')} className={this.state.disliked ? 'active' : ''}>DISLIKED VIDEOS</p>
                   </div> 
-                  <div>
+                  <div className={this.state.upload ? 'active-div' : ''}>
                     <p onClick={() => this.handleClick('upload')} className={this.state.upload ? 'active' : ''}>UPLOAD A VIDEO</p> 
                   </div> 
-                  <div>
+                  <div className={this.state.about ? 'active-div' : ''}>
                     <p onClick={() => this.handleClick('about')} className={this.state.about ? 'active' : ''}>ABOUT</p>
                   </div>       
                 </div>
