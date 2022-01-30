@@ -222,3 +222,32 @@
 .fa-trash-alt:hover {
   color: rgba(255,255,255,0.8);
 }
+.comment-dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.comment-dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: #181818;
+  z-index: 1;
+}
+
+.comment-dropdown-content p{
+  padding: 6px;
+  margin: 5px 0px;
+  cursor: pointer;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.comment-dropdown-content p:hover{
+  background-color: rgba(170, 170, 170,0.3);
+}
+
+.comment-dropdown-content.active{
+  display: block;
+}

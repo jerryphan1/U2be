@@ -94,6 +94,17 @@ export default class UserShow extends React.Component{
                 <p className="user-show-created">Joined {this.props.user.createdAt}</p>
               </div>
             </div>
+
+            <div className={this.state.upload ? 'user-show-upload-container' : 'hide'}>
+              <img src={window.youtube_download} alt="youtube-upload-logo" id='youtube-upload-logo'/>
+              <h2 className="user-show-upload-header">Upload a video to get started</h2>
+              <div className="user-show-upload-text-container">
+                <p className="user-show-upload-text">
+                  Start sharing your story and connecting with viewers. Videos you upload will show up here.
+                </p>
+              </div>
+              <button className="user-upload-video-button">UPLOAD VIDEO</button>
+            </div>
         </div>
       </div>
     )
