@@ -10,8 +10,7 @@ const VideoFormat = (props) => {
     <div className='user-video-container'>
         <Link className="user-video-thumbnail" to={`/videos/${props.video.id}`}>
           <video className='user-video-actual-video'src={props.video.uploaded_video}  
-            poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}
-            onClick={() => props.loadTop()}/>
+            poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}/>
         </Link>
 
         <div className="user-video-info-container">

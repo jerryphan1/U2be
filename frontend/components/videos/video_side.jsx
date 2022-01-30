@@ -12,10 +12,6 @@ export default class VideoSide extends React.Component {
     this.props.fetchVideos();
   }  
 
-  loadTop(){
-    window.scrollTo(0, 0);
-  }
-
   handleMouseEnter(e) {
     e.preventDefault();
     {
@@ -54,8 +50,7 @@ export default class VideoSide extends React.Component {
       <div>
         {
           this.props.videos.map((video) => <VideoSideItem video={video} key={video.id}
-          MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
-          loadTop={this.loadTop}/>)
+          MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}/>)
         }
       </div>
     ) 
