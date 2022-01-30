@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Source+Sans+3:wght@300;400&display=swap');
+
+
+#edit-form-container{
+  display: flex;
+  width: 100%;
+  padding: 4px 0px;
+  justify-content: space-between;
+  /* margin-top: 10px; */
+  margin-left: -2px;
+}
+
+.edit-form-textarea:focus{
+  border-bottom: 2px solid white;
+}
+
+.edit-form-textarea{
+  height: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #AAAAAA;
+  background-color: transparent;
+  margin-bottom: 10px;
+  resize: none;
+  outline: none;
+  color: white;
+  transition: border 500ms;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 15px;
+
+}
+
+.edit-form{
+  flex-direction: column;
+  display: flex;
+  width: 90%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 15px;
+}
+
+
+.edit-form-buttons{
+  display: flex;
+  justify-content: flex-end;
+  /* visibility: hidden; */
+}
+/* 
+.edit-form-buttons.toggle-buttons{
+  visibility: visible;
+} */
+
+.edit-form-input, .edit-form-button {
+  padding: 10px 15px;
+  margin: none;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-form-input {
+  background-color: #3ea6ff;
+}
+
+.edit-form-buttons .edit-form-button{
+  color: #AAAAAA;
+  background-color: black;
+}

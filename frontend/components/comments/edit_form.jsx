@@ -58,12 +58,12 @@ export default class EditForm extends React.Component{
   render(){
     if (!this.props.user) return null;
     return(
-      <>
-      <form onSubmit={this.handleSubmit} className="comment-form">
-        <textarea onClick={this.handleVisible} className="comment-form-textarea" placeholder='Add a public comment...' value={this.state.body} onChange={this.update('body')}/>
-        <div className="comment-form-buttons">
-          <button className='comment-form-button'onClick={this.handleCancel} >Cancel</button>
-          <input className='comment-form-input'type='submit' placeholder="Comment"/>
+      <div  id="edit-form-container">
+      <form onSubmit={this.handleSubmit} className="edit-form">
+        <textarea onClick={this.handleVisible} className="edit-form-textarea" value={this.state.body} onChange={this.update('body')}/>
+        <div className="edit-form-buttons">
+          <button className='edit-form-button'onClick={this.handleCancel} >Cancel</button>
+          <input className='edit-form-input'type='submit' placeholder="Comment"/>
         </div>
       </form>
         <ul className="errors">
@@ -71,7 +71,7 @@ export default class EditForm extends React.Component{
                   return <li key={idx}>{error}</li>
               })}
           </ul>
-      </>
+      </div>
     )
   }
 
