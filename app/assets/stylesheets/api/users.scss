@@ -64,9 +64,6 @@
   margin: 10px 0px;
 }
 
-// #user-show-tabs + p{
-
-// }
 
 #user-show-tabs p:hover{
   color: white;
@@ -204,4 +201,18 @@
 
 .user-show-created{
   font-size: 14px;
+}
+
+.hide{
+  display: none;
+}
+
+.active{
+  color: white;
+}
+
+.disliked > div > p, .liked > div > p, .home > div > p{
+  color: white;
+  margin-top: 80px;
+  text-align: center;
 }
