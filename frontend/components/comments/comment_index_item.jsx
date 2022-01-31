@@ -55,7 +55,7 @@ export default class CommentIndexItem extends React.Component{
                   </div>
               </div>
           </div>
-          {this.state.edit ? <EditFormContainer comment={this.props.comment} user={this.props.user}/> : <p className="comment-index-body">{this.props.comment.body}</p>}
+          {this.state.edit ? <EditFormContainer comment={this.props.comment} user={this.props.user} testEdit={this.testEdit} /> : <p className="comment-index-body">{this.props.comment.body}</p>}
         </div>
         
       </div>

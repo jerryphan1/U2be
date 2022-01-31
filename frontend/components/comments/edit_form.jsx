@@ -15,6 +15,7 @@ export default class EditForm extends React.Component{
     const comment = Object.assign({}, this.state);
     // debugger
     this.props.processForm(comment)
+    .then(() => this.props.testEdit())
       .fail(() => this.setState({ errors: this.props.errors }));
       return null
       // this.props.processForm(user).fail(() => this.setState({ errors: this.props.errors }));
@@ -23,6 +24,7 @@ export default class EditForm extends React.Component{
   handleCancel(e){
     //reset body to empty
     e.preventDefault();
+    this.props.testEdit();
     // this.props.edit()
     // return e => this.setState({body: this.props.comment.body});
     // this.setState({body: this.storeBody})
