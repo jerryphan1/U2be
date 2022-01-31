@@ -68,3 +68,8 @@
   color: #AAAAAA;
   background-color: black;
 }
+
+.errors-edit-form{
+  text-align: center;
+  color: red;
+}

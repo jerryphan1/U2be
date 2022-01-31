@@ -29,7 +29,7 @@ export default class FormatSideViews extends React.Component{
 
   formatViews(views){
     if (views < 1000) {
-      return;
+      return views;
     } else if (views < 1000000){
       return this.formatHundreds(views)
     } else if (views < 1000000000){

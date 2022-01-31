@@ -49,7 +49,6 @@ export default class VideoForm extends React.Component{
   }
 
   handleTitleColor(e){
-    console.log(typeof e.currentTarget.value)
     let div = document.querySelector('#video-form-title-container');
     let title = document.querySelector('.video-form-title');
     if (e.currentTarget.value.length > 0) {
@@ -59,7 +58,6 @@ export default class VideoForm extends React.Component{
       div.classList.remove('blue-border');
       title.classList.remove('blue-text')
     }
-    console.log(e.currentTarget.value)
   }
 
   handleDescriptionColor(e){

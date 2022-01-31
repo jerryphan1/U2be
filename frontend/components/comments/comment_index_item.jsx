@@ -35,7 +35,7 @@ export default class CommentIndexItem extends React.Component{
 
     let initial = this.props.comment.user.username[0].toUpperCase();
     let date = moment.parseZone(this.props.comment.created_at).local().format('YYYYMMDD HH:mm:ss');
-    {console.log(date)}
+    // {console.log(date)}
     let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
     return(
       <div className="comment-index-container">

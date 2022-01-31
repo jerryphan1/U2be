@@ -78,7 +78,6 @@ export default class LikesDislikes extends React.Component {
     } else {
       const dislike = Object.assign({}, this.state);
       this.props.createDislike(dislike)
-      .then(console.log(this.props.dislikes))
       this.dislikeBackgroundColor()
     }
   }
@@ -143,11 +142,8 @@ export default class LikesDislikes extends React.Component {
 
   dislikeBackgroundColor(){
     // this.resetBackgroundColor()
-    console.log(this.props.dislikes)
-    console.log(this.props.currentUser)
     for (let i = 0; i < this.props.dislikes.length; i++){
       if ( this.props.dislikes[i].user_id === this.props.currentUser.id) {
-        console.log('inside')
         this.addDislikeBackgroundColor();
       }
     }
@@ -156,8 +152,6 @@ export default class LikesDislikes extends React.Component {
 
   render(){
     let likeCount, dislikeCount;
-    console.log('hello')
-    console.log(this.props.likes)
     likeCount = (this.props.likes && this.props.likes.length > 0) ? this.props.likes.length : ' '
     dislikeCount = (this.props.dislikes && this.props.dislikes.length > 0) ? this.props.dislikes.length : ' '
 

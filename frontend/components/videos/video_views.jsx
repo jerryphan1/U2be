@@ -4,30 +4,24 @@ import React from "react";
 export default class VideoViews extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      // user_id: this.props.video.user_id,
-      // title: this.props.video.title,
-      // description: this.props.video.description,
-      // thumbnail: this.props.video.thumbnail,
-      // uploaded_video: this.props.video.uploaded_video,
-      views: this.props.video.views
-    }
+    this.state = this.props.video
+    this.updateViewCount = this.updateViewCount.bind(this)
   }
 
 
   componentDidMount(){
+    // debugger
+    console.log(this.state.views)
     this.setState({
-      // user_id: this.props.video.user_id,
-      // title: this.props.video.title,
-      // description: this.props.video.description,
-      // thumbnail: this.props.video.thumbnail,
-      // uploaded_video: this.props.video.uploaded_video,
-      views: this.state.views + 1
+      ['views']: this.state.views + 1
     })
+    this.updateViewCount()
   }
 
   updateViewCount(){
     const video = Object.assign({}, this.state);
+    console.log(video)
+    // debugger
     this.props.processForm(video)
   }
 

@@ -8,10 +8,11 @@ class Api::VideosController < ApplicationController
 
   def show 
     @video = Video.find_by(id: params[:id])
+    # debugger
     if @video 
       render :show 
     else 
-      render json: @video.errors.full_message, status: 422
+      render json: ['there was an error loading the video'], status: 422
     end
   end
 
@@ -27,10 +28,11 @@ class Api::VideosController < ApplicationController
 
   def update 
     @video = Video.find_by(id: params[:id])
+    # debugger
     if @video.update(video_params)
       render :show 
     else 
-      render json: @video.errors.full_message, status: 422
+      render json: ['could not update video'], status: 422
     end
   end
 
