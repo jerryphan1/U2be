@@ -23,7 +23,7 @@ export default class EditForm extends React.Component{
   handleCancel(e){
     //reset body to empty
     e.preventDefault();
-    return null;
+    // this.props.edit()
     // return e => this.setState({body: this.props.comment.body});
     // this.setState({body: this.storeBody})
   }

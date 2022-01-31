@@ -15,8 +15,8 @@ export default class CommentIndexItem extends React.Component{
   }
 
   testEdit(){
+    (this.state.edit) ? this.setState({edit: false}) : this.setState({edit: true})
     this.setActive()
-    this.setState({edit: true})
   }
 
   setActive(){

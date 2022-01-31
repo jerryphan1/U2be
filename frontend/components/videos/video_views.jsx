@@ -13,7 +13,7 @@ export default class VideoViews extends React.Component{
     // debugger
     console.log(this.state.views)
     this.setState({
-      ['views']: this.state.views + 1
+      views: this.state.views + 1
     })
     this.updateViewCount()
   }
