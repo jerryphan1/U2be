@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy, :index]
     resources :dislikes, only: [:create, :destroy, :index]
     resource :session, only: [:create, :destroy]
+    patch '/videos/:id/views', to: 'videos#update'
+    
   end
 
   root to: 'static_pages#root'

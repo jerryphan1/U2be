@@ -28,10 +28,11 @@ class Api::VideosController < ApplicationController
 
   def update 
     @video = Video.find_by(id: params[:id])
-    # debugger
-    if @video.update(video_params)
+    #needed to permit ONLY the views
+    if @video.update(video_view_params)
       render :show 
     else 
+      debugger
       render json: ['could not update video'], status: 422
     end
   end
@@ -48,6 +49,10 @@ class Api::VideosController < ApplicationController
 
   private 
   def video_params
-    params.require(:video).permit(:user_id, :title, :views, :description, :thumbnail, :uploaded_video )
+    params.require(:video).permit(:user_id, :title, :views, :description, :thumbnail, :uploaded_video)
+  end
+
+  def video_view_params
+    params.require(:video).permit(:views)
   end
 end

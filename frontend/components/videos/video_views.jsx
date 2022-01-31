@@ -4,25 +4,25 @@ import React from "react";
 export default class VideoViews extends React.Component{
   constructor(props){
     super(props)
-    this.state = this.props.video
+    this.state = Object.assign({errors: []} , this.props.video)
     this.updateViewCount = this.updateViewCount.bind(this)
   }
 
 
   componentDidMount(){
     // debugger
-    console.log(this.state.views)
-    this.setState({
-      views: this.state.views + 1
-    })
     this.updateViewCount()
   }
 
   updateViewCount(){
-    const video = Object.assign({}, this.state);
-    console.log(video)
+    this.setState({
+      views: this.state.views + 1
+    },() => this.props.processForm(this.state))
+    // const video = Object.assign({}, this.state);
+    // console.log(this.state)
+    // console.log(video)
     // debugger
-    this.props.processForm(video)
+    // this.props.processForm(video)
   }
 
   render(){
