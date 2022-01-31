@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from 'moment-timezone';
-
+import FormatIndexViews from "./format_index_views";
 
 
 // onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
@@ -34,7 +34,8 @@ const VideoIndexItem = (props) => {
               <h2>{user}</h2>
             </Link>
             <div className="video-index-viewdates">
-              <p className="video-index-views">{props.video.views} views</p>
+              {/* <p className="video-index-views">{props.video.views} views</p> */}
+              <FormatIndexViews video={props.video}/>
               <p>{newDate}</p>
             </div>
         </div>

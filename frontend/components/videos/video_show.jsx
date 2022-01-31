@@ -5,6 +5,7 @@ import TopNavbar from "../top_navbar";
 import VideoSideContainer from "./video_side_container";
 import CommentIndexContainer from '../comments/comment_index_container';
 import LikesDislikesContainer from "../likes_dislikes/likes_dislikes_container"
+// import VideoViewsContainer from "./video_views_container";
 
 export default class VideoShow extends React.Component {
   constructor(props){
@@ -31,6 +32,7 @@ export default class VideoShow extends React.Component {
   render(){
     if (!this.props.video) return null;
     let initial = this.props.video.user.username[0].toUpperCase();
+    let internationalNumberFormat = new Intl.NumberFormat('en-US')
     return (
       <div id='show-div'>
         <TopNavbar/>
@@ -42,7 +44,9 @@ export default class VideoShow extends React.Component {
                     <h1>{this.props.video.title}</h1>
                       <div className="video-show-format-container">
                         <div id='video-show-views-create'>
-                          <h3 className="video-show-views">{this.props.video.views} views</h3>
+                            {/* <VideoViewsContainer video={this.props.video}/> */}
+                          <h3 className="video-show-views">{internationalNumberFormat.format(this.props.video.views)} views</h3>
+
                           <h3>{this.props.video.createdAt}</h3>
                         </div>
                         <LikesDislikesContainer video={this.props.video}/>

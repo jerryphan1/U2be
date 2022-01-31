@@ -30,8 +30,8 @@ class Api::CommentsController < ApplicationController
 
   def update 
     @comment = Comment.find_by(id: params[:id])
-    # debugger
-    if @comment.update 
+    debugger
+    if @comment.update(comment_params)
       render :show 
     else 
       render json: ['cannot leave comment blank'], status: 422
@@ -52,7 +52,7 @@ class Api::CommentsController < ApplicationController
 
   private 
   def comment_params 
-    params.require(:comment).permit(:body, :user_id, :video_id, :id)
+    params.require(:comment).permit(:body, :user_id, :video_id)
   end
 
 end

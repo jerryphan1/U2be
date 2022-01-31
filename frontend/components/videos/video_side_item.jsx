@@ -1,6 +1,7 @@
 import moment from 'moment-timezone';
 import React from "react";
 import { Link } from "react-router-dom";
+import FormatSideViews from './format_side_views'
 
 const VideoSideItem = (props) => {
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
@@ -28,7 +29,8 @@ const VideoSideItem = (props) => {
             </Link>
 
             <div className="video-side-viewdates">
-              <p className="video-side-views">{props.video.views} views</p>
+              {/* <p className="video-side-views">{props.video.views} views</p> */}
+              <FormatSideViews video={props.video}/>
               <p className='video-side-date'>{newDate}</p>
             </div>
         </div>
