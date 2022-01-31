@@ -73,7 +73,7 @@ export default class CommentForm extends React.Component{
             </div>
           </form>
         </div>
-                   <ul className="errors">
+          <ul className="errors">
               {this.state.errors.map((error, idx) => {
                   return <li key={idx}>{error}</li>
               })}

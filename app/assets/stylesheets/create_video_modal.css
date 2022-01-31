@@ -46,7 +46,8 @@
 }
 
 #video-form-main-container h2{
-  margin-top: 10px;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 .video-form-title{
@@ -143,6 +144,14 @@ input[type="file"] {
   justify-content: space-evenly;
 }
 
+#video-form-buttons-container{
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
 .video-form-image-label{
   display: flex;
   flex-direction: column;
@@ -175,4 +184,28 @@ input[type="file"] {
 .video-form-image-label:hover, .video-form-video-label:hover{
   color: white;
   border: 0.5px solid white;
+}
+
+.fa-film, .fa-image{
+  padding: 5px;
+}
+
+.video-form-cancel, .video-form-submit{
+  text-decoration: none;
+  border: none;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(33,33,33,0.98);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.video-form-cancel{
+  color: #AAAAAA;
+}
+
+.video-form-submit{
+  color: #3ea6ff;
 }

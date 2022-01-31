@@ -5,7 +5,8 @@ import { openModal } from "../../actions/modal_actions";
 
 const mSTP = (state,ownProps) => {
   return {
-    user: state.entities.users[ownProps.match.params.userId]
+    user: state.entities.users[ownProps.match.params.userId],
+    currentUser: state.entities.users[state.session.id],
   }
 }
 

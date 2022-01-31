@@ -55,6 +55,14 @@ export default class UserShow extends React.Component{
   render(){
     if (!this.props.user) return null;
     let initial = this.props.user.username[0].toUpperCase();
+    let hide, classes;
+    if (this.props.user.id !== this.props.currentUser.id){
+      hide = true;
+      classes = 'user-upload-video-button disabled-button'
+    } else {
+      hide = false;
+      classes = 'user-upload-video-button'
+    }
     return(
 
       <div>
@@ -103,7 +111,7 @@ export default class UserShow extends React.Component{
                   Start sharing your story and connecting with viewers. Videos you upload will show up here.
                 </p>
               </div>
-              <button className="user-upload-video-button" onClick={() => this.props.openModal('createVideo', 100)}>UPLOAD VIDEO</button>
+              <button className={classes} disabled={hide} onClick={() => this.props.openModal('createVideo', 100)}>UPLOAD VIDEO</button>
             </div>
         </div>
       </div>

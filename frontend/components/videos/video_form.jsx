@@ -9,10 +9,12 @@ export default class VideoForm extends React.Component{
       title: '',
       description: '',
       thumbnail: '',
-      uploaded_video: ''
+      uploaded_video: '',
+      errors: []
     }
     this.handleTitleColor = this.handleTitleColor.bind(this);
     this.handleDescriptionColor = this.handleDescriptionColor.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount(){
@@ -25,6 +27,25 @@ export default class VideoForm extends React.Component{
     if (this.props.currentUser.id !== prevProps.currentUser.id){
       this.componentDidMount()
     }
+  }
+
+  update(field){
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    const video = Object.assign({}, this.state);
+
+    this.props.processForm(video)
+      .then(() => this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''}))
+      .fail(() => this.setState({ errors: this.props.errors }));
+  }
+
+  handleCancel(e){
+    //reset body to empty
+    e.preventDefault();
+    this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''})
   }
 
   handleTitleColor(e){
@@ -56,23 +77,24 @@ export default class VideoForm extends React.Component{
 
   render(){
     return(
-        <form id='video-form-main-container'>
+      <div>
+        <form id='video-form-main-container' onSubmit={this.handleSubmit}>
             <h2>Upload a video</h2>
             <div id="video-form-title-container">
               <p className="video-form-title">Title (required)</p>
               <input className="video-form-title-textarea" type='textarea' placeholder="Add a title that describes your video"
-                onKeyDown={this.handleTitleColor}/>
+                onKeyDown={this.handleTitleColor} value={this.state.title} onChange={this.update('title')}/>
             </div>
 
             <div id="video-form-description-container">
               <p className="video-form-description">Description</p>
               <input className="video-form-description-textarea" type='textarea' placeholder="Tell viewers about your video"
-                onClick={this.handleDescriptionColor}/>
+                onKeyDown={this.handleDescriptionColor} value={this.state.description} onChange={this.update('description')}/>
             </div>
 
             <div id='video-form-file-container'>
               <div id="video-form-video-url-container">
-                <label for='video-file' className="video-form-video-label">
+                <label htmlFor='video-file' className="video-form-video-label">
                 <i className="fas fa-film"></i>
                   Upload Video
                 </label>
@@ -80,14 +102,25 @@ export default class VideoForm extends React.Component{
               </div>
 
               <div id="video-form-thumbnail-container">
-              <label for='image-file' className="video-form-image-label">
+              <label htmlFor='image-file' className="video-form-image-label">
                 <i className="far fa-image"></i>
                   Upload Thumbnail
                 </label>
                 <input type="file" id='image-file' className="video-form-thumbnail" accept="image/jpg , image/jpeg, image/png"/>
               </div>
             </div>
+
+            <div id='video-form-buttons-container'>
+                <button className="video-form-cancel" onClick={() => this.props.closeModal()}>CANCEL</button>
+                <input type='submit' className="video-form-submit" placeholder="SUBMIT" value='SUBMIT'/>
+            </div>
         </form>
+        {/* <ul className="errors">
+              {this.state.errors.map((error, idx) => {
+                  return <li key={idx}>{error}</li>
+              })}
+          </ul>  */}
+      </div>
     )
   }
 
