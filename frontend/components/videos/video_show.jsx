@@ -16,6 +16,7 @@ export default class VideoShow extends React.Component {
   componentDidMount(){
     // let url = window.location.href.split('/');
     // let video = url[url.length-1]
+    // this,props.fetchVideo(video)
     this.props.fetchVideo(this.props.match.params.videoId)
   }
 

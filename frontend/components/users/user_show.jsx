@@ -103,7 +103,7 @@ export default class UserShow extends React.Component{
                   Start sharing your story and connecting with viewers. Videos you upload will show up here.
                 </p>
               </div>
-              <button className="user-upload-video-button">UPLOAD VIDEO</button>
+              <button className="user-upload-video-button" onClick={() => this.props.openModal('createVideo', 100)}>UPLOAD VIDEO</button>
             </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import DeleteCommentContainer from '../comments/delete_comment_container';
+import VideoFormContainer from '../videos/video_form_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({modal, closeModal}) {
   switch (modal[0]) {
     case 'deleteOption':
       component = <DeleteCommentContainer commentId={modal[1]} />;
+      break;
+    case 'createVideo':
+      component = <VideoFormContainer/>
       break;
     default:
       return null;
