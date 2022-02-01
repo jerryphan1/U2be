@@ -24,7 +24,7 @@ const VideoSideItem = (props) => {
             <Link to={`/videos/${props.video.id}`} className="video-side-title">
                 <h2>{props.video.title}</h2>
             </Link>
-            <Link to={`/users/${props.video.user.id}`} className="video-side-user-h2">
+            <Link to={`/users/${props.video.user.id}`} onClick={() => props.loadTop()}  className="video-side-user-h2">
               <h2>{user}</h2>
             </Link>
 

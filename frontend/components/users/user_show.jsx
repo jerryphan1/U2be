@@ -6,6 +6,7 @@ import LeftIcons from "../left_icons";
 import UserVideoContainer from "./user_video_container";
 import UserLikedVideoContainer from "./user_liked_video_container";
 import UserDislikedVideoContainer from "./user_disliked_video_container";
+import FollowUserContainer from "../follows/follow_user_container";
 
 
 export default class UserShow extends React.Component{
@@ -66,8 +67,9 @@ export default class UserShow extends React.Component{
       hide = false;
       classes = 'user-upload-video-button'
     }
+    // let subs;
+    // subs = (this.props.user.fans.length && this.props.user.fans.length > 0) ? this.props.user.fans.length + 'subscribers' : 'no subscribers'
     return(
-
       <div>
         <TopNavbar/>
         <LeftNavbar/>
@@ -75,8 +77,11 @@ export default class UserShow extends React.Component{
         <div id='user-show-main-container'>
           <div id='user-show-info-container'>
                 <div id='user-show-info'>
-                  <div className="user-show-initials"><p>{initial}</p></div>
-                  <h2 className="user-show-username">{this.props.user.username}</h2>
+                  <div id='user-show-initial-username'>
+                      <div className="user-show-initials"><p>{initial}</p></div>
+                      <h2 className="user-show-username">{this.props.user.username}</h2>
+                  </div>
+                  <FollowUserContainer user={this.props.user}/>
                 </div>
                 <div id='user-show-tabs'>
                   <div className={this.state.home ? 'active-div' : ''}>

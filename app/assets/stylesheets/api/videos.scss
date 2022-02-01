@@ -277,6 +277,10 @@
   cursor: pointer;
 }
 
+.subscribe.hide-subscribe{
+  display: none;
+}
+
 .subscribe.gray{
   color: #AAAAAA;
   background-color: rgba(255, 255, 255, 0.1);
@@ -344,4 +348,41 @@
 
 .video-show-username-link{
   text-decoration: none;
+}
+
+
+
+#user-show-button-container{
+  display: flex;
+  margin-right: 20px;
+  align-items: flex-end;
+  justify-content: end;
+  margin-top: 10px;
+  width: 20%;
+  height: 50%;
+}
+
+.user-subscribe{
+  text-align: end;
+  background-color: #c00;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+  color: white;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 18px;
+  margin: 0px 4px;
+  cursor: pointer;
+}
+
+.user-subscribe.user-hide-subscribe{
+  display: none;
+}
+
+.user-subscribe.gray{
+  color: #AAAAAA;
+  background-color: rgba(255, 255, 255, 0.1);
 }

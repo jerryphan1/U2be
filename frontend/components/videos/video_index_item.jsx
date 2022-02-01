@@ -28,10 +28,10 @@ const VideoIndexItem = (props) => {
           <Link to='/' className='video-index-image'><p>{initial}</p></Link>
         </div>
         <div className="video-index-info">
-            <Link to={`/videos/${props.video.id}`} className="video-index-title">
+            <Link to={`/videos/${props.video.id}`} className="video-index-title" >
               <h2>{props.video.title}</h2>
             </Link>
-            <Link to={`/users/${props.video.user.id}`} className="video-index-user">
+            <Link to={`/users/${props.video.user.id}`}  onClick={() => props.loadTop()} className="video-index-user">
               <h2>{user}</h2>
             </Link>
             <div className="video-index-viewdates">
