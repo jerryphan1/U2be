@@ -9,7 +9,7 @@
 #  updated_at        :datetime         not null
 #
 class Follow < ApplicationRecord
-  validates :user_id, :user_following_id
+  validates :user_id, :user_following_id, presence: true
 
 
   belongs_to :user,
