@@ -7,6 +7,7 @@ import VideoForm from "./video_form";
 const mSTP = (state) => {
   return {
     currentUser: state.entities.users[state.session.id],
+    errors: state.errors.videoErrors
   }
 }
 

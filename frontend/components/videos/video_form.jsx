@@ -8,10 +8,10 @@ export default class VideoForm extends React.Component{
       user_id: '',
       title: '',
       description: '',
-      thumbnail: null,
-      thumbnailUrl: null,
-      uploaded_video: null,
-      uploadedUrl: null,
+      thumbnail: '',
+      thumbnailUrl: '',
+      uploaded_video: '',
+      uploadedUrl: '',
       errors: []
     }
     this.handleTitleColor = this.handleTitleColor.bind(this);
@@ -155,7 +155,7 @@ export default class VideoForm extends React.Component{
     } else {
       combinedPic = ""
     }
-
+    console.log(this.state.errors)
     return(
       <div>
         <form id='video-form-main-container' onSubmit={this.handleSubmit}>
@@ -201,12 +201,12 @@ export default class VideoForm extends React.Component{
                 <button className="video-form-cancel" onClick={() => this.props.closeModal()}>CANCEL</button>
                 <input type='submit' className="video-form-submit" placeholder="SUBMIT" value='SUBMIT'/>
             </div>
-        </form>
           <ul className="video-errors">
               {this.state.errors.map((error, idx) => {
                   return <li key={idx}>{error}</li>
               })}
           </ul> 
+        </form>
       </div>
     )
   }

@@ -29,6 +29,7 @@
   height: 575px;
   border-radius: 5px;
   font-family: Roboto, Arial, sans-serif;
+  border: 1px solid white;
 }
 
 
@@ -173,7 +174,8 @@ input[type="file"] {
   width: 90%;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  border: 1px solid white;
 }
 
 .video-form-image-label{
@@ -224,8 +226,8 @@ input[type="file"] {
 .video-form-cancel, .video-form-submit{
   text-decoration: none;
   border: none;
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 25px;
   background-color: rgba(33,33,33,0.98);
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
@@ -240,9 +242,13 @@ input[type="file"] {
 
 .video-form-submit{
   color: #3ea6ff;
+  margin-left: 50px;
 }
 
 .video-errors{
   text-align: center;
   color: red;
+  margin-top: 20px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
 }

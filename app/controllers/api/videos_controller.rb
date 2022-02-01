@@ -17,13 +17,19 @@ class Api::VideosController < ApplicationController
   end
 
   def create 
+    if params[:video][:title].empty? 
+      render json: ['Must fill out the title!'], status: 422
+      return nil
+    elsif params[:video][:thumbnail].empty? || params[:video][:uploaded_video].empty?
+      render json: ['Must upload a valid video and thumbnail!'], status: 422
+      return nil
+    end
     @video = Video.new(video_params)
     @video.user_id = current_user.id
-    # debugger
     if @video.save 
       render :show 
     else 
-      render json: @video.error.full_messages, status: 422
+      render json: @video.errors.full_messages, status: 422
     end 
   end
 
