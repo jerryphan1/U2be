@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments 
     resources :likes, only: [:create, :destroy, :index]
     resources :dislikes, only: [:create, :destroy, :index]
+    resources :follows, only: [:create, :destroy, :index]
     resource :session, only: [:create, :destroy]
     patch '/videos/:id/views', to: 'videos#update'
     

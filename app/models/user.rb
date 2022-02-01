@@ -40,9 +40,30 @@ class User < ApplicationRecord
         through: :likes,
         source: :video
 
+    has_many :fans,
+        primary_key: :id,
+        foreign_key: :user_following_id,
+        class_name: :Follow
+    
+    has_many :follows,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Follow
+
+    has_many :followers,
+        through: :fans,
+        source: :user
+    
+    has_many :followees,
+        through: :follows,
+        source: :user_following
+
+
     has_many :disliked_videos,
         through: :dislikes,
         source: :video
+
+    
 
   def self.find_by_credentials(username, password)
       user = User.find_by(username: username)

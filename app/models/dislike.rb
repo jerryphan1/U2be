@@ -2,12 +2,11 @@
 #
 # Table name: dislikes
 #
-#  id             :bigint           not null, primary key
-#  user_id        :integer          not null
-#  video_id       :integer          not null
-#  start_dislikes :integer          default(0), not null
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  id         :bigint           not null, primary key
+#  user_id    :integer          not null
+#  video_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 class Dislike < ApplicationRecord
   validates :user_id, uniqueness:{scope: :video_id,
