@@ -19,7 +19,7 @@ export default class VideoViews extends React.Component{
 
   componentDidUpdate(prevProps){
     // if (!this.props.currentUser) return null;
-    debugger
+    // debugger
     if (this.props.video.id !== prevProps.video.id) {
       console.log(this.props.video)
       this.componentDidMount()
@@ -41,7 +41,7 @@ export default class VideoViews extends React.Component{
     if (!this.props.video) return null
     let internationalNumberFormat = new Intl.NumberFormat('en-US')
     return(
-      <h3 className="video-show-views">{internationalNumberFormat.format(this.props.video.views)} views</h3>
+      <h3 className="video-show-views">{internationalNumberFormat.format(this.state.views)} views</h3>
     )
   }
 }

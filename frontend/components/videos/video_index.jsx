@@ -14,6 +14,10 @@ export default class VideoIndex extends React.Component {
     this.props.fetchVideos()
   }
 
+  loadTop(){
+    window.scrollTo(0, 0);
+  }
+
   // timeout = null;
 
   handleMouseEnter(e) {
@@ -57,7 +61,8 @@ export default class VideoIndex extends React.Component {
         <div id='video-index-blacktext'></div> */}
 
         {
-          this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}/>)
+          this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
+            loadTop={this.loadTop}/>)
         }
       </div>
     )
