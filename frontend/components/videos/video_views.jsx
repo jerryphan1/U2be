@@ -4,6 +4,7 @@ import React from "react";
 export default class VideoViews extends React.Component{
   constructor(props){
     super(props)
+    // debugger
     this.state = Object.assign({errors: []} , this.props.video)
     this.updateViewCount = this.updateViewCount.bind(this)
   }
@@ -11,7 +12,18 @@ export default class VideoViews extends React.Component{
 
   componentDidMount(){
     // debugger
-    this.updateViewCount()
+    this.setState(Object.assign({errors: []} , this.props.video),
+    () => this.updateViewCount())
+    // this.updateViewCount()
+  }
+
+  componentDidUpdate(prevProps){
+    // if (!this.props.currentUser) return null;
+    debugger
+    if (this.props.video.id !== prevProps.video.id) {
+      console.log(this.props.video)
+      this.componentDidMount()
+    }
   }
 
   updateViewCount(){
@@ -29,7 +41,7 @@ export default class VideoViews extends React.Component{
     if (!this.props.video) return null
     let internationalNumberFormat = new Intl.NumberFormat('en-US')
     return(
-      <h3 className="video-show-views">{internationalNumberFormat.format(this.state.views)} views</h3>
+      <h3 className="video-show-views">{internationalNumberFormat.format(this.props.video.views)} views</h3>
     )
   }
 }
