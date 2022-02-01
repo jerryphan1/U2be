@@ -71,20 +71,20 @@ if user.follows
 end
 
 # user has many followers thru source
-if user.followers
-  json.followers do 
-    user.followers.each do |follow|
-      json.extract! follow, :id, :user_id, :user_following_id
-    end
-  end
-end
+# if user.followers
+#   json.followers do 
+#     user.followers.each do |follow|
+#       json.extract! follow, :id, :user_id, :user_following_id
+#     end
+#   end
+# end
 
 
-#user is following many thru source
-if user.followees
-  json.followees do 
-    user.followees.each do |follow|
-      json.extract! follow, :id, :user_id, :user_following_id
-    end
-  end
-end
+# #user is following many thru source
+# if user.followees
+#   json.followees do 
+#     user.followees.each do |follow|
+#       json.extract! follow, :id, :user_id, :user_following_id
+#     end
+#   end
+# end
