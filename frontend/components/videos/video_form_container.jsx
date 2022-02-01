@@ -13,7 +13,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
   return {
-    createVideo: (video) => dispatch(createVideo(video)),
+    processForm: (video) => dispatch(createVideo(video)),
     closeModal: () => dispatch(closeModal()),
     openModal: (modal) => dispatch(openModal(modal))
   }

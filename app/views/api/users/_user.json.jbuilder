@@ -11,7 +11,7 @@ if user.videos
         json.createdAtIndex video.created_at.strftime("%Y%m%d")
         json.createdAt video.created_at.strftime("%b %d, %Y")
         json.thumbnail url_for(video.thumbnail)
-        json.uploaded_video url_for(video.uploaded_video)
+        json.uploadedVideo url_for(video.uploaded_video)
       end
     end
   end

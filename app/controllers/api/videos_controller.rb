@@ -17,12 +17,15 @@ class Api::VideosController < ApplicationController
   end
 
   def create 
+    debugger
     @video = Video.new(video_params)
+    debugger
     @video.user_id = current_user.id
+    # debugger
     if @video.save 
       render :show 
     else 
-      render json: @video.errors.full_message, status: 422
+      render json: ['Please fill out all required params!'], status: 422
     end 
   end
 
@@ -32,7 +35,7 @@ class Api::VideosController < ApplicationController
     if @video.update(video_view_params)
       render :show 
     else 
-      debugger
+      # debugger
       render json: ['could not update video'], status: 422
     end
   end

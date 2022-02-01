@@ -25,8 +25,8 @@
   flex-direction: column;
   align-items: center;
   background-color: rgba(33,33,33,0.98);
-  width: 475px;
-  height: 375px;
+  width: 875px;
+  height: 575px;
   border-radius: 5px;
   font-family: Roboto, Arial, sans-serif;
 }
@@ -34,10 +34,11 @@
 
 #video-form-title-container{
   border: 0.5px solid #AAAAAA;
-  width: 70%;
-  height: 12%;
+  width: 80%;
+  height: 7.5%;
   margin: 15px;
-  padding: 5px 20px 1px 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px 1px 5px;
   border-radius: 3px;
 }
 
@@ -59,7 +60,7 @@
 }
 
 .video-form-title-textarea{
-  height: 20px;
+  /* height: 10px; */
   width: 100%;
   border: none;
   background-color: transparent;
@@ -83,12 +84,13 @@
 
 #video-form-description-container{
   border: 0.5px solid #AAAAAA;
-  width: 70%;
-  height: 12%;
+  width: 80%;
+  height: 7.5%;
   margin: 15px;
-  padding: 5px 20px 1px 5px;
+  padding: 5px 10px 1px 5px;
   border-radius: 3px;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
+
 }
 
 #video-form-description-container:hover{
@@ -139,46 +141,74 @@ input[type="file"] {
 
 #video-form-file-container{
   display: flex;
-  width: 90%;
-  align-items: center;
-  justify-content: space-evenly;
+  width: 82%;
+  height: 44%;
+  vertical-align: middle;
+  justify-content: space-between;
 }
+
+#video-form-upload-container{
+  width: 25%;
+}
+
+#video-preview-container{
+  width: 70%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.video-preview{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 #video-form-buttons-container{
   display: flex;
   width: 90%;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .video-form-image-label{
   display: flex;
   flex-direction: column;
-  width: 150px;
-  height: 50px;
+  justify-content: center;
+  width: 175px;
+  height: 125px;
   border: 0.5px solid #AAAAAA;
   color: #AAAAAA;
   font-size: 14px;
-  align-items: center;
+  /* align-items: center;
   justify-content: center;
-  vertical-align: middle;
+  vertical-align: middle; */
   cursor: pointer;
+  /* margin-top: 50px; */
+  vertical-align: middle;
+  text-align: center;
 }
 
 
 .video-form-video-label{
   display: flex;
   flex-direction: column;
-  width: 150px;
-  height: 50px;
+  justify-content: center;
+  width: 175px;
+  height: 125px;
   border: 0.5px solid #AAAAAA;
   color: #AAAAAA;
   font-size: 14px;
-  align-items: center;
+  /* align-items: center;
   justify-content: center;
-  vertical-align: middle;
+  vertical-align: middle; */
   cursor: pointer;
+  /* margin-top: 50px; */
+  vertical-align: middle;
 }
 
 .video-form-image-label:hover, .video-form-video-label:hover{
@@ -200,6 +230,7 @@ input[type="file"] {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  text-align: center;
 }
 
 .video-form-cancel{
@@ -208,4 +239,9 @@ input[type="file"] {
 
 .video-form-submit{
   color: #3ea6ff;
+}
+
+.video-errors{
+  text-align: center;
+  color: red;
 }

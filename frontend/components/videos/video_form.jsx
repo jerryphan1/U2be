@@ -8,18 +8,56 @@ export default class VideoForm extends React.Component{
       user_id: '',
       title: '',
       description: '',
-      thumbnail: '',
-      uploaded_video: '',
+      thumbnail: null,
+      thumbnailUrl: null,
+      uploaded_video: null,
+      uploadedUrl: null,
       errors: []
     }
     this.handleTitleColor = this.handleTitleColor.bind(this);
     this.handleDescriptionColor = this.handleDescriptionColor.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+    this.handleVideo = this.handleVideo.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
+
+    handleMouseEnter(e) {
+      e.preventDefault();
+      {
+        if (e.target.className === 'video-preview' ) {
+        this.startPreview(e.target);
+        setTimeout(() => this.stopPreview(e.target),5000)
+        }
+      } 
+    }
+    
+    handleMouseLeave(e) {
+      e.preventDefault();
+      if (e.target.className === 'video-preview') {
+        this.stopPreview(e.target);
+      }
+    }
+    
+    startPreview(target) {
+      // e.preventDefault();
+      target.muted = true;
+      target.currentTime = 1;
+      target.playbackRate = 0.5;
+      target.play()
+    }
+    
+    stopPreview(target){
+      target.currentTime = 0;
+      target.playbackRate = 1;
+      target.pause();
+      target.load();
+    }
 
   componentDidMount(){
     if (!this.props.currentUser.id) return null;
-    this.setState({user_id: this.props.currentUser.id, 
+    this.setState({user_id: this.props.currentUser.id, errors: []
       })
   }
 
@@ -35,10 +73,16 @@ export default class VideoForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    const video = Object.assign({}, this.state);
-
-    this.props.processForm(video)
+    // const video = Object.assign({}, this.state);
+    const formData = new FormData();
+    formData.append('video[user_id]', this.state.user_id)
+    formData.append('video[title]', this.state.title)
+    formData.append('video[description]', this.state.description)
+    formData.append('video[thumbnail]', this.state.thumbnail)
+    formData.append('video[uploaded_video]', this.state.uploaded_video)
+    this.props.processForm(formData)
       .then(() => this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''}))
+      // .then(this.props.closeModal())
       .fail(() => this.setState({ errors: this.props.errors }));
   }
 
@@ -46,6 +90,32 @@ export default class VideoForm extends React.Component{
     //reset body to empty
     e.preventDefault();
     this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''})
+    .then(this.props.closeModal())
+  }
+
+  handleImage(e){
+    e.preventDefault();
+    const image = e.currentTarget.files[0]
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({thumbnail: image, thumbnailUrl: fileReader.result})
+    }
+    if (image){
+      fileReader.readAsDataURL(image);
+    }
+  }
+
+  handleVideo(e){
+    e.preventDefault();
+    const video = e.currentTarget.files[0]
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({uploaded_video: video, uploadedUrl: fileReader.result})
+    }
+    if (video){
+      fileReader.readAsDataURL(video);
+    }
+    // this.setState({uploaded_video: e.currentTarget.files[0]})
   }
 
   handleTitleColor(e){
@@ -74,6 +144,18 @@ export default class VideoForm extends React.Component{
   }
 
   render(){
+    // const thumbnailPreview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl} className="thumbnail-preview"/> : null
+    // const videoPreview = this.state.uploadedUrl ? <video src={this.state.uploadedUrl} className="video-preview"/> : null
+
+    
+    let combinedPic;
+    if (this.state.uploadedUrl && this.state.thumbnailUrl) {      
+      combinedPic = <video className='video-preview' src={this.state.uploadedUrl}  
+      poster={this.state.thumbnailUrl} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
+    } else {
+      combinedPic = ""
+    }
+
     return(
       <div>
         <form id='video-form-main-container' onSubmit={this.handleSubmit}>
@@ -91,20 +173,27 @@ export default class VideoForm extends React.Component{
             </div>
 
             <div id='video-form-file-container'>
-              <div id="video-form-video-url-container">
-                <label htmlFor='video-file' className="video-form-video-label">
-                <i className="fas fa-film"></i>
-                  Upload Video
-                </label>
-                <input type="file" id='video-file' className="video-form-video" accept="video/mp4 , video/mov"/>
-              </div>
+              <div id='video-form-upload-container'>
+                <div id="video-form-video-url-container">
+                  <label htmlFor='video-file' className="video-form-video-label">
+                  <i className="fas fa-film"></i>
+                      Upload Video
+                  </label>
+                  <input type="file" id='video-file' className="video-form-video" accept="video/mp4 , video/mov"
+                  onChange={this.handleVideo}/>
+                </div>
 
-              <div id="video-form-thumbnail-container">
-              <label htmlFor='image-file' className="video-form-image-label">
-                <i className="far fa-image"></i>
-                  Upload Thumbnail
-                </label>
-                <input type="file" id='image-file' className="video-form-thumbnail" accept="image/jpg , image/jpeg, image/png"/>
+                <div id="video-form-thumbnail-container">
+                <label htmlFor='image-file' className="video-form-image-label">
+                  <i className="far fa-image"></i>
+                    <p>Upload Thumbnail</p>
+                  </label>
+                  <input type="file" id='image-file' className="video-form-thumbnail" accept="image/jpg , image/jpeg, image/png"
+                    onChange={this.handleImage}/>
+                </div>
+              </div>
+              <div id='video-preview-container'>
+                {combinedPic}
               </div>
             </div>
 
@@ -113,11 +202,11 @@ export default class VideoForm extends React.Component{
                 <input type='submit' className="video-form-submit" placeholder="SUBMIT" value='SUBMIT'/>
             </div>
         </form>
-        {/* <ul className="errors">
+          <ul className="video-errors">
               {this.state.errors.map((error, idx) => {
                   return <li key={idx}>{error}</li>
               })}
-          </ul>  */}
+          </ul> 
       </div>
     )
   }
