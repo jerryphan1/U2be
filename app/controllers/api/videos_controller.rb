@@ -17,15 +17,13 @@ class Api::VideosController < ApplicationController
   end
 
   def create 
-    debugger
     @video = Video.new(video_params)
-    debugger
     @video.user_id = current_user.id
     # debugger
     if @video.save 
       render :show 
     else 
-      render json: ['Please fill out all required params!'], status: 422
+      render json: @video.error.full_messages, status: 422
     end 
   end
 

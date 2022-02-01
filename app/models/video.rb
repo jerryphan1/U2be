@@ -12,10 +12,22 @@
 #
 class Video < ApplicationRecord
   validates :title, :views, presence: true 
-
+  validate :ensure_thumbnail, :ensure_uploaded
   # aws/s3 syntax 
   has_one_attached :uploaded_video
   has_one_attached :thumbnail
+
+  def ensure_thumbnail
+    unless self.thumbnail.attached?
+      errors[:thumbnail] << "Must include a valid thumbnail!"
+    end
+  end
+
+  def ensure_uploaded
+    unless self.uploaded_video.attached?
+      errors[:uploaded_video] << "Must include a valid video!"
+    end
+  end
 
   has_many :comments,
     primary_key: :id,
