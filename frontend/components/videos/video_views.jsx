@@ -21,7 +21,6 @@ export default class VideoViews extends React.Component{
     // if (!this.props.currentUser) return null;
     // debugger
     if (this.props.video.id !== prevProps.video.id) {
-      console.log(this.props.video)
       this.componentDidMount()
     }
   }

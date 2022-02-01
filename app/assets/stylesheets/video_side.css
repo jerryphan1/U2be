@@ -36,12 +36,12 @@
   color: white;
 }
 
-.video-side-user{
+.video-side-user-h2{
   color: #AAAAAA;
   font-weight: 400;
   font-size: 12px;
   text-decoration: none;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   /* line-height: 4rem; */
   margin-top: 30px;
 }

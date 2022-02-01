@@ -56,7 +56,10 @@ export default class UserShow extends React.Component{
     if (!this.props.user) return null;
     let initial = this.props.user.username[0].toUpperCase();
     let hide, classes;
-    if (this.props.user.id !== this.props.currentUser.id){
+    if (!this.props.currentUser){
+      hide = true;
+      classes = 'user-upload-video-button disabled-button'
+    } else if (this.props.user.id !== this.props.currentUser.id) {
       hide = true;
       classes = 'user-upload-video-button disabled-button'
     } else {
