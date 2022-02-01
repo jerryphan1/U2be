@@ -158,7 +158,9 @@
 }
 
 #video-show-top-info-container h1{
-  font-size: 24px;
+  font-size: 22px;
+  padding: 8px;
+  padding-left: 0px;
 }
 
 #video-show-top-info-container{
@@ -240,16 +242,68 @@
 #video-show-image-username{
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
   margin: 10px;
   margin-left: 0px;
   border-bottom: 1px solid #AAAAAA;
   margin-right: 0px;
-  text-align: center;
 }
 
-#video-show-image-username div{ 
+// #video-show-image-username-container{
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.video-show-description{
+  margin-left: 10px;
+  margin-left: 0px;
+  line-height: 17px;
+  overflow-wrap: anywhere;
+}
+
+.subscribe{
+  text-align: end;
+  background-color: #c00;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+  color: white;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 18px;
+  margin: 0px 4px;
+  cursor: pointer;
+}
+
+.subscribe.hide-subscribe{
+  display: none;
+}
+
+.subscribe.gray{
+  color: #AAAAAA;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#video-show-button-container{
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-top: 10px;
+  width: 20%;
+  height: 50%;
+}
+
+#video-show-image-username-container{ 
+  display: flex;
+  // align-items: baseline;
+  justify-content: space-between;
+}
+
+#video-show-links-container{
+  display: flex;
   flex-direction: column;
 }
 
@@ -279,7 +333,6 @@
 }
 
 #video-show-image-username h2{
-  margin: 10px 0px;
   color: white;
   font-weight: 500;
   font-size: 20px;
@@ -295,4 +348,41 @@
 
 .video-show-username-link{
   text-decoration: none;
+}
+
+
+
+#user-show-button-container{
+  display: flex;
+  margin-right: 20px;
+  align-items: flex-end;
+  justify-content: end;
+  margin-top: 10px;
+  width: 20%;
+  height: 50%;
+}
+
+.user-subscribe{
+  text-align: end;
+  background-color: #c00;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+  color: white;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 18px;
+  margin: 0px 4px;
+  cursor: pointer;
+}
+
+.user-subscribe.user-hide-subscribe{
+  display: none;
+}
+
+.user-subscribe.gray{
+  color: #AAAAAA;
+  background-color: rgba(255, 255, 255, 0.1);
 }

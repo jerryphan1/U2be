@@ -1,5 +1,5 @@
 class Api::VideosController < ApplicationController
-  before_action :require_logged_in, only: [:create, :destroy, :update]
+  before_action :require_logged_in, only: [:create, :destroy]
 
   def index 
     @videos = Video.all
@@ -34,8 +34,9 @@ class Api::VideosController < ApplicationController
   end
 
   def update 
+    # debugger
     @video = Video.find_by(id: params[:id])
-    #needed to permit ONLY the views
+    #needed to permit ONLY the views, had to remove the logged in update constraint
     if @video.update(video_view_params)
       render :show 
     else 

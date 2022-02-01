@@ -3,6 +3,7 @@ import VideosReducer from "./videos_reducer";
 import CommentsReducer from "./comments_reducer";
 import LikesReducer from "./likes_reducer";
 import DislikesReducer from './dislikes_reducer';
+import FollowsReducer from "./follows_reducer";
 import { combineReducers } from "redux";
 
 const EntitiesReducer = combineReducers({
@@ -11,6 +12,7 @@ const EntitiesReducer = combineReducers({
     comments: CommentsReducer,
     likes: LikesReducer,
     dislikes: DislikesReducer,
+    follows: FollowsReducer,
 });
 
 export default EntitiesReducer;

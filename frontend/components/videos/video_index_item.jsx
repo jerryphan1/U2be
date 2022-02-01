@@ -18,7 +18,8 @@ const VideoIndexItem = (props) => {
     <div className="video-index-container">
       <Link className="video-index-thumbnail" to={`/videos/${props.video.id}`}>
         <video className='index-actual-video'src={props.video.uploaded_video}  
-        poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}/>
+        poster={props.video.thumbnail} onMouseEnter={props.MouseEnter} onMouseLeave={props.MouseLeave}
+        onClick={() => props.loadTop()}/>
       </Link>
       {/* <video className='video-test'src={props.video.uploaded_video} controls></video> */}
       <div className="video-index-info-container">
@@ -27,10 +28,10 @@ const VideoIndexItem = (props) => {
           <Link to='/' className='video-index-image'><p>{initial}</p></Link>
         </div>
         <div className="video-index-info">
-            <Link to={`/videos/${props.video.id}`} className="video-index-title">
+            <Link to={`/videos/${props.video.id}`} className="video-index-title" >
               <h2>{props.video.title}</h2>
             </Link>
-            <Link to={`/users/${props.video.user.id}`} className="video-index-user">
+            <Link to={`/users/${props.video.user.id}`}  onClick={() => props.loadTop()} className="video-index-user">
               <h2>{user}</h2>
             </Link>
             <div className="video-index-viewdates">

@@ -3,6 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const VideoFormat = (props) => {
+
+  let internationalNumberFormat = new Intl.NumberFormat('en-US')
+
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
   let date = moment.parseZone(props.video.created_at).local().format('YYYYMMDD HH:mm:ss');
   let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
@@ -22,7 +25,7 @@ const VideoFormat = (props) => {
             </Link>
 
             <div className="user-video-viewdates">
-              <p className="user-video-views">{props.video.views} views</p>
+              <p className="user-video-views">{internationalNumberFormat.format(props.video.views)} views</p>
               <p className='user-video-date'>{newDate}</p>
             </div>
         </div>

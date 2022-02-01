@@ -5,6 +5,7 @@ import TopNavbar from "../top_navbar";
 import VideoSideContainer from "./video_side_container";
 import CommentIndexContainer from '../comments/comment_index_container';
 import LikesDislikesContainer from "../likes_dislikes/likes_dislikes_container"
+import FollowVideoContainer from "../follows/follow_video_container";
 import VideoViewsContainer from "./video_views_container";
 
 export default class VideoShow extends React.Component {
@@ -54,15 +55,21 @@ export default class VideoShow extends React.Component {
                       </div>
                 </div>
                 <div id='video-show-image-username'>
-                    <Link to={`/users/${this.props.video.user.id}`} className='video-show-image'><p>{initial}</p></Link>
-                    <div>
-                    <Link to={`/users/${this.props.video.user.id}`} className="video-show-username-link">
-                      <h2>{(this.props.video?.user.username[0].toUpperCase() + 
-                          this.props.video?.user.username.slice(1).toLowerCase())
-                          }</h2>
-                    </Link>
-                      <h3>Description</h3>
+                  <div id='video-show-image-username-container'>
+                    <div id='video-show-links-container'>
+                      <Link to={`/users/${this.props.video.user.id}`} className='video-show-image'><p>{initial}</p></Link>
+                      <Link to={`/users/${this.props.video.user.id}`} className="video-show-username-link">
+                        <h2>{(this.props.video?.user.username[0].toUpperCase() + 
+                            this.props.video?.user.username.slice(1).toLowerCase())
+                            }</h2>
+                      </Link>
                     </div>
+                    {/* <div id='video-show-button-container'>
+                      <button className='subscribe'>SUBSCRIBE</button>
+                    </div> */}
+                    <FollowVideoContainer video={this.props.video}/>
+                  </div>
+                      <h3 className="video-show-description">Description</h3>
                 </div>
 
                 <CommentIndexContainer video={this.props.video}/>
