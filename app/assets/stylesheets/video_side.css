@@ -46,6 +46,10 @@
   margin-top: 30px;
 }
 
+.video-side-user-h2:hover{
+  color:white;
+}
+
 .video-side-viewdates{
   display: flex;
   font-size: 12px;
