@@ -136,6 +136,51 @@
   margin-left: 5px;
 }
 
-.random{
-  margin-left: 2px;
+.left-nav-panel{
+  background-color: #202020;
+  color: #AAAAAA;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-nav-links{
+  line-height: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  font-family: Roboto, Arial, sans-serif;
+  display: none;
+}
+
+.left-nav-links.open-subs{
+  display: block;
+}
+
+.left-nav-links:hover{
+  background-color: rgba(255,255,255,0.2);
+}
+
+.left-nav-panel.open-subs{
+  display: block;
+}
+
+.fas.fa-plus{
+  color: #AAAAAA;
+}
+
+.left-nav-subs{
+  display: flex;
+  /* justify-content: right; */
+  /* flex-direction: column; */
+  background-color: #202020;
+  text-decoration: none;
+  border: none;
+  padding: 28px;
+  margin-top: 6px;
+  width: 100%;
 }
