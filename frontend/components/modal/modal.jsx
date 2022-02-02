@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import DeleteCommentContainer from '../comments/delete_comment_container';
 import VideoFormContainer from '../videos/video_form_container';
+import DeleteSubContainer from '../follows/delete_sub_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -15,6 +16,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'createVideo':
       component = <VideoFormContainer/>
+      break;
+    case 'deleteSub':
+      component = <DeleteSubContainer subId={modal[1]}/>;
       break;
     default:
       return null;
