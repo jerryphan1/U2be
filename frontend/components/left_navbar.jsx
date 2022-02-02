@@ -1,4 +1,6 @@
 import React from "react";
+import SubscriberListContainer from "./follows/subscriber_list_container";
+
 
 export default class LeftNavbar extends React.Component {
 
@@ -7,6 +9,13 @@ export default class LeftNavbar extends React.Component {
     // const hideMenu = document.querySelector('#hide-menu');
     const sideMenu = document.querySelector('#left-nav-menu');
     sideMenu.classList.toggle('active');
+  }
+  
+  handleSubs(){
+    const panel = document.querySelector('.left-nav-panel')
+    const links = document.querySelectorAll('.left-nav-links')
+    panel.classList.toggle('open-subs')
+    links.forEach((link) => link.classList.toggle('open-subs'))
   }
 
   render(){
@@ -42,10 +51,11 @@ export default class LeftNavbar extends React.Component {
                 
               </li>
 
-              <li className="left-nav-text">
-                <a href="https://www.youtube.com/c/Valkyrae1" target='_blank'className='random-all'><i className="fas fa-random left-nav-icon"></i><p className='random'>Random</p></a>
-                
-              </li>
+              <button className="left-nav-text left-nav-subs" onClick={this.handleSubs}>
+                    <i className="fas fa-plus left-nav-icon"></i>
+                    <p className='random-sub'>Subscriptions</p>                   
+              </button>
+              <SubscriberListContainer />
 
               
             </div>

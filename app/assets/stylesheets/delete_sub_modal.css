@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap');
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  text-align: center;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+#sub-delete-modal{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: rgba(33,33,33,0.98);
+  width: 270px;
+  height: 135px;
+  border-radius: 5px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+#sub-delete-modal-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 0px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-left: 5px;
+}
+
+#sub-delete-modal-button-container button{
+  background-color: rgba(33,33,33,0.98);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.sub-delete-modal-text{
+  margin-top: 28px;
+  margin-bottom: 30px;
+  width: 100%;
+  color: #AAAAAA;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 24px;
+}
+
+.sub-delete-button-cancel{
+  color: #AAAAAA;
+  background-color: black;
+  margin-right: 16px;
+}
+
+.sub-delete-button-confirm{
+  color: #3ea6ff;
+}
+
+.sub-delete-button-cancel:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+}
