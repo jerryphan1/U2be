@@ -152,10 +152,15 @@ export default class VideoForm extends React.Component{
     if (this.state.uploadedUrl && this.state.thumbnailUrl) {      
       combinedPic = <video className='video-preview' src={this.state.uploadedUrl}  
       poster={this.state.thumbnailUrl} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}/>
-    } else {
+    } else if (this.state.thumbnailUrl && !this.state.uploadedUrl) {
+      combinedPic = <img className='video-preview' src={this.state.thumbnailUrl}/>
+    } else if (!this.state.thumbnailUrl && this.state.uploadedUrl) {
+      combinedPic = <video className='video-preview' src={this.state.uploadedUrl}/>
+    } else{
       combinedPic = ""
     }
-    console.log(this.state.errors)
+    
+
     return(
       <div>
         <form id='video-form-main-container' onSubmit={this.handleSubmit}>
