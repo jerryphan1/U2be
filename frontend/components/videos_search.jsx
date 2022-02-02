@@ -2,14 +2,27 @@ import React from "react";
 import LeftNavbar from "./left_navbar";
 import LeftIcons from "./left_icons";
 import TopNavbar from "./top_navbar";
+import VideoIndexItem from './videos/video_index_item'
 
 export default class VideosSearch extends React.Component{
   constructor(props){
     super(props)
+    this.state = {
+      errors: []
+    }
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchVideos()
+      .fail(() => this.setState({errors: this.props.errors}))
+  }
+
+  componentDidUpdate(prevProps){
+    if (this.props.match.params.query !== prevProps.match.params.query) {
+      this.componentDidMount()
+    }
   }
 
   loadTop(){
@@ -50,12 +63,37 @@ export default class VideosSearch extends React.Component{
 
 
   render(){
-    return(
-      <div>
-        <TopNavbar/>
-        <LeftNavbar/>
-        <LeftIcons/>
-      </div>
-    )
+    if (!this.props.videos) return null 
+    if (this.props.errors.length > 0) {
+      return (
+        <div>
+          <TopNavbar/>
+          <LeftNavbar/>
+          <LeftIcons/>
+          <div id='main-video-index-container'>
+            <ul className="no-search-errors">
+                  {this.props.errors.map((error, idx) => {
+                      return <li key={idx}>{error}, please try again</li>
+                  })}
+              </ul>
+          </div>
+        </div>
+      )
+    } else {
+        return(
+          <div>
+            <TopNavbar/>
+            <LeftNavbar/>
+            <LeftIcons/>
+              <div id='main-video-index-container'>
+                <div id='video-index-blacktext'></div>
+                {
+                  this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
+                    loadTop={this.loadTop}/>)
+                }
+              </div>
+          </div>
+        )
+    }
   }
 }
