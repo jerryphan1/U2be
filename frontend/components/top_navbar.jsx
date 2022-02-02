@@ -1,5 +1,7 @@
 import React from "react";
-import Searchbar from "./searchbar";
+// import searchbar from "./searchbar";
+import SearchbarContainer from "./searchbar_container";
+import searchbar from "./searchbar";
 import GreetingContainer from "./greeting/greeting_container";
 import { Link } from "react-router-dom";
 
@@ -19,7 +21,7 @@ export default class TopNavbar extends React.Component {
           {/* <a href='#/'><i className="fab fa-react nav-logos"></i></a> */}
           <a href="#"><img src={window.u2be_logo} alt="main-logo" className='fa-react nav-logos'/></a>
         </div>
-        <Searchbar/>
+        <SearchbarContainer/>
         <GreetingContainer/>
       </div>
     )

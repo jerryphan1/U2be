@@ -81,7 +81,6 @@ export default class FollowVideo extends React.Component{
   changeVisibility(){
     if (!this.props.currentUser || !this.props.follows) return;
     if (this.props.currentUser.id === this.props.video.user_id) {
-      console.log('test')
       let color = document.querySelector('.subscribe');
       color.classList.add('hide-subscribe')
     }

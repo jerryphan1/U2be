@@ -30,6 +30,7 @@ export default class VideoShow extends React.Component {
 
   // this.props.video?.uploaded_video  "" checks for value if not itll return empty, 
   // good to run with the id because refreshes can take time
+  // autoPlay
   render(){
     if (!this.props.video) return null;
     let initial = this.props.video.user.username[0].toUpperCase();
@@ -38,7 +39,8 @@ export default class VideoShow extends React.Component {
       <div id='show-div'>
         <TopNavbar/>
         <LeftNavbar/>
-            <video id='video-show-video' src={this.props.video?.uploaded_video || ""} controls/>
+        
+            <video id='video-show-video' src={this.props.video?.uploaded_video || ""}  controls/>
           <div id='video-show-container'>
             <div id ='video-show-info'>
                 <div id='video-show-top-info-container'>

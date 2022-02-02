@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy, :index]
     resource :session, only: [:create, :destroy]
     patch '/videos/:id/views', to: 'videos#update'
+    get '/search', to: "videos#search"
   end
 
   root to: 'static_pages#root'

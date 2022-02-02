@@ -55,6 +55,17 @@ class Api::VideosController < ApplicationController
     end
   end
 
+  def search 
+    query = params[:query]
+    puts 'hello search'
+    @videos = Video.where("title ILIKE ?", "%#{query}%")
+    if !@videos.empty?
+      render :index
+    else 
+      render json: ["No results found for #{query}"], status: 404
+    end
+  end
+
   private 
   def video_params
     params.require(:video).permit(:user_id, :title, :views, :description, :thumbnail, :uploaded_video)

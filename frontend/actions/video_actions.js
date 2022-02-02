@@ -62,3 +62,9 @@ export const deleteVideo = (videoId) => (dispatch) => {
     .then(() => dispatch(removeVideo(videoId)),
     (errors) => dispatch(receiveVideoErrors(errors.responseJSON)))
 }
+
+export const searchVideos = (query) => (dispatch) => {
+  return VideoAPIUtil.searchVideos(query)
+    .then((videos) => dispatch(receiveVideos(videos)),
+    (errors) => dispatch(receiveVideoErrors(errors.responseJSON)))
+}

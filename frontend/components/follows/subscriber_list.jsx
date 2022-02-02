@@ -20,7 +20,6 @@ export default class SubscriberList extends React.Component {
       this.props.follows.forEach((follow) => {
         if (follow.user_id === this.props.currentUser.id) userFollows.push(follow)
       })
-      console.log(userFollows)
       for (let i = 0; i < userFollows.length; i++){
         for (let j = 0; j < this.props.users.length; j++){
           if (this.props.users[j].id === userFollows[i].user_following_id) {
@@ -28,7 +27,6 @@ export default class SubscriberList extends React.Component {
           }
         }
       }
-      console.log(userFollowsUsername)
 
     }
 
