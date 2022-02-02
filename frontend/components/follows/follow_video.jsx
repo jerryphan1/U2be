@@ -36,13 +36,15 @@ export default class FollowVideo extends React.Component{
     e.preventDefault();
     let subStatus = this.checkPreviousSubscribe();
     if (subStatus){
-      this.props.deleteFollow(subStatus.id)
-        .then(this.changeColor())
+      // this.props.deleteFollow(subStatus.id)
+      this.props.openModal('deleteSub',subStatus.id)
+        // .then(this.changeColor())
     } else {
       const follows = Object.assign({}, this.state);
       this.props.createFollow(follows)
-        .then(this.changeColor())
+        // .then(this.changeColor())
     }
+    this.changeColor()
   }
 
   checkPreviousSubscribe(){
