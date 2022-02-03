@@ -10,15 +10,10 @@ export default class LeftNavbar extends React.Component {
     const sideMenu = document.querySelector('#left-nav-menu');
     sideMenu.classList.toggle('active');
   }
-  
-  handleSubs(){
-    const panel = document.querySelector('.left-nav-panel')
-    const links = document.querySelectorAll('.left-nav-links')
-    panel.classList.toggle('open-subs')
-    links.forEach((link) => link.classList.toggle('open-subs'))
-  }
+
 
   render(){
+
     return(
 
       <nav id='left-nav-menu'>
@@ -50,13 +45,7 @@ export default class LeftNavbar extends React.Component {
                 <a href="https://www.linkedin.com/in/jerry-phan-8615a7a3/" target='_blank'className='linkedin-all'><i className="fab fa-linkedin left-nav-icon"></i><p className='linkedin'>LinkedIn</p></a>
                 
               </li>
-
-              <button className="left-nav-text left-nav-subs" onClick={this.handleSubs}>
-                    <i className="fas fa-plus left-nav-icon"></i>
-                    <p className='random-sub'>Subscriptions</p>                   
-              </button>
               <SubscriberListContainer />
-
               
             </div>
         </ul>

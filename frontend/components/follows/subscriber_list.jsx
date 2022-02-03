@@ -11,6 +11,13 @@ export default class SubscriberList extends React.Component {
     this.props.fetchUsers();
   }
 
+  handleSubs(){
+    const panel = document.querySelector('.left-nav-panel')
+    const links = document.querySelectorAll('.left-nav-links')
+    panel.classList.toggle('open-subs')
+    links.forEach((link) => link.classList.toggle('open-subs'))
+  }
+
   render(){
     if (!this.props.fetchFollows) return null
     if (!this.props.fetchUsers) return null
@@ -30,20 +37,30 @@ export default class SubscriberList extends React.Component {
 
     }
 
-    if (!this.props.currentUser) {
-      return (<div className="left-nav-panel"><p>Must login to view subscribers</p></div>)
-    } else {
+    // return (<div className="left-nav-panel"><p className="left-nav-links">Must login to view subscribers</p></div>)
+    if (this.props.currentUser) {
       return(
-        <div className='left-nav-panel'>
-          {
-            userFollowsUsername.map((user) => 
-            {
-              return <Link to={`/users/${user.id}`} key={user.id} className="left-nav-links">{user.username}</Link>
-            })
-          }
-        </div>
+          <>
+            <button className="left-nav-text left-nav-subs" onClick={this.handleSubs}>
+                <i className="fas fa-plus left-nav-icon"></i>
+                <p className='random-sub'>Subscriptions</p>                   
+            </button>
+            <div className='left-nav-panel'>
+              {
+                userFollowsUsername.map((user) => 
+                {
+                  return <Link to={`/users/${user.id}`} key={user.id} className="left-nav-links">{user.username}</Link>
+                })
+              }
+            </div>
+          </>
+        ) 
+    } else {
+      return (
+        null
       )
     }
+    
   }
 
 }
