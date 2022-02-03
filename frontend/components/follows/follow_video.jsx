@@ -26,7 +26,8 @@ export default class FollowVideo extends React.Component{
     if (this.props.video.id !== prevProps.video.id) {
       this.componentDidMount()
     }
-    this.changeColor()
+    this.changeColor();
+    this.changeStatus();
     this.changeVisibility();
   }
 
@@ -86,15 +87,26 @@ export default class FollowVideo extends React.Component{
     }
   }
 
+  changeStatus(){
+    if (!this.props.currentUser || !this.props.follows) return false;
+    for (let i = 0; i < this.props.follows.length; i++){
+      if ( this.props.follows[i].user_id === this.props.currentUser.id) {
+        return true
+      }
+    }
+    return false 
+  }
+
   render(){
     if (!this.props.follows) return null
-    let disabled;
+    let disabled, status;
     disabled = (this.props.currentUser) ? false : true
+    status = (this.changeStatus()) ? 'SUBSCRIBED' : 'SUBSCRIBE'
     // visible = (this.props.currentUser.id === this.props.video.user_id) ? 'hidden;' : 'hidden;'
     // background = (this.props.currentUser) ? 'subscribe red' : 'subscribe gray'
     return(
       <div id='video-show-button-container' >
-            <button className='subscribe' disabled={disabled} onClick={this.handleClick}>SUBSCRIBE</button>
+            <button className='subscribe' disabled={disabled} onClick={this.handleClick}>{status}</button>
       </div>
     )
   }

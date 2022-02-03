@@ -25,7 +25,8 @@ export default class FollowUser extends React.Component{
     if (this.props.user.id !== prevProps.user.id) {
       this.componentDidMount()
     }
-    this.changeColor()
+    this.changeColor();
+    this.changeStatus();
     this.changeVisibility();
   }
 
@@ -83,15 +84,32 @@ export default class FollowUser extends React.Component{
     }
   }
 
+  changeStatus(){
+    if (!this.props.currentUser || !this.props.follows) return false; 
+    for (let i = 0; i < this.props.follows.length; i++){
+      if ( this.props.follows[i].user_id === this.props.currentUser.id) {
+        return true
+      }
+    }
+    return false 
+  }
+
   render(){
     if (!this.props.follows) return null
-    let disabled;
+    let disabled, status;
     disabled = (this.props.currentUser) ? false : true
+    status = (this.changeStatus()) ? 'SUBSCRIBED' : 'SUBSCRIBE'
+    // if (this.props.currentUser && this.props.currentUser.follows) {
+    //   for (let i = 0; i < Object.values(this.props.currentUser.follows).length; i++){
+    //     if (Object.values(this.props.currentUser.follows)[i].user_following_id === this.props.user.id) status = 'SUBSCRIBED'
+    //   }
+    // }
+
     // visible = (this.props.currentUser.id === this.props.video.user_id) ? 'hidden;' : 'hidden;'
     // background = (this.props.currentUser) ? 'subscribe red' : 'subscribe gray'
     return(
       <div id='user-show-button-container' >
-          <button className='user-subscribe'disabled={disabled} onClick={this.handleClick}>SUBSCRIBE</button>
+          <button className='user-subscribe'disabled={disabled} onClick={this.handleClick}>{status}</button>
       </div>
     )
   }

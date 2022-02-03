@@ -10,6 +10,7 @@ export default class VideosSearch extends React.Component{
     this.state = {
       errors: []
     }
+    
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }

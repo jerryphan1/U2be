@@ -57,7 +57,6 @@ class Api::VideosController < ApplicationController
 
   def search 
     query = params[:query]
-    puts 'hello search'
     @videos = Video.where("title ILIKE ?", "%#{query}%")
     if !@videos.empty?
       render :index
