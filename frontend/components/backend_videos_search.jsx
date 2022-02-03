@@ -17,7 +17,7 @@ export default class VideosSearch extends React.Component{
 
   componentDidMount(){
     this.props.searchVideos(this.props.match.params.query)
-      .then((searchedVid) => this.setState({videos: searchedVid}))
+      .then((searchedVid) => this.setState({videos: searchedVid, errors: []}))
       .fail(() => this.setState({ errors: this.props.errors }));
   }
 
@@ -66,15 +66,28 @@ export default class VideosSearch extends React.Component{
 
 
   render(){
-    console.log(this.props.videos)
     if (!this.state.videos) return null 
-    console.log(Object.values(this.state.videos))
-    debugger
-    console.log(this.state.videos)
-    if (this.state.errors.length > 0) {
-       if (!this.state.videos.length) {
+    // debugger
+    if (Object.values(Object.values(Object.values(this.state.videos))[1]).length > 0) {
+      //  if (this.state.videos.length === 0) {
         return (
           <div>
+            <TopNavbar/>
+            <LeftNavbar/>
+            <LeftIcons/>
+              <div id='main-video-index-container'>
+                <div id='video-index-blacktext'></div>
+                {
+                  Object.values(Object.values(Object.values(this.state.videos))[1]).map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
+                    loadTop={this.loadTop}/>)
+                }
+              </div>
+          </div>
+        )
+      // }
+    } else {
+        return(
+            <div>
             <TopNavbar/>
             <LeftNavbar/>
             <LeftIcons/>
@@ -83,24 +96,9 @@ export default class VideosSearch extends React.Component{
                       return <li key={idx}>{error}, please try again</li>
                   })}
               </ul>
-          </div>
-        )
-      }
-    } else {
-        return(
-          <div>
-            <TopNavbar/>
-            <LeftNavbar/>
-            <LeftIcons/>
-              <div id='main-video-index-container'>
-                <div id='video-index-blacktext'></div>
-                {
-                  Object.values(Object.values(Object.values(this.state.videos))[1]).map((video) => <VideoIndexItem video={video} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
-                    loadTop={this.loadTop}/>)
-                }
-              </div>
-          </div>
+            </div>
         )
     }
   }
 }
+

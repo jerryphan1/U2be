@@ -2,7 +2,7 @@ import React from "react";
 import LeftNavbar from "./left_navbar";
 import LeftIcons from "./left_icons";
 import TopNavbar from "./top_navbar";
-// import VideoIndexItem from './videos/video_index_item'
+// import VideoIndexItem from './videos/video_index_item';
 
 export default class VideosSearch extends React.Component{
   constructor(props){
@@ -16,6 +16,7 @@ export default class VideosSearch extends React.Component{
 
   componentDidMount(){
     this.props.fetchVideos()
+    .then(() => this.setState({errors: []}))
       .fail(() => this.setState({errors: this.props.errors}))
   }
 
@@ -64,22 +65,9 @@ export default class VideosSearch extends React.Component{
 
   render(){
     if (!this.props.videos) return null 
-    if (this.props.errors.length > 0) {
+    if (this.props.videos.length > 0) {
       return (
-        <div>
-          <TopNavbar/>
-          <LeftNavbar/>
-          <LeftIcons/>
-            <ul className="no-search-errors">
-                  {this.props.errors.map((error, idx) => {
-                      return <li key={idx}>{error}, please try again</li>
-                  })}
-              </ul>
-        </div>
-      )
-    } else {
-        return(
-          <div>
+            <div>
             <TopNavbar/>
             <LeftNavbar/>
             <LeftIcons/>
@@ -91,7 +79,21 @@ export default class VideosSearch extends React.Component{
                 }
               </div>
           </div>
+      )
+    } else {
+        return(
+            <div>
+            <TopNavbar/>
+            <LeftNavbar/>
+            <LeftIcons/>
+              <ul className="no-search-errors">
+                    {this.props.errors.map((error, idx) => {
+                        return <li key={idx}>{error}, please try again</li>
+                    })}
+                </ul>
+            </div>
         )
     }
   }
 }
+
