@@ -1,5 +1,6 @@
 json.extract! video, :id, :title, :description, :views, :user_id, :created_at
 # user video association
+# debugger
 json.user video.user
 
 # video has many comments

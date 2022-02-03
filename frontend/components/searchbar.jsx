@@ -18,7 +18,7 @@ class Searchbar extends React.Component {
       e.preventDefault();
       this.props.searchVideos(this.state.query)
       .then(() => this.props.history.push(`/search/${this.state.query}`))
-      // .then(() => console.log('hi',this.props))
+      .fail(() => this.props.history.push(`/search/${this.state.query}`))
     }
 
 

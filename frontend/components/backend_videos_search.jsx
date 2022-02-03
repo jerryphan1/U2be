@@ -2,12 +2,13 @@ import React from "react";
 import LeftNavbar from "./left_navbar";
 import LeftIcons from "./left_icons";
 import TopNavbar from "./top_navbar";
-import VideoIndexItem from './videos/video_index_item'
+// import VideoIndexItem from './videos/video_index_item';
 
 export default class VideosSearch extends React.Component{
   constructor(props){
     super(props)
     this.state = {
+      videos: '',
       errors: []
     }
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -15,13 +16,14 @@ export default class VideosSearch extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchVideos()
-    .then(() => this.setState({errors: []}))
-      .fail(() => this.setState({errors: this.props.errors}))
+    this.props.searchVideos(this.props.match.params.query)
+      .then((searchedVid) => this.setState({videos: searchedVid}))
+      .fail(() => this.setState({ errors: this.props.errors }));
   }
 
   componentDidUpdate(prevProps){
     if (this.props.match.params.query !== prevProps.match.params.query) {
+
       this.componentDidMount()
     }
   }
@@ -64,20 +66,26 @@ export default class VideosSearch extends React.Component{
 
 
   render(){
-    if (!this.props.videos) return null 
-    if (this.props.errors.length > 0) {
-      return (
-        <div>
-          <TopNavbar/>
-          <LeftNavbar/>
-          <LeftIcons/>
+    console.log(this.props.videos)
+    if (!this.state.videos) return null 
+    console.log(Object.values(this.state.videos))
+    debugger
+    console.log(this.state.videos)
+    if (this.state.errors.length > 0) {
+       if (!this.state.videos.length) {
+        return (
+          <div>
+            <TopNavbar/>
+            <LeftNavbar/>
+            <LeftIcons/>
             <ul className="no-search-errors">
                   {this.props.errors.map((error, idx) => {
                       return <li key={idx}>{error}, please try again</li>
                   })}
               </ul>
-        </div>
-      )
+          </div>
+        )
+      }
     } else {
         return(
           <div>
@@ -87,7 +95,7 @@ export default class VideosSearch extends React.Component{
               <div id='main-video-index-container'>
                 <div id='video-index-blacktext'></div>
                 {
-                  this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
+                  Object.values(Object.values(Object.values(this.state.videos))[1]).map((video) => <VideoIndexItem video={video} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
                     loadTop={this.loadTop}/>)
                 }
               </div>

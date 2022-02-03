@@ -2,7 +2,7 @@ import React from "react";
 import LeftNavbar from "./left_navbar";
 import LeftIcons from "./left_icons";
 import TopNavbar from "./top_navbar";
-import VideoIndexItem from './videos/video_index_item'
+// import VideoIndexItem from './videos/video_index_item'
 
 export default class VideosSearch extends React.Component{
   constructor(props){
@@ -16,7 +16,6 @@ export default class VideosSearch extends React.Component{
 
   componentDidMount(){
     this.props.fetchVideos()
-    .then(() => this.setState({errors: []}))
       .fail(() => this.setState({errors: this.props.errors}))
   }
 

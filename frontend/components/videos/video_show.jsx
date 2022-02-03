@@ -40,7 +40,7 @@ export default class VideoShow extends React.Component {
         <TopNavbar/>
         <LeftNavbar/>
         
-            <video id='video-show-video' src={this.props.video?.uploaded_video || ""}  controls/>
+            <video id='video-show-video' src={this.props.video?.uploaded_video || ""}  controls autoPlay muted/>
           <div id='video-show-container'>
             <div id ='video-show-info'>
                 <div id='video-show-top-info-container'>
