@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchFollows, createFollow, deleteFollow } from "../../actions/follow_actions";
 import FollowUser from "./follow_user";
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state,ownProps) => {
   let follows, filteredFollow;
@@ -33,7 +34,9 @@ const mDTP = (dispatch) => {
   return {
     fetchFollows: () => dispatch(fetchFollows()),
     createFollow: (follow) => dispatch(createFollow(follow)),
-    deleteFollow: (followId) => dispatch(deleteFollow(followId))
+    deleteFollow: (followId) => dispatch(deleteFollow(followId)),
+    closeModal: () => dispatch(closeModal()),
+    openModal: (modal,id) => dispatch(openModal(modal,id))
   }
 }
 

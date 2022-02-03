@@ -34,12 +34,13 @@ export default class FollowUser extends React.Component{
     e.preventDefault();
     let subStatus = this.checkPreviousSubscribe();
     if (subStatus){
-      this.props.deleteFollow(subStatus.id)
-        .then(this.changeColor())
+      // this.props.deleteFollow(subStatus.id)
+      this.props.openModal('deleteSub',subStatus.id)
+        // .then(this.changeColor())
     } else {
       const follows = Object.assign({}, this.state);
       this.props.createFollow(follows)
-        .then(this.changeColor())
+        // .then(this.changeColor())
     }
   }
 
@@ -83,8 +84,8 @@ export default class FollowUser extends React.Component{
   }
 
   render(){
-    let disabled;
     if (!this.props.follows) return null
+    let disabled;
     disabled = (this.props.currentUser) ? false : true
     // visible = (this.props.currentUser.id === this.props.video.user_id) ? 'hidden;' : 'hidden;'
     // background = (this.props.currentUser) ? 'subscribe red' : 'subscribe gray'
