@@ -11,6 +11,7 @@ export default class CommentForm extends React.Component{
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   handleSubmit(e){
@@ -40,6 +41,12 @@ export default class CommentForm extends React.Component{
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  handleErrors(e){
+    if (e.currentTarget.value.length > 0) {
+      this.setState({errors: []})
+    }
+  }
+
   componentDidMount(){
     // only signed in users can post comment
     if (!this.props.user) return null;
@@ -66,7 +73,7 @@ export default class CommentForm extends React.Component{
         <div id="comment-form-container">
           <h2 className="comment-image-h2"><p>{initial}</p></h2>
           <form onSubmit={this.handleSubmit} className="comment-form">
-            <textarea onClick={this.handleVisible} className="comment-form-textarea" placeholder='Add a public comment...' value={this.state.body} onChange={this.update('body')}/>
+            <textarea onKeyUp={this.handleErrors}  onClick={this.handleVisible} className="comment-form-textarea" placeholder='Add a public comment...' value={this.state.body} onChange={this.update('body')}/>
             <div className="comment-form-buttons">
               <button className='comment-form-button'onClick={this.handleCancel} disabled={status}>Cancel</button>
               <input className='comment-form-input'type='submit' placeholder="Comment" disabled={status}/>

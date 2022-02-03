@@ -133,7 +133,6 @@ export default class VideoForm extends React.Component{
   handleDescriptionColor(e){
     let div = document.querySelector('#video-form-description-container');
     let title = document.querySelector('.video-form-description');
-
     if (e.currentTarget.value.length > 0){
       div.classList.add('blue-border');
       title.classList.add('blue-text')
@@ -168,13 +167,13 @@ export default class VideoForm extends React.Component{
             <div id="video-form-title-container">
               <p className="video-form-title">Title (required)</p>
               <input className="video-form-title-textarea" type='textarea' placeholder="Add a title that describes your video"
-                onKeyDown={this.handleTitleColor} value={this.state.title} onChange={this.update('title')}/>
+                onKeyUp={this.handleTitleColor} value={this.state.title} onChange={this.update('title')}/>
             </div>
 
             <div id="video-form-description-container">
               <p className="video-form-description">Description</p>
               <input className="video-form-description-textarea" type='textarea' placeholder="Tell viewers about your video"
-                onKeyDown={this.handleDescriptionColor} value={this.state.description} onChange={this.update('description')}/>
+                onKeyUp={this.handleDescriptionColor} value={this.state.description} onChange={this.update('description')}/>
             </div>
 
             <div id='video-form-file-container'>
