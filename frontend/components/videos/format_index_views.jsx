@@ -10,21 +10,33 @@ export default class FormatIndexViews extends React.Component{
     let stringViews = views.toString();
     let begin = stringViews.slice(0,stringViews.length-3)
     let end = stringViews.slice(begin.length, begin.length+1)
-    return begin + '.' + end + 'K'
+    if (end === '0') {
+      return begin + 'K'
+    } else {
+      return begin + '.' + end + 'K'
+    }
   }
 
   formatThousands(views){
     let stringViews = views.toString();
     let begin = stringViews.slice(0,stringViews.length-6)
     let end = stringViews.slice(begin.length, begin.length+1)
-    return begin + '.' + end + 'M'
+    if (end === '0') {
+      return begin + 'M'
+    } else {
+      return begin + '.' + end + 'M'
+    }
   }
 
   formatMillions(views){
     let stringViews = views.toString();
     let begin = stringViews.slice(0,stringViews.length-9)
     let end = stringViews.slice(begin.length, begin.length+1)
-    return begin + '.' + end + 'B'
+    if (end === '0') {
+      return begin + 'B'
+    } else {
+      return begin + '.' + end + 'B'
+    }
   }
 
   formatViews(views){

@@ -6,7 +6,8 @@ const ErrorPage = ({location: { pathname }}) => (
     <a href='#'>
         <img src={window.u2be_logo} alt="main-logo" id='error-logo'/>
     </a>
-    <h2 id='error-statement'>Placeholder 404 not found</h2>
+    <h2 id='error-statement'>This page isn't available anymore. Click the logo
+      to head back home</h2>
   </div>
 );
 
