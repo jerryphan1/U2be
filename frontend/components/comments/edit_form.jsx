@@ -7,6 +7,7 @@ export default class EditForm extends React.Component{
     this.storage = this.props.comment.body
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
     // this.storeBody = this.storeBody.bind(this);
   }
 
@@ -52,6 +53,12 @@ export default class EditForm extends React.Component{
   //   }
   // }
 
+  handleErrors(e){
+    if (e.currentTarget.value.length > 0) {
+      this.setState({errors: []})
+    }
+  }
+
   update(field){
     return e => this.setState({ [field]: e.currentTarget.value });
   }
@@ -61,7 +68,7 @@ export default class EditForm extends React.Component{
     return(
       <div  id="edit-form-container">
       <form onSubmit={this.handleSubmit} className="edit-form">
-        <textarea onClick={this.handleVisible} className="edit-form-textarea" value={this.state.body} onChange={this.update('body')}/>
+        <textarea onKeyUp={this.handleErrors} onClick={this.handleVisible} className="edit-form-textarea" value={this.state.body} onChange={this.update('body')}/>
         <div className="edit-form-buttons">
           <button className='edit-form-button'onClick={this.handleCancel} >Cancel</button>
           <input className='edit-form-input'type='submit' placeholder="Comment"/>

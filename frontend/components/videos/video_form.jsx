@@ -95,10 +95,11 @@ export default class VideoForm extends React.Component{
 
   handleImage(e){
     e.preventDefault();
+    // this.handleErrors();
     const image = e.currentTarget.files[0]
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({thumbnail: image, thumbnailUrl: fileReader.result})
+      this.setState({thumbnail: image, thumbnailUrl: fileReader.result, errors: []})
     }
     if (image){
       fileReader.readAsDataURL(image);
@@ -107,10 +108,11 @@ export default class VideoForm extends React.Component{
 
   handleVideo(e){
     e.preventDefault();
+    // this.handleErrors();
     const video = e.currentTarget.files[0]
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({uploaded_video: video, uploadedUrl: fileReader.result})
+      this.setState({uploaded_video: video, uploadedUrl: fileReader.result, errors: []})
     }
     if (video){
       fileReader.readAsDataURL(video);
@@ -122,6 +124,7 @@ export default class VideoForm extends React.Component{
     let div = document.querySelector('#video-form-title-container');
     let title = document.querySelector('.video-form-title');
     if (e.currentTarget.value.length > 0) {
+      this.setState({errors: []})
       div.classList.add('blue-border');
       title.classList.add('blue-text')
     } else {
@@ -131,6 +134,7 @@ export default class VideoForm extends React.Component{
   }
 
   handleDescriptionColor(e){
+    // this.handleErrors();
     let div = document.querySelector('#video-form-description-container');
     let title = document.querySelector('.video-form-description');
     if (e.currentTarget.value.length > 0){
@@ -141,6 +145,12 @@ export default class VideoForm extends React.Component{
       title.classList.remove('blue-text')
     }
   }
+
+  // handleErrors(e){
+  //   if (e.currentTarget.value.length > 0) {
+  //     this.setState({errors: []})
+  //   }
+  // }
 
   render(){
     // const thumbnailPreview = this.state.thumbnailUrl ? <img src={this.state.thumbnailUrl} className="thumbnail-preview"/> : null

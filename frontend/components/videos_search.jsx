@@ -73,7 +73,7 @@ export default class VideosSearch extends React.Component{
             <LeftNavbar/>
             <LeftIcons/>
               <div id='main-video-index-container'>
-                <div id='video-index-blacktext'></div>
+                {/* <div id='video-index-blacktext'></div> */}
                 {
                   this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
                     loadTop={this.loadTop}/>)

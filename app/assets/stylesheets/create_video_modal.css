@@ -181,6 +181,7 @@ input[type="file"] {
 .text-preview{
   font-family: Roboto, Arial, sans-serif;
   font-size: 14px;
+  color: #AAAAAA;
 }
 
 /* .image-preview{
