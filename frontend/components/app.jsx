@@ -4,6 +4,7 @@ import SignupFormContainer from './session/signup_form_container';
 import VideoShowContainer from './videos/video_show_container';
 import UserShowContainer from './users/user_show_container';
 import VideosSearchContainer from "./videos_search_container";
+import FollowVideoContainer from "./follows/follow_video_container";
 import Home from "./home";
 import ErrorPage from "./error_page";
 import { Route, Switch, Redirect } from "react-router-dom";

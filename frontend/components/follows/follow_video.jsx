@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default class FollowVideo extends React.Component{
   constructor(props){
@@ -104,10 +104,20 @@ export default class FollowVideo extends React.Component{
     status = (this.changeStatus()) ? 'SUBSCRIBED' : 'SUBSCRIBE'
     // visible = (this.props.currentUser.id === this.props.video.user_id) ? 'hidden;' : 'hidden;'
     // background = (this.props.currentUser) ? 'subscribe red' : 'subscribe gray'
-    return(
-      <div id='video-show-button-container' >
-            <button className='subscribe' disabled={disabled} onClick={this.handleClick}>{status}</button>
-      </div>
-    )
+    if (!this.props.currentUser) {
+      return (
+        <div id='video-show-button-container' >
+          <Link to='/login' className="link-subscribe-video">
+            <p className='subscribe' disabled={disabled} onClick={this.handleClick}>{status}</p>
+          </Link>
+        </div>
+      )
+    } else {
+        return(
+          <div id='video-show-button-container' >
+                <button className='subscribe' disabled={disabled} onClick={this.handleClick}>{status}</button>
+          </div>
+        )
+    }
   }
 }

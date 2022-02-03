@@ -156,7 +156,7 @@ export default class VideoForm extends React.Component{
     } else if (!this.state.thumbnailUrl && this.state.uploadedUrl) {
       combinedPic = <video className='video-preview' src={this.state.uploadedUrl}/>
     } else{
-      combinedPic = ""
+      combinedPic = <p className='text-preview'>Preview Here!</p>
     }
     
 
