@@ -17,7 +17,7 @@ U2be is a Youtube inspired clone where users can follow their dreams and do just
 
 ## Features 
 
-* Videos preview on hover
+* Videos preview on hover <br>
 ![hover](app/assets/images/video_hover_gif.gif)
 
 ```javascript 
@@ -47,16 +47,16 @@ U2be is a Youtube inspired clone where users can follow their dreams and do just
 
 ```
 
-* Comments on videos
+* Comments on videos <br>
 ![comment](app/assets/images/comments_gif.gif)
 
-* Like or Dislike a video
+* Like or Dislike a video <br>
 ![like](app/assets/images/like_video_gif.gif)
 
-* Increasing video views
+* Increasing video views <br>
 ![views](app/assets/images/video_views_gif.gif)
 
-* Subscribe to channel
+* Subscribe to channel <br>
 ![subscribe](app/assets/images/subscribe_gif.gif)
 
 ## Upcoming Features
