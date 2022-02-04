@@ -38,7 +38,6 @@ export default class VideoIndex extends React.Component {
   }
   
   startPreview(target) {
-    // e.preventDefault();
     target.muted = true;
     target.currentTime = 1;
     target.playbackRate = 0.5;
