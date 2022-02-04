@@ -35,8 +35,6 @@
   display: flex;
   align-items: right;
   justify-content: right;
-  /* justify-content: center;
-  text-align: center; */
   padding: 8px 8px 8px 24px;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
@@ -87,11 +85,3 @@
 .delete-button-cancel:hover{
   background-color: rgba(0, 0, 0, 0.7);
 }
-
-/* .delete-button-confirm{
-  background-color: #3ea6ff;
-} */
-/* 
-.delete-button-confirm:hover{
-  background-color: #3ea5ffbe;
-} */
