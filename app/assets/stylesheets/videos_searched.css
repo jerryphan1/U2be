@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap'); 
+
+
+#main-video-search-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Roboto, Arial, sans-serif;
+  margin-left: 140px;
+  margin-top: 110px;
+}
+
+.video-search-thumbnail video{
+  width: 365px;
+  height: 210px;
+  object-fit: cover;
+}
+
+
+.video-search-container{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.video-search-info-container{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 1px 16px;
+  height: 100%;
+}
+
+.video-search-image-container{
+  width: 55px;
+}
+
+.video-search-image{
+  display: flex;
+  justify-content: center;
+  margin-right: 8px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  align-items: center;
+  vertical-align:middle;
+  text-decoration: none;
+}
+
+.video-search-image p{
+  align-items: center;
+  font-size: 12px;
+  vertical-align:middle;
+}
+
+.video-search-info{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 185px;
+  margin-bottom: 14px;
+}
+
+.video-search-title{
+  font-family: "Roboto","Arial",sans-serif;
+  font-size: 20px;
+  line-height: 1.1rem;
+  font-weight: 100;
+  text-decoration: none;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  padding-top: 6px;
+}
+
+.video-search-title h2{
+  display: inline;
+}
+
+.video-search-title:hover{
+  color: rgba(255,255,255,0.9)
+}
+
+.video-search-user{
+  color: #AAAAAA;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-search-user:hover{
+  color: white;
+}
+
+.video-search-viewdates{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12px;
+  line-height: 2rem;
+  margin-bottom: 2px;
+  font-weight: 400;
+  color: #AAAAAA;
+  margin-bottom: 8px;
+}
+
+.video-search-viewdates p{
+  margin-right: 6px;
+}
+
+.video-search-views::after{
+  color: #AAAAAA;
+  content: " \2219 ";
+  margin: 0 4px;
+  font-weight: 900;
+}
+
+.video-search-viewdates span{
+  font-size: 30px;
+  margin: 0px 6px;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.video-search-description{
+  color: #AAAAAA;
+  font-size: 12px;
+}

@@ -3,6 +3,7 @@ import LeftNavbar from "./left_navbar";
 import LeftIcons from "./left_icons";
 import TopNavbar from "./top_navbar";
 import VideoIndexItem from './videos/video_index_item';
+import VideosSearchItem from "./videos_search_item";
 
 export default class VideosSearch extends React.Component{
   constructor(props){
@@ -34,7 +35,7 @@ export default class VideosSearch extends React.Component{
   handleMouseEnter(e) {
     e.preventDefault();
     {
-      if (e.target.className === 'index-actual-video' ) {
+      if (e.target.className === 'search-actual-video' ) {
       this.startPreview(e.target);
       setTimeout(() => this.stopPreview(e.target),4000)
       }
@@ -43,7 +44,7 @@ export default class VideosSearch extends React.Component{
   
   handleMouseLeave(e) {
     e.preventDefault();
-    if (e.target.className === 'index-actual-video') {
+    if (e.target.className === 'search-actual-video') {
       this.stopPreview(e.target);
     }
   }
@@ -72,10 +73,10 @@ export default class VideosSearch extends React.Component{
             <TopNavbar/>
             <LeftNavbar/>
             <LeftIcons/>
-              <div id='main-video-index-container'>
+              <div id='main-video-search-container'>
                 {/* <div id='video-index-blacktext'></div> */}
                 {
-                  this.props.videos.map((video) => <VideoIndexItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
+                  this.props.videos.map((video) => <VideosSearchItem video={video} key={video.id} MouseEnter={this.handleMouseEnter} MouseLeave={this.handleMouseLeave}
                     loadTop={this.loadTop}/>)
                 }
               </div>

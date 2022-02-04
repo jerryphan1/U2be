@@ -36,6 +36,11 @@
   color: white;
 }
 
+.video-side-title:hover{
+  color: rgba(255,255,255,0.9)
+}
+
+
 .video-side-user-h2{
   color: #AAAAAA;
   font-weight: 400;

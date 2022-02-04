@@ -204,10 +204,26 @@
   text-decoration: none;
   text-align: center;
   color: #AAAAAA;
-  padding: 5px;
+  padding: 10px;
 }
 
 .logged-links:hover{
+  background-color: rgba(255,255,255,0.2);
+}
+
+.logged-links-email{
+  text-decoration: none;
+  text-align: center;
+  color: #AAAAAA;
+  padding: 10px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  border-top: 0.1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+.logged-links-email:hover{
   background-color: rgba(255,255,255,0.2);
 }
 
@@ -216,7 +232,7 @@
   background: none;
 	color: inherit;
 	border: none;
-	padding: 5px;
+	padding: 10px;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;

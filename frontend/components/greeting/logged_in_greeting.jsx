@@ -10,8 +10,8 @@ const LoggedInGreeting = (props) => {
     <h2 className='video-greeting-button'><p>{initial}</p></h2>
     <div className='logged-in-dropdown'>
       <Link to={`/users/${props.user.id}`} className='logged-links'>Your Channel</Link>
-      <Link to={`/videos/new`} className='logged-links'>Upload Video</Link>
-      <button className='logged-logout' onClick={() => props.logout()}>Logout</button>
+      <button className='logged-logout' onClick={() => props.logout()}>Signout</button>
+      <a href='mailto:jerryphan1@gmail.com?subject=General Inquiries' className='logged-links-email'>Contact</a>
     </div>
   </div>
   )

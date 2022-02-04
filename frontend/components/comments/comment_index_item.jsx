@@ -16,7 +16,9 @@ export default class CommentIndexItem extends React.Component{
 
   testEdit(){
     (this.state.edit) ? this.setState({edit: false}) : this.setState({edit: true})
-    this.setActive()
+    if (this.state.edit) {
+      this.setActive()
+    }
   }
 
   setActive(){
@@ -43,7 +45,10 @@ export default class CommentIndexItem extends React.Component{
         <div className="comment-index-info-container">
           <div className="comment-index-top-info">
               <div className="comment-index-delete">
-                <h2 className="comment-index-username">{this.props.comment.user.username}</h2>
+              <Link to={`/users/${this.props.comment.user.id}`} className="comment-index-username-link">
+                  <h2 className="comment-index-username">{this.props.comment.user.username}</h2>
+                </Link>
+
                 <h2 className="comment-index-date">{newDate}</h2>
               </div>
               {/* {console.log(this.props.comment.id)} */}

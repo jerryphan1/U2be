@@ -26,7 +26,7 @@ const VideoIndexItem = (props) => {
       <div className="video-index-info-container">
         {/* <Link to={`/users/${props.video.user.id}`}><p>Image of user</p></Link> */}
         <div className="video-index-image-container">
-          <Link to='/' className='video-index-image'><p>{initial}</p></Link>
+          <Link to={`/users/${props.video.user.id}`} className='video-index-image'><p>{initial}</p></Link>
         </div>
         <div className="video-index-info">
             <Link to={`/videos/${props.video.id}`} className="video-index-title" >
