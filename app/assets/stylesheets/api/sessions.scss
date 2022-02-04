@@ -12,6 +12,7 @@
   align-items: center;
   margin: auto;
   width: 100%;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 #form-outer-line{
@@ -35,7 +36,7 @@
 
 .session-h2-text{
   font-size: 24px;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   margin-top: 15px;
   margin-bottom: 12px;
 }
@@ -57,6 +58,7 @@
   text-align: center;
   margin: 10px;
   width: 62%;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 
@@ -67,6 +69,7 @@
   border: 0.5px solid #4d4949;
   color: rgba(255,255,255,0.6);
   border-radius: 5px;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 #form-container > input:focus{
@@ -88,6 +91,7 @@
   // margin: 5px;
   margin-top: 15px;
   outline: none;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 #form-container > input.demo-submit:hover{
@@ -98,6 +102,7 @@
 .session-link{
   text-decoration: none;
   color: rgba(255,255,255,1);
+  font-size: 14px;
 }
 
 .session-link:hover{
@@ -107,6 +112,7 @@
 .session-submit {
   cursor: pointer;
   background-color: rgba(255,0,0,1);
+  font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   padding: 12px 20px;
   color: white;
@@ -124,11 +130,11 @@
 
 .greeting-button{
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 16px;
   margin-right: 40px;
   cursor: pointer;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .errors{
@@ -181,7 +187,8 @@
   align-items: center;
   vertical-align:middle;
   font-size: 16px;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
+
 }
 
 

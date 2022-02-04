@@ -71,7 +71,7 @@ export default class VideoShow extends React.Component {
                     </div> */}
                     <FollowVideoContainer video={this.props.video}/>
                   </div>
-                      <h3 className="video-show-description">Description</h3>
+                      <h3 className="video-show-description">{this.props.video.description}</h3>
                 </div>
 
                 <CommentIndexContainer video={this.props.video}/>
