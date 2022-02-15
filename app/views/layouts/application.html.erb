@@ -5,15 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <meta property="og:title" content="U2be" />
-    <meta property='og:image' content="<%= image_url('u2be_linkedin.png') %>"/>
-    <meta property="og:description"
-       content="A ube inspired Youtube clone"
-     />
-    <meta property="og:url"
-       content="https://the-u2be.herokuapp.com/#/"
-     />
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
@@ -28,6 +19,12 @@
     <link rel='icon' type='image/x-icon' href="<%= image_url('U2be_just_logo.png') %>" />
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald&family=Roboto&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
+  
+  
+      <meta property="og:title" content="U2be" />
+      <meta property='og:image' content="<%= image_url('u2be_linkedin.png') %>"/>
+      <meta property="og:description" content="A ube inspired Youtube clone" />
+      <meta property="og:url" content="https://the-u2be.herokuapp.com/#/" />
   </head>
 
   <body>
