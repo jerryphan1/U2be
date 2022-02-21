@@ -20,6 +20,7 @@ class Api::VideosController < ApplicationController
     if params[:video][:title].empty? 
       render json: ['Must fill out the title!'], status: 422
       return nil
+    # uploaded video/thumbnails arent string objects 
     elsif params[:video][:thumbnail].is_a?(String) || params[:video][:uploaded_video].is_a?(String)
       if (params[:video][:thumbnail].empty? || params[:video][:uploaded_video].empty?)
         render json: ['Must upload a valid video and thumbnail!'], status: 422
@@ -36,13 +37,11 @@ class Api::VideosController < ApplicationController
   end
 
   def update 
-    # debugger
     @video = Video.find_by(id: params[:id])
     #needed to permit ONLY the views, had to remove the logged in update constraint
     if @video.update(video_view_params)
       render :show 
     else 
-      # debugger
       render json: ['could not update video'], status: 422
     end
   end

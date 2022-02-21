@@ -37,7 +37,6 @@ export default class CommentIndexItem extends React.Component{
 
     let initial = this.props.comment.user.username[0].toUpperCase();
     let date = moment.parseZone(this.props.comment.created_at).local().format('YYYYMMDD HH:mm:ss');
-    // {console.log(date)}
     let newDate = moment(date, 'YYYYMMDD HH:mm:ss').fromNow();
     return(
       <div className="comment-index-container">
@@ -51,7 +50,6 @@ export default class CommentIndexItem extends React.Component{
 
                 <h2 className="comment-index-date">{newDate}</h2>
               </div>
-              {/* {console.log(this.props.comment.id)} */}
               <div className="comment-dropdown">
                   <p className="comment-delete" onClick={this.setActive}>{deleteComm}</p>
                   <div className="comment-dropdown-content"> 

@@ -7,7 +7,7 @@ import FormatIndexViews from "./format_index_views";
 // onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
 
 const VideoIndexItem = (props) => {
-  // debugger
+
   let user = props.video.user.username[0].toUpperCase() + props.video.user.username.slice(1).toLowerCase();
   // let newDate = moment(props.video.createdAtIndex,"YYYYMMDD").fromNow();
   // let date = moment.tz(props.video.created_at, 'America/Los_Angeles').format('YYYYMMDD HH:mm:ss');

@@ -14,7 +14,6 @@ export default class EditForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    // debugger
     this.props.processForm(comment)
     .then(() => this.props.testEdit())
       .fail(() => this.setState({ errors: this.props.errors }));

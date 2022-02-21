@@ -67,7 +67,6 @@ export default class VideosSearch extends React.Component{
 
   render(){
     if (!this.state.videos) return null 
-    // debugger
     if (Object.values(Object.values(Object.values(this.state.videos))[1]).length > 0) {
       //  if (this.state.videos.length === 0) {
         return (
