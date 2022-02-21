@@ -256,3 +256,27 @@ input[type="file"] {
   font-family: Roboto, Arial, sans-serif;
   font-size: 20px;
 }
+
+.spinner {
+  opacity:0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 10px solid rgba(0,0,0,0.95);
+  border-top: 10px solid #AAAAAA;
+  animation: spin 1.5s linear infinite;
+  animation-delay: 1s;
+}
+
+.spinner.hidden{
+  display: none;
+}
+
+@keyframes spin{
+  0%{
+   transform: rotate(0deg);
+  }
+  100%{
+   transform: rotate(360deg);
+  }
+}

@@ -81,10 +81,29 @@ class VideoForm extends React.Component{
     formData.append('video[description]', this.state.description)
     formData.append('video[thumbnail]', this.state.thumbnail)
     formData.append('video[uploaded_video]', this.state.uploaded_video)
+    // setTimeout(() => {this.showSpinner()}, 500);
     this.props.processForm(formData)
-      .then(() => this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''}))
-      .then(() => this.props.history.push(`/`))
-      .fail(() => this.setState({ errors: this.props.errors }));
+      .then(() =>  {
+        this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''})
+        this.props.history.push(`/`)
+      })
+      //testing if this will take it to home page after submit
+      // .then(() => this.props.history.push(`/`))
+      .fail(() => {
+        this.hideSpinner();
+        this.setState({ errors: this.props.errors })
+      });
+      this.showSpinner();
+  }
+
+  showSpinner(){
+    let spin = document.querySelector('.spinner')
+    spin.classList.remove('hidden')
+  }
+
+  hideSpinner(){
+    let spin = document.querySelector('.spinner')
+    spin.classList.add('hidden')
   }
 
   handleCancel(e){
@@ -221,6 +240,7 @@ class VideoForm extends React.Component{
                   return <li key={idx}>{error}</li>
               })}
           </ul> 
+          <div className='spinner hidden'></div>
         </form>
       </div>
     )

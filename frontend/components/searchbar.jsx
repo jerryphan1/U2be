@@ -16,6 +16,7 @@ class Searchbar extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
+      //trying to search empty string
       if (this.state.query.length === 0) return  
       this.props.searchVideos(this.state.query)
       .then(() => this.props.history.push(`/search/${this.state.query}`))
