@@ -20,9 +20,11 @@ class Api::VideosController < ApplicationController
     if params[:video][:title].empty? 
       render json: ['Must fill out the title!'], status: 422
       return nil
-    elsif params[:video][:thumbnail].empty? || params[:video][:uploaded_video].empty?
-      render json: ['Must upload a valid video and thumbnail!'], status: 422
-      return nil
+    elsif params[:video][:thumbnail].is_a?(String) || params[:video][:uploaded_video].is_a?(String)
+      if (params[:video][:thumbnail].empty? || params[:video][:uploaded_video].empty?)
+        render json: ['Must upload a valid video and thumbnail!'], status: 422
+        return nil
+      end
     end
     @video = Video.new(video_params)
     @video.user_id = current_user.id

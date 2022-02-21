@@ -85,6 +85,7 @@ class VideoForm extends React.Component{
     this.props.processForm(formData)
       .then(() =>  {
         this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''})
+        this.props.closeModal();
         this.props.history.push(`/`)
       })
       //testing if this will take it to home page after submit
