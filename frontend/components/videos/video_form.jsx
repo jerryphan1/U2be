@@ -1,7 +1,8 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 
-export default class VideoForm extends React.Component{
+class VideoForm extends React.Component{
   constructor(props){
     super(props)
     this.state = {
@@ -82,7 +83,7 @@ export default class VideoForm extends React.Component{
     formData.append('video[uploaded_video]', this.state.uploaded_video)
     this.props.processForm(formData)
       .then(() => this.setState({ title: '', description: '', thumbnail: '', uploaded_video: ''}))
-      // .then(this.props.closeModal())
+      .then(() => this.props.history.push(`/`))
       .fail(() => this.setState({ errors: this.props.errors }));
   }
 
@@ -226,3 +227,5 @@ export default class VideoForm extends React.Component{
   }
 
 }
+
+export default withRouter(VideoForm)
