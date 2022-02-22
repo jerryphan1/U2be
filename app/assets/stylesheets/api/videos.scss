@@ -184,7 +184,7 @@
   padding-left: 0px;
   color: #AAAAAA;
   font-size: 13px;
-  width: 38%;
+  width: 62%;
 }
 
 .video-show-views::after{
@@ -389,4 +389,41 @@
 .user-subscribe.gray{
   color: #AAAAAA;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (max-width: 827px) {
+  .video-show-format-container{
+    display: flex;
+    flex-direction: column;
+    color: #AAAAAA;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #video-show-views-create {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    color: #AAAAAA;
+    font-size: 13px;
+    width: 100%;
+}
+
+  #video-show-likes-dislikes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  #video-show-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-right: 5%;
+    width: 60%;
+}
 }
