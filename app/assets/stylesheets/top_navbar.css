@@ -105,9 +105,8 @@
   .fa-react.nav-logos{
     position: fixed;
     cursor: pointer;
-    /* font-size: 16px; */
     left: 11%;
-    top: 0.5%;
+    top: -1%;
     width: 10%;
     height: 13%;
   }
